@@ -1,0 +1,46 @@
+{
+  "name": "gulp-angualr-coffee-jade-less-seed",
+  "version": "0.0.0",
+  "description": "gulp-angualr-coffee-jade-less-seed",
+  "author": ":FooTearth <footearth@gmail.com>",
+  "main": "README.md",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mooxe000/gulp-angualr-coffee-jade-less-seed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mooxe000/gulp-angualr-coffee-jade-less-seed/issues"
+  },
+  "homepage": "https://github.com/Mooxe000/gulp-angualr-coffee-jade-less-seed",
+  "Keywords": [
+    "gulp",
+    "angular",
+    "coffee",
+    "jade",
+    "less",
+    "generator"
+  ],
+  "bin": {},
+  "scripts": {
+    "test": ""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "*",
+    "npb-coffee": "*",
+    "lodash": "*",
+    "del": "*",
+    "run-sequence": "*",
+    "gulp-filter": "*",
+    "gulp-coffee": "*",
+    "gulp-jade": "*",
+    "gulp-less": "*",
+    "gulp-tap": "*",
+    "gulp-watch": "*",
+    "gulp-plumber": "*",
+    "browser-sync": "*",
+    "connect-modrewrite": "*",
+    "gulp": "*"
+  }
+}

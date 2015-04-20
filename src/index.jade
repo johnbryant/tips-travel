@@ -1,0 +1,24 @@
+doctype html
+html(
+lang='en'
+ng-app='tipstravel'
+)
+  head
+    meta(charset='utf-8')
+    base(href="/")
+    title TipsTravel.
+
+    link(rel='stylesheet', href='./styles/bootstrap.min.css', type="text/css")
+    link(rel='stylesheet', href='./styles/style.css', type="text/css")
+    link(rel='stylesheet', href='./styles/animate.css', type="text/css")
+  body
+
+    div(
+    ui-view=''
+    )
+
+    script(src="./scripts/libs/angular.js")
+    script(src="./scripts/libs/angular-ui-router.js")
+    script(src="./scripts/libs/angular-classy.js")
+
+    include scripts/scripts
