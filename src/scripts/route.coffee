@@ -34,5 +34,12 @@ angular.module 'tipstravel'
       parent: 'abslogin'
       url: '/login'
       templateUrl: '/modules/login/signin.html'
-      controller: 'signinCtrl'
+      controller: 'loginCtrl'
+
+    .state 'search'
+    ,
+      parent: 'abslogin'
+      url: '/search'
+      templateUrl: '/modules/search/search.html'
+      controller: 'searchCtrl'
 ]
