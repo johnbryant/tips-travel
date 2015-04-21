@@ -35,7 +35,7 @@ angular.module 'tipstravel'
       .error (err) ->
         console.error err
 
-    openNav: ->
+    openlNav: ->
       if !@$scope.isopened
         @$scope.topactive = true
         @$scope.middleactive = true

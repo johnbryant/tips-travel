@@ -42,4 +42,11 @@ angular.module 'tipstravel'
       url: '/search'
       templateUrl: '/modules/search/search.html'
       controller: 'searchCtrl'
+
+    .state 'dashboard'
+    ,
+      parent: 'abslogin'
+      url: '/dashboard'
+      templateUrl: '/modules/dashboard/dashboard.html'
+      controller: 'dashboardCtrl'    
 ]
