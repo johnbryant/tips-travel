@@ -15,44 +15,53 @@
                     a Search
 
     //内容框架
-    .l-container.l-container--two-column-dashboard
-        .l-content.clearfix
-            //右侧栏（内容待定）
-            #right_column.right_column
-
-            //左侧栏
-            #left_column.left_column
-    			ol#posts.posts.post-avatar--static
-    				//新建tip
-    				li#new_post_buttons.post_container.new_post_buttons_container
-    					#new_post.new_post_buttons.post.post_full.is_mine.with_avatar.new_post
-    				//好友tip内容
-    				li.post_container(data-pageable='#')
-    					.post.post_full.is_photoset
-    					//头像
-    					.post_avatar
-    					//内容
-    					.post_wrapper
-    						//标题
-    						.post_header
-    						//内容
-    						.post_content
-    							.post_content_inner
-    								//媒体
-    								.post_media
-    								//文字
-    								.post_body
-    						//标签
-    						.post_tag
-    						//tip操作
-    						.post_footer
-    							.post_contral
-    								.post_like
-
-    //Footer
-    footer
-      p
-        | Made with 
-        span.fa.fa-heart.animated.pulse
-        |  in Tongji, Shanghai
-      p © 2014 John Bryant. All rights reserved.
+    .container-fluid
+        .row-fluid
+        .span8
+          ul.nav.nav-tabs
+            li.active
+              a 首页
+            li
+              a 资料
+            li.disabled
+              a 信息
+            li.dropdown.pull-right
+              a.dropdown-toggle(data-toggle='dropdown')
+                | 下拉
+                strong.caret
+              ul.dropdown-menu
+                li
+                  a 操作
+                li
+                  a 设置栏目
+                li
+                  a 更多设置
+                li.divider
+                li
+                  a 分割线
+          a#modal-968593.btn(href='#modal-container-968593', role='button', data-toggle='modal') 触发遮罩窗体
+          #modal-container-968593.modal.hide.fade(role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+              h3#myModalLabel
+                | 标题栏
+            .modal-body
+              p
+                | 显示信息
+            .modal-footer
+              button.btn(data-dismiss='modal', aria-hidden='true') 关闭
+              button.btn.btn-primary 保存设置
+          #accordion-593039.accordion
+            .accordion-group
+              .accordion-heading
+                a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion-593039', href='#accordion-element-460644') 选项卡 #1
+              #accordion-element-460644.accordion-body.collapse
+                .accordion-inner
+                  | 功能块...
+            .accordion-group
+              .accordion-heading
+                a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion-593039', href='#accordion-element-363958') 选项卡 #2
+              #accordion-element-363958.accordion-body.collapse
+                .accordion-inner
+                  | 功能块...
+        .span4
