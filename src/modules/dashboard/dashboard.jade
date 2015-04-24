@@ -14,54 +14,50 @@
                 li
                     a Search
 
+
     //内容框架
     .container-fluid
-        .row-fluid
-        .span8
-          ul.nav.nav-tabs
-            li.active
-              a 首页
-            li
-              a 资料
-            li.disabled
-              a 信息
-            li.dropdown.pull-right
-              a.dropdown-toggle(data-toggle='dropdown')
-                | 下拉
-                strong.caret
-              ul.dropdown-menu
-                li
-                  a 操作
-                li
-                  a 设置栏目
-                li
-                  a 更多设置
-                li.divider
-                li
-                  a 分割线
-          a#modal-968593.btn(href='#modal-container-968593', role='button', data-toggle='modal') 触发遮罩窗体
-          #modal-container-968593.modal.hide.fade(role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-            .modal-header
-              button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-              h3#myModalLabel
-                | 标题栏
-            .modal-body
-              p
-                | 显示信息
-            .modal-footer
-              button.btn(data-dismiss='modal', aria-hidden='true') 关闭
-              button.btn.btn-primary 保存设置
-          #accordion-593039.accordion
-            .accordion-group
-              .accordion-heading
-                a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion-593039', href='#accordion-element-460644') 选项卡 #1
-              #accordion-element-460644.accordion-body.collapse
-                .accordion-inner
-                  | 功能块...
-            .accordion-group
-              .accordion-heading
-                a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion-593039', href='#accordion-element-363958') 选项卡 #2
-              #accordion-element-363958.accordion-body.collapse
-                .accordion-inner
-                  | 功能块...
-        .span4
+      .row-fluid
+        //左侧栏
+        .col-md-6
+            .left_column
+                //新建tip框
+                .new_tip
+                    .user-avatar--static
+                        .new_tip_btn_group_container
+                            .user_avatar
+                                a.user_avatar_link 头像
+
+                            nav.new_tip_buttons
+                                a.new_tip_label
+                                    img.icon_tip_text
+                                    span.new_tip_label_text Text
+                                a.new_tip_label
+                                    img.icon_tip_photo
+                                    span.new_tip_label_text Photo
+                                a.new_tip_label
+                                    img.icon_tip_link
+                                    span.new_tip_label_text Link
+                                a.new_tip_label
+                                    img.icon_tip_audio
+                                    span.new_tip_label_text Audio
+                                a.new_tip_label
+                                    img.icon_tip_video
+                                    span.new_tip_label_text Video
+
+
+                //好友tips
+                ul
+                    li
+
+                    li
+
+                    li
+
+                    li
+
+
+
+        //右侧栏
+        .col-md-4
+            .right_column
