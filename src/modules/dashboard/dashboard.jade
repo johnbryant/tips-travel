@@ -1,0 +1,63 @@
+.dashboard
+    //导航栏
+    #toggle.button-container(ng-click='opendNav()')
+        span(ng-class='{top_active:topactive}')
+        span(ng-class='{middle_active:middleactive}')
+        span(ng-class='{bottom_active:bottomactive}')
+    #overlay(ng-class='{overlay:onclose,overlay_open:onopen}')
+        nav
+            ul
+                li
+                    a Sign in
+                li
+                    a Sign up
+                li
+                    a Search
+
+
+    //内容框架
+    .container-fluid
+      .row-fluid
+        //左侧栏
+        .col-md-6
+            .left_column
+                //新建tip框
+                .new_tip
+                    .user-avatar--static
+                        .new_tip_btn_group_container
+                            .user_avatar
+                                a.user_avatar_link 头像
+
+                            nav.new_tip_buttons
+                                a.new_tip_label
+                                    img.icon_tip_text
+                                    span.new_tip_label_text Text
+                                a.new_tip_label
+                                    img.icon_tip_photo
+                                    span.new_tip_label_text Photo
+                                a.new_tip_label
+                                    img.icon_tip_link
+                                    span.new_tip_label_text Link
+                                a.new_tip_label
+                                    img.icon_tip_audio
+                                    span.new_tip_label_text Audio
+                                a.new_tip_label
+                                    img.icon_tip_video
+                                    span.new_tip_label_text Video
+
+
+                //好友tips
+                ul
+                    li
+
+                    li
+
+                    li
+
+                    li
+
+
+
+        //右侧栏
+        .col-md-4
+            .right_column

@@ -35,3 +35,6 @@ angular.module 'tipstravel'
 
     goSignin: ->
       @$state.go 'login'
+
+    goSearch: ->
+      @$state.go 'search'

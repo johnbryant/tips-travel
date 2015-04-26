@@ -1,12 +1,13 @@
-.login {
+.dashboard {
   overflow: auto;
+  height: 100%;
+  width: 100%;
   margin:0;
-  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size:14px;
   line-height:1.42857143;
-  color:#333;
-  background-color: #fff;
+  background-color: #34495e;
 
+  //导航栏
   .button-container {
     position:fixed;
     top:3%;
@@ -110,8 +111,6 @@
   .overlay_open nav ul li {
     display:block;
     height:20%;
-   // height:-webkit-calc(100% / 5);
-    //height:calc(100% / 5);
     min-height:32px;
     position:relative;
     opacity:0.7
@@ -171,112 +170,35 @@
 
 
 
-  //表单面板
-  .intro-lg {
-    text-align:center;
-    padding-top:150px;
-    padding-bottom:150px
+  //dashboard
+
+  //左侧栏
+  .left_column {
+    background-color: #fff;
+    border-radius: 3px;
+    float: left;
+    width: 625px
   }
 
-  .uppercase {
-    text-transform: uppercase;
+  .new_tip {
+    position:relative;
+    font-size:14px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
   }
 
-  #title {
-    color:#FFF;
-    -webkit-animation-delay:.5s;
-    animation-delay:.5s
+  .user-avatar--static {
+    position:absolute;
+    left:-85px;
+    top:0
   }
 
-  #sub {
-    color:#FFF;
-    font-size:1.214em;
-    -webkit-animation-delay:1s;
-    animation-delay:1s;
-    //-webkit-animation-duration:1s;
-    //animation-duration:1s
-  }
-
-  h1 {
-    font-size:5.143em;
-    font-weight:700
-  }
-
-  h2 {
-    font-size:1.429em
-  }
-
-  h3 {
-    font-size:1.214em
-  }
-
-  form {
-    text-align: center;
-  }
-
-  .form-signin {
-  max-width: 440px;
-  padding: 15px;
-  margin: 0 auto;
-  }
-
-  .form-signin .form-signin-heading,
-  .form-signin .checkbox {
-    margin-bottom: 10px;
-  }
-
-  .form-signin .checkbox {
-    font-weight: normal;
-  }
-
-  .form-signin .form-control {
+  .new_tip_btn_group_container {
     position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 10px;
-    font-size: 16px;
   }
 
-  .form-signin .form-control:focus {
-    z-index: 2;
-  }
-
-  .form-signin input[type="email"] {
-    width:100%;
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  .form-signin input[type="password"] {
-    width:100%;
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  .form-signin input[type="text"] {
-    width:100%;
-    margin-bottom: -1px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  footer {
-    background-color:#F1F1F1;
-    border-top:1px solid #E0E0E0;
-    color:#b0b0b0;
-    font-size:.929em;
-    height:150px;
-    padding-top:20px;
-    text-align:center
-  }
-
-  footer span {
-    color:#FF5252;
-    -webkit-animation-iteration-count:infinite;
-    animation-iteration-count:infinite
+  .new_tip_buttons {
+    
   }
 }
