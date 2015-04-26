@@ -3,10 +3,11 @@ angular.module 'tipstravel'
 .factory 'apiUserBase', [
   'Restangular'
   (Restangular) ->
-    baseURL = "#{192.168.1.104:8080}/tipstravel"
+    baseURL = "http://192.168.1.105:8080/tipstravel"
 
     Restangular.withConfig (RestangularConfigurer) ->
       RestangularConfigurer.setBaseUrl baseURL
+
 ]
 
 .factory 'apiUser', [
@@ -17,11 +18,13 @@ angular.module 'tipstravel'
       email
       password
       } = login_data
-      meta = apiUserBase.all 'login'
+      meta = apiUserBase.all "login"
+
+      a = JSON.stringify email: email, password: password
+
+
       new Promise (resolve, reject) ->
-        meta.post
-          email: email
-          password: password
+        meta.post a
         .then (result) ->
           resolve result
         , (res) ->

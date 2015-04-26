@@ -29,6 +29,8 @@
     "bootstrap": "*",
     "angular": "*",
     "ui-route": "~0.2.13",
-    "angular-classy": "~1.1.0"
+    "angular-classy": "~1.1.0",
+    "restangular": "~1.5.1",
+    "bluebird": "~2.9.24"
   }
 }
