@@ -1,6 +1,6 @@
 .dashboard {
   overflow: auto;
-  height: 100%;
+  height: 1000px;
   width: 100%;
   margin:0;
   font-size:14px;
@@ -174,31 +174,100 @@
 
   //左侧栏
   .left_column {
+    border-radius: 5px;
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .new_tip_container {
+    //margin: 10px;
+    height: 100%;
+    width: 100%;
     background-color: #fff;
-    border-radius: 3px;
+    padding: 0;
+    text-align: center;
+    word-wrap: break-word;
+    //-webkit-box-sizing:border-box;
+    //-moz-box-sizing:border-box;
+    //box-sizing:border-box
+    border: 1px solid black
+  }
+
+  .user_avatar {
     float: left;
-    width: 625px
+    margin: 10px;
+    height: 64px;
+    width: 64px;
+    border: 1px solid black;
   }
 
-  .new_tip {
-    position:relative;
-    font-size:14px;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box
-  }
-
-  .user-avatar--static {
-    position:absolute;
-    left:-85px;
-    top:0
-  }
-
-  .new_tip_btn_group_container {
-    position: relative;
+  .user_avatar_link {
+    background-image: url(./styles/img/user_avatar_link_testimg.png)
   }
 
   .new_tip_buttons {
+    display: block;
+    margin: 10px;
+    margin-left: 94px;
+    border: 1px solid black;
     
+  }
+
+  .new_tip_label {
+    display: inline;
+    position: relative;
+    float: left;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 20px;
+    padding: 61px 1px 18px 0;
+    color: #696969;
+    font-size: 15px;
+    opacity: .9;
+    font-weight: normal;
+    text-decoration: none;
+  }
+
+  .icon_tip_label_text {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    padding: 0 14px;
+    font-size: 4
+  }
+
+
+  //所有tips
+  .all_tips_container {
+
+  }
+
+  //单条tip
+  .single_tip_container {
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .right_column {
+    height: 100%;
+    border:2px solid black;
+    margin-top: 100px;
+    overflow: hidden;
   }
 }

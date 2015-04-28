@@ -19,36 +19,35 @@
     .container-fluid
       .row-fluid
         //左侧栏
+        .col-md-2
+
         .col-md-6
             .left_column
                 //新建tip框
-                .new_tip
-                    .user-avatar--static
-                        .new_tip_btn_group_container
-                            .user_avatar
-                                a.user_avatar_link 头像
-
-                            nav.new_tip_buttons
-                                a.new_tip_label
-                                    img.icon_tip_text
-                                    span.new_tip_label_text Text
-                                a.new_tip_label
-                                    img.icon_tip_photo
-                                    span.new_tip_label_text Photo
-                                a.new_tip_label
-                                    img.icon_tip_link
-                                    span.new_tip_label_text Link
-                                a.new_tip_label
-                                    img.icon_tip_audio
-                                    span.new_tip_label_text Audio
-                                a.new_tip_label
-                                    img.icon_tip_video
-                                    span.new_tip_label_text Video
+                .new_tip_container
+                    .user_avatar
+                        a.user_avatar_link
+                    nav.new_tip_buttons
+                        a.new_tip_label
+                            i.icon_tip_text
+                            span.new_tip_label_text Text
+                        a.new_tip_label
+                            i.icon_tip_photo
+                            span.new_tip_label_text Photo
+                        a.new_tip_label
+                            i.icon_tip_link
+                            span.new_tip_label_text Link
+                        a.new_tip_label
+                            i.icon_tip_audio
+                            span.new_tip_label_text Audio
+                        a.new_tip_label
+                            i.icon_tip_video
+                            span.new_tip_label_text Video
 
 
                 //好友tips
-                ul
-                    li
+                ul.all_tips_container
+                    li.single_tip_container
 
                     li
 

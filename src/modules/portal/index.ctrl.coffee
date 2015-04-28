@@ -7,6 +7,7 @@ angular.module 'tipstravel'
   inject: [
     '$scope'
     '$state'
+    'apiUser'
   ]
 
   init: ->
@@ -38,3 +39,18 @@ angular.module 'tipstravel'
 
     goSearch: ->
       @$state.go 'search'
+
+    signup: ->
+      console.log @$scope.username
+      Promise.bind @
+      .then ->
+        @apiUser.register
+          email: @$scope.email
+          username: @$scope.username
+          password: @$scope.password
+      .then (result) ->
+        console.log result
+      .error (err) ->
+          console.error err
+      if result.message is 'ÓÊÏäÒÑ¾­×¢²á'
+        @$state.go 'login'

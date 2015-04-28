@@ -3,11 +3,10 @@ angular.module 'tipstravel'
 .factory 'apiUserBase', [
   'Restangular'
   (Restangular) ->
-    baseURL = "http://192.168.1.105:8080/tipstravel"
+    baseURL = "http://192.168.1.110:8080/tipstravel"
 
     Restangular.withConfig (RestangularConfigurer) ->
       RestangularConfigurer.setBaseUrl baseURL
-
 ]
 
 .factory 'apiUser', [
@@ -20,15 +19,38 @@ angular.module 'tipstravel'
       } = login_data
       meta = apiUserBase.all "login"
 
-      a = JSON.stringify email: email, password: password
-
+#      a = JSON.stringify email: email, password: password
 
       new Promise (resolve, reject) ->
-        meta.post a
+        meta.post
+          email: email
+          password: password
         .then (result) ->
           resolve result
         , (res) ->
           reject res
+
+    register: (register_data) ->
+      {
+      email
+      password
+      username
+      } = register_data
+      meta = apiUserBase.one 'user'
+      .all 'add'
+
+      new Promise (resolve, reject) ->
+        meta.post
+          email: email
+          username: username
+          password: password
+        .then (result) ->
+          resolve result
+        , (res) ->
+          reject res
+
+
+
 ]
 #    registerCheck: (register_check_data) ->
 #      {
@@ -43,24 +65,4 @@ angular.module 'tipstravel'
 #        , (res) ->
 #          reject res
 
-#    register: (register_data) ->
-#      {
-#      cellphone
-#      password
-#      verification_code
-#      promo
-#      ticket
-#      } = register_data
-#      meta = apiUserBase.all 'register'
-#      new Promise (resolve, reject) ->
-#        meta.post
-#          cellphone: cellphone
-#          password: password
-#          verification_code: verification_code
-#          promo: promo
-#          ticket: ticket
-#        .then (result) ->
-#          resolve result
-#        , (res) ->
-#          reject res
 
