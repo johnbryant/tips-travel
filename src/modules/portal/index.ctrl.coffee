@@ -18,6 +18,7 @@ angular.module 'tipstravel'
     @$scope.isopened = false
     @$scope.onclose = true
     @$scope.onopen = false
+#    @$scope.errorInfo = 'good'
 
   methods:
   	openNav: ->
@@ -53,4 +54,6 @@ angular.module 'tipstravel'
       .error (err) ->
           console.error err
       if result.message is 'ÓÊÏäÒÑ¾­×¢²á'
+        @$scope.errorInfo = 'The email has been registered!'
+      else
         @$state.go 'login'

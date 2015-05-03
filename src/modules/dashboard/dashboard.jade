@@ -19,9 +19,9 @@
     .container-fluid
       .row-fluid
         //左侧栏
-        .col-md-2
+        .col-md-1
 
-        .col-md-6
+        .col-md-8
             .left_column
                 //新建tip框
                 .new_tip_container
@@ -46,17 +46,24 @@
 
 
                 //好友tips
-                ul.all_tips_container
-                    li.single_tip_container
-
-                    li
-
-                    li
-
-                    li
-
+                .tips_container
+                    ul.tips_timeline
+                        li
+                            time.tips_time
+                                span 4/30/15
+                                span 18:30
+                            .tips_id
+                                .tips_user_avatar
+                                    img(src='styles/img/avatar6.jpg',alt='Avatar')
+                            .tips_icon.tips_icon-phone
+                            .tips_label
+                                a.tips_username
+                                    h5 johnbryant262
+                                img.tips_image(src='styles/img/tips_img1.jpg')
+                                p.tips_text This is my first tips!
+                                a.tips_tag #castle
 
 
         //右侧栏
-        .col-md-4
+        .col-md-3
             .right_column

@@ -18,6 +18,7 @@ angular.module 'tipstravel'
     @$scope.isopened = false
     @$scope.onclose = true
     @$scope.onopen = false
+#    @$scope.signup_errorInfo = 'haha'
 
   methods:
     goSignup: ->
@@ -34,7 +35,10 @@ angular.module 'tipstravel'
         console.log result
       .error (err) ->
         console.error err
-
+      if result.message is 'ÓÊÏä²»´æÔÚ'
+        @$scope.signup_errorInfo = 'invalid email or password! '
+      else
+        @$state.go 'dashboard'
     openlNav: ->
       if !@$scope.isopened
         @$scope.topactive = true

@@ -3,7 +3,7 @@ angular.module 'tipstravel'
 .factory 'apiUserBase', [
   'Restangular'
   (Restangular) ->
-    baseURL = "http://192.168.1.110:8080/tipstravel"
+    baseURL = "http://172.24.171.2:8080/tipstravel"
 
     Restangular.withConfig (RestangularConfigurer) ->
       RestangularConfigurer.setBaseUrl baseURL

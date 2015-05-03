@@ -32,6 +32,7 @@
                 type='password', placeholder='Password', required=''
                 ng-model='password'
                 )
+                p {{ signup_errorInfo }}
                 button.btn.btn-lg.btn-primary.btn-block(
                 ng-click='signin()'
                 ) Sign in
