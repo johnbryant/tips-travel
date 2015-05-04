@@ -202,7 +202,7 @@
   }
 
   .user_avatar_link {
-    //background-image: url('./styles/img/user_avatar_link_testimg.png')
+    ''background: url('styles/img/user_avatar_link_testimg.png')
   }
 
   .new_tip_buttons {
@@ -222,7 +222,7 @@
     width: 75px;
     height: 20px;
     padding: 61px 1px 18px 0;
-    color: #fff;
+    color: #000;
     font-size: 15px;
     opacity: .9;
     font-weight: normal;
@@ -237,6 +237,7 @@
     height: 48px;
     padding: 0 14px;
     font-size: 4px;
+    color: #000;
   }
 
   //Friend's tips
@@ -246,7 +247,7 @@
     font-weight: 200;
     line-height: 21px;
     padding: 15px 30px 30px 30px;
-    border: 1px solid #f55
+    //border: 1px solid #f55
   }
 
   .tips_container .white {
@@ -264,7 +265,7 @@
     margin: 20px 0 0 0;
     padding: 0;
     list-style: none;
-    border: 1px solid black;
+    //border: 1px solid black;
   }
 
   .tips_timeline:before {
@@ -275,7 +276,8 @@
     width: 10px;
     background: #fff;
     left: 20%;
-    margin-left: -10px
+    margin-left: -10px;
+    margin-bottom: -82px
   }
 
   .tips_timeline > li {
@@ -394,11 +396,19 @@
 
   .tips_text {
     margin: 20px;
+    font-size: 10px;
+    font-family: arial, sans-serif;
     color: #000
   }
 
-  .tips_tag {
-    margin:20px;
+  .tips_timeline > li .tips_tag {
+    text-decoration: none;
+    padding:20px;
+  }
+
+  .blank {
+    background-color: #fff;
+    height: 20px;
   }
 
 
