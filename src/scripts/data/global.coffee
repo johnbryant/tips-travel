@@ -1,4 +1,4 @@
-angular.module 'fenyinCloud'
+angular.module 'tipstravel'
 
 .service 'Global', [
   () ->

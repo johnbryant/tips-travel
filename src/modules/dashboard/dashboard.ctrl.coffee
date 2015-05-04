@@ -2,23 +2,40 @@ angular.module 'tipstravel'
 
 .classy.controller
 
-	name: 'dashboardCtrl'
+  name: 'dashboardCtrl'
 
-	inject: [
-		'$scope'
-	]
+  inject: [
+    '$scope'
+    'apiTips'
+    'Global'
+  ]
 
-	init: ->
-		@$scope.tips = "follow and share the interesting travel tips"
-		@$scope.topactive = false
-		@$scope.middleactive = false
-		@$scope.bottomactive = false
-		@$scope.isopened = false
-		@$scope.onclose = true
-		@$scope.onopen = false
+  data:
+    getData: ->
+      Promise.bind @
+      .then ->
+        @apiTips.getTips
+          userID: 2
+          index: 0
 
-	methods:
-  	opendNav: ->
+      .then (result) ->
+        console.log result
+      .error (err) ->
+        console.error err
+
+  init: ->
+    @$scope.tips = "follow and share the interesting travel tips"
+    @$scope.topactive = false
+    @$scope.middleactive = false
+    @$scope.bottomactive = false
+    @$scope.isopened = false
+    @$scope.onclose = true
+    @$scope.onopen = false
+    @getData()
+
+
+  methods:
+    opendNav: ->
       if !@$scope.isopened
         @$scope.topactive = true
         @$scope.middleactive = true
@@ -31,4 +48,3 @@ angular.module 'tipstravel'
         @$scope.bottomactive = false
         @$scope.isopened = false
         @$scope.onopen = false
-
