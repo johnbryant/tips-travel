@@ -8,6 +8,7 @@ angular.module 'tipstravel'
     '$scope'
     '$state'
     'apiUser'
+    'Global'
   ]
 
   init: ->
@@ -32,14 +33,16 @@ angular.module 'tipstravel'
           email: @$scope.email
           password: @$scope.password
       .then (result) ->
-        console.log result
+        if result.message is 'ï¿½ï¿½ï¿½ä²»ï¿½ï¿½ï¿½ï¿½'
+          @$scope.signup_errorInfo = 'invalid email or password! '
+        else
+          @Global.userId = result.userId
+          @$state.go 'dashboard'
       .error (err) ->
         console.error err
-      if result.message is 'ÓÊÏä²»´æÔÚ'
-        @$scope.signup_errorInfo = 'invalid email or password! '
-      else
-        @$state.go 'dashboard'
+
     openlNav: ->
+
       if !@$scope.isopened
         @$scope.topactive = true
         @$scope.middleactive = true
