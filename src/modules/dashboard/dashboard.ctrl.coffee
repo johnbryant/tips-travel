@@ -16,19 +16,28 @@ angular.module 'tipstravel'
 		@$scope.isopened = false
 		@$scope.onclose = true
 		@$scope.onopen = false
+		@$scope.fileupload = false
+
 
 	methods:
   	opendNav: ->
+
       if !@$scope.isopened
         @$scope.topactive = true
         @$scope.middleactive = true
         @$scope.bottomactive = true
         @$scope.isopened = true
+        @$scope.fileupload = true
         @$scope.onopen = true
+
+
       else
+
+
         @$scope.topactive = false
         @$scope.middleactive = false
         @$scope.bottomactive = false
         @$scope.isopened = false
         @$scope.onopen = false
+        @$scope.fileupload = false
 

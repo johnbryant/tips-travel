@@ -26,6 +26,10 @@ libs_obj =
     bluebird: 'js/browser/bluebird.js'
     restangular: 'dist/restangular.js'
     lodash: 'lodash.js'
+    'ng-file-upload': [
+      'ng-file-upload.js'
+      'ng-file-upload-shim.js'
+    ]
 
 
 getlibfiles = (libs) ->

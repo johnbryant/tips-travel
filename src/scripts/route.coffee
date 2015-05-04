@@ -48,5 +48,12 @@ angular.module 'tipstravel'
       parent: 'abslogin'
       url: '/dashboard'
       templateUrl: '/modules/dashboard/dashboard.html'
-      controller: 'dashboardCtrl'    
+      controller: 'dashboardCtrl'
+
+    .state 'upload'
+    ,
+      parent: 'abslogin'
+      url: '/upload'
+      templateUrl: '/modules/upload/index.html'
+      controller: 'uploadCtrl'
 ]
