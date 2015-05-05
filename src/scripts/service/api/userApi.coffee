@@ -8,7 +8,6 @@ angular.module 'tipstravel'
     Global
   ) ->
     baseURL = Global.baseUrl
-
     Restangular.withConfig (RestangularConfigurer) ->
       RestangularConfigurer.setBaseUrl baseURL
 ]
