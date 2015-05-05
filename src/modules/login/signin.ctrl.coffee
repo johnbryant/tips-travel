@@ -33,7 +33,7 @@ angular.module 'tipstravel'
           email: @$scope.email
           password: @$scope.password
       .then (result) ->
-        if result.message is '���䲻����'
+        if result.message is '待定'
           @$scope.signup_errorInfo = 'invalid email or password! '
         else
           @Global.userId = result.userId

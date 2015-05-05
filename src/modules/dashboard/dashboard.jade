@@ -1,122 +1,73 @@
 .dashboard
-    //导航栏
-    #toggle.button-container(ng-click='opendNav()')
-        span(ng-class='{top_active:topactive}')
-        span(ng-class='{middle_active:middleactive}')
-        span(ng-class='{bottom_active:bottomactive}')
-    #overlay(ng-class='{overlay:onclose,overlay_open:onopen}')
-        nav
-            ul
-                li
-                    a Sign in
-                li
-                    a Sign up
-                li
-                    a Search
+  //导航栏
+  #toggle.button-container(ng-click='opendNav()')
+    span(ng-class='{top_active:topactive}')
+    span(ng-class='{middle_active:middleactive}')
+    span(ng-class='{bottom_active:bottomactive}')
+  #overlay(ng-class='{overlay:onclose,overlay_open:onopen}')
+    nav
+      ul
+        li
+          a Sign in
+        li
+          a Sign up
+        li
+          a Search
 
 
-    //内容框架
-    .container-fluid
-      .row-fluid
-        //左侧栏
-        .col-md-1
+  //内容框架
+  .container-fluid
+    .row-fluid
+      //左侧栏
+      .col-md-1
 
-        .col-md-8
-            .left_column
-                //新建tip框
-                .new_tip_container
-                    .user_avatar
-                        a.user_avatar_link
-                    nav.new_tip_buttons
-                        a.new_tip_label
-                            i.icon_tip_text
-                            span.new_tip_label_text Text
-                        a.new_tip_label
-                            i.icon_tip_photo
-                            span.new_tip_label_text Photo
-                        a.new_tip_label
-                            i.icon_tip_link
-                            span.new_tip_label_text Link
-                        a.new_tip_label
-                            i.icon_tip_audio
-                            span.new_tip_label_text Audio
-                        a.new_tip_label
-                            i.icon_tip_video
-                            span.new_tip_label_text Video
+      .col-md-8
+        .left_column
+          //新建tip框
+          .new_tip_container
+            .user_avatar
+              a.user_avatar_link
+            nav.new_tip_buttons
+              a.new_tip_label
+                i.icon_tip_text
+                span.new_tip_label_text Text
+              a.new_tip_label
+                i.icon_tip_photo
+                span.new_tip_label_text Photo
+              a.new_tip_label
+                i.icon_tip_link
+                span.new_tip_label_text Link
+              a.new_tip_label
+                i.icon_tip_audio
+                span.new_tip_label_text Audio
+              a.new_tip_label
+                i.icon_tip_video
+                span.new_tip_label_text Video
 
 
-                //好友tips
-                .tips_container
-                    ul.tips_timeline
-                        li
-                            time.tips_time
-                                span 4/30/15
-                                span 18:30
-                            .tips_id
-                                .tips_user_avatar
-                                    img(src='styles/img/avatar6.jpg',alt='Avatar')
-                            .tips_icon.tips_icon-phone
-                            .tips_label
-                                a.tips_username
-                                    h5 johnbryant262
-                                img.tips_image(src='styles/img/tips_img1.jpg')
-                                p.tips_text This is my first tips!
-                                a.tips_tag #castle
+          //好友tips
+          .tips_container(
+          ng-repeat= "tip in data"
+          )
+            ul.tips_timeline
+              li
+                time.tips_time
+                  span 4/30/15
+                  span 18:30
+                .tips_id
+                  .tips_user_avatar
+                    img(ng-src="{{BaseURL}}{{tip.user.avator}}",alt='Avatar')
+                .tips_icon.tips_icon-phone
+                .tips_label
+                  a.tips_username
+                    h5 {{tip.user.username}}
+                  img.tips_image(ng-src="{{BaseURL}}{{tip.image}}")
+                  p.tips_text {{tip.context}}
+                  a.tips_tag( 
+                  ng-repeat= "tag in tip.tag_message" 
+                  )       #'{{tag.tag.tag_name}}'
 
-                .tips_container
-                    ul.tips_timeline
-                        li
-                            time.tips_time
-                                span 4/30/15
-                                span 18:30
-                            .tips_id
-                                .tips_user_avatar
-                                    img(src='styles/img/avatar6.jpg',alt='Avatar')
-                            .tips_icon.tips_icon-phone
-                            .tips_label
-                                a.tips_username
-                                    h5 johnbryant262
-                                img.tips_image(src='styles/img/tips_img1.jpg')
-                                p.tips_text This is my first tips!
-                                a.tips_tag #castle
 
-                .tips_container
-                    ul.tips_timeline
-                        li
-                            time.tips_time
-                                span 4/30/15
-                                span 18:30
-                            .tips_id
-                                .tips_user_avatar
-                                    img(src='styles/img/avatar6.jpg',alt='Avatar')
-                            .tips_icon.tips_icon-phone
-                            .tips_label
-                                a.tips_username
-                                    h5 johnbryant262
-                                img.tips_image(src='styles/img/tips_img1.jpg')
-                                p.tips_text This is my first tips!
-                                a.tips_tag #castle
-                .tips_container
-                    ul.tips_timeline
-                        li
-                            time.tips_time
-                                span 4/30/15
-                                span 18:30
-                            .tips_id
-                                .tips_user_avatar
-                                    img(src='styles/img/avatar6.jpg',alt='Avatar')
-                            .tips_icon.tips_icon-phone
-                            .tips_label
-                                a.tips_username
-                                    h5 johnbryant262
-                                img.tips_image(src='styles/img/tips_img1.jpg')
-                                p.tips_text This is my first tips!
-                                a.tips_tag #castle
-                                ul
-                                    li(style='float:left;width:80px')
-                                        a
-                                            i.fa.fa-thumbs-o-up
-                                            | 0
-        //右侧栏
-        .col-md-3
-            .right_column
+      //右侧栏
+      .col-md-3
+        .right_column

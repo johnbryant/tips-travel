@@ -2,8 +2,12 @@ angular.module 'tipstravel'
 
 .factory 'apiTipsBase', [
   'Restangular'
-  (Restangular) ->
-    baseURL = "http://192.168.1.100:8080/tipstravel"
+  'Global'
+  (
+    Restangular
+    Global
+  ) ->
+    baseURL = Global.baseUrl
 
     Restangular.withConfig (RestangularConfigurer) ->
       RestangularConfigurer.setBaseUrl baseURL

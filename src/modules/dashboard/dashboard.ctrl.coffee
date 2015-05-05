@@ -15,15 +15,17 @@ angular.module 'tipstravel'
       Promise.bind @
       .then ->
         @apiTips.getTips
-          userID: 2
+          userID: 1
           index: 0
-
       .then (result) ->
-        console.log result
+        @$scope.data = result.data
+        @$scope.$apply()
       .error (err) ->
         console.error err
 
   init: ->
+
+    @$scope.BaseURL = @Global.baseUrl
     @$scope.tips = "follow and share the interesting travel tips"
     @$scope.topactive = false
     @$scope.middleactive = false
@@ -34,7 +36,9 @@ angular.module 'tipstravel'
     @getData()
 
 
+
   methods:
+
     opendNav: ->
       if !@$scope.isopened
         @$scope.topactive = true
