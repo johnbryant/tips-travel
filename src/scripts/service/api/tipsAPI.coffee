@@ -15,7 +15,7 @@ angular.module 'tipstravel'
 .factory 'apiTips', [
   'apiTipsBase'
   (apiTipsBase) ->
-    getTips: (getInfo) ->
+    getFollowingTips: (getInfo) ->
       {
         userID
         index

@@ -26,6 +26,7 @@ libs_obj =
     bluebird: 'js/browser/bluebird.js'
     restangular: 'dist/restangular.js'
     lodash: 'lodash.js'
+    'ngInfiniteScroll': 'build/ng-infinite-scroll.js'
 
 
 getlibfiles = (libs) ->

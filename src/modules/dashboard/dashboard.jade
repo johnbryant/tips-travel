@@ -47,16 +47,21 @@
 
           //好友tips
           .tips_container(
-          ng-repeat= "tip in data"
+          infinite-scroll='reddit.nextPage()'
+          infinite-scroll-disabled='reddit.busy'
+          infinite-scroll-distance='3'
+
           )
-            ul.tips_timeline
+            ul.tips_timeline(
+            ng-repeat= "tip in reddit.items"
+            )
               li
                 time.tips_time
                   span 4/30/15
                   span 18:30
                 .tips_id
                   .tips_user_avatar
-                    img(ng-src="{{BaseURL}}{{tip.user.avator}}",alt='Avatar')
+                    img(ng-src="{{BaseURL}}{{tip.user.avatar}}",alt='Avatar')
                 .tips_icon.tips_icon-phone
                 .tips_label
                   a.tips_username
@@ -66,8 +71,11 @@
                   a.tips_tag( 
                   ng-repeat= "tag in tip.tag_message" 
                   )       #'{{tag.tag.tag_name}}'
-
-
+          .loading(
+          ng-show='reddit.busy'
+          )
+            h3
+              | {{reddit.busy_statu}}
       //右侧栏
       .col-md-3
         .right_column
