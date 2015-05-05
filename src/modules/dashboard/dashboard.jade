@@ -25,36 +25,36 @@
         .left_column
           //新建tip框
           .new_tip_container
-            a.user_avatar
-              img(src='styles/img/avatar4.jpg')
+            .user_avatar
+              a.user_avatar_link
             nav.new_tip_buttons
               a.new_tip_label
-                .tip_button_icon
-                  i.fa.fa-font
+                i.icon_tip_text
                 span.new_tip_label_text Text
               a.new_tip_label
-                .tip_button_icon
-                  i.fa.fa-camera
+                i.icon_tip_photo
                 span.new_tip_label_text Photo
               a.new_tip_label
-                .tip_button_icon
-                  i.fa.fa-link
+                i.icon_tip_link
                 span.new_tip_label_text Link
               a.new_tip_label
-                .tip_button_icon
-                  i.fa.fa-headphones
+                i.icon_tip_audio
                 span.new_tip_label_text Audio
               a.new_tip_label
-                .tip_button_icon
-                  i.fa.fa-video-camera
+                i.icon_tip_video
                 span.new_tip_label_text Video
 
 
           //好友tips
           .tips_container(
-          ng-repeat= "tip in tipsdata"
+          infinite-scroll='reddit.nextPage()'
+          infinite-scroll-disabled='reddit.busy'
+          infinite-scroll-distance='3'
+
           )
-            ul.tips_timeline
+            ul.tips_timeline(
+            ng-repeat= "tip in reddit.items"
+            )
               li
                 time.tips_time
                   span 4/30/15
@@ -71,11 +71,11 @@
                   a.tips_tag( 
                   ng-repeat= "tag in tip.tag_message" 
                   )       #'{{tag.tag.tag_name}}'
-                  .likes
-                    i.fa.fa-thumbs-o-up
-                    p 2
-                  .blank_content
-
+          .loading(
+          ng-show='reddit.busy'
+          )
+            h3
+              | {{reddit.busy_statu}}
       //右侧栏
       .col-md-3
         .right_column

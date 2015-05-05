@@ -8,20 +8,16 @@ angular.module 'tipstravel'
     '$scope'
     'apiTips'
     'Global'
+    'Reddit'
   ]
 
   data:
-    getData: ->
-      Promise.bind @
-      .then ->
-        @apiTips.getTips
-          userID: 1
-          index: 0
-      .then (result) ->
-        @$scope.tipsdata = result.data
-        @$scope.$apply()
-      .error (err) ->
-        console.error err
+    api_setting:
+      start: 0
+      count: 10
+      classify_name: null
+      user_id: null
+      scope: null
 
   init: ->
 
@@ -33,9 +29,10 @@ angular.module 'tipstravel'
     @$scope.isopened = false
     @$scope.onclose = true
     @$scope.onopen = false
-    @getData()
-
-
+    @api_setting.classify_name = 'followingTips'
+    @api_setting.user_id = 1
+    @api_setting.scope = @$scope
+    @$scope.reddit = new @Reddit @api_setting
 
   methods:
 
