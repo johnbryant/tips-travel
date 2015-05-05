@@ -18,7 +18,7 @@ angular.module 'tipstravel'
           userID: 1
           index: 0
       .then (result) ->
-        @$scope.data = result.data
+        @$scope.tipsdata = result.data
         @$scope.$apply()
       .error (err) ->
         console.error err

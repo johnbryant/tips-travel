@@ -25,29 +25,34 @@
         .left_column
           //新建tip框
           .new_tip_container
-            .user_avatar
-              a.user_avatar_link
+            a.user_avatar
+              img(src='styles/img/avatar4.jpg')
             nav.new_tip_buttons
               a.new_tip_label
-                i.icon_tip_text
+                .tip_button_icon
+                  i.fa.fa-font
                 span.new_tip_label_text Text
               a.new_tip_label
-                i.icon_tip_photo
+                .tip_button_icon
+                  i.fa.fa-camera
                 span.new_tip_label_text Photo
               a.new_tip_label
-                i.icon_tip_link
+                .tip_button_icon
+                  i.fa.fa-link
                 span.new_tip_label_text Link
               a.new_tip_label
-                i.icon_tip_audio
+                .tip_button_icon
+                  i.fa.fa-headphones
                 span.new_tip_label_text Audio
               a.new_tip_label
-                i.icon_tip_video
+                .tip_button_icon
+                  i.fa.fa-video-camera
                 span.new_tip_label_text Video
 
 
           //好友tips
           .tips_container(
-          ng-repeat= "tip in data"
+          ng-repeat= "tip in tipsdata"
           )
             ul.tips_timeline
               li
@@ -56,7 +61,7 @@
                   span 18:30
                 .tips_id
                   .tips_user_avatar
-                    img(ng-src="{{BaseURL}}{{tip.user.avator}}",alt='Avatar')
+                    img(ng-src="{{BaseURL}}{{tip.user.avatar}}",alt='Avatar')
                 .tips_icon.tips_icon-phone
                 .tips_label
                   a.tips_username
@@ -66,7 +71,10 @@
                   a.tips_tag( 
                   ng-repeat= "tag in tip.tag_message" 
                   )       #'{{tag.tag.tag_name}}'
-
+                  .likes
+                    i.fa.fa-thumbs-o-up
+                    p 2
+                  .blank_content
 
       //右侧栏
       .col-md-3

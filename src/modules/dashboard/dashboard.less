@@ -183,8 +183,8 @@
 
   .new_tip_container {
     height: 130px;
-    background-color: #fff;
-    padding: 0;
+    background-color: #36465D;
+    padding: 15px 15px 15px 45px;
     text-align: center;
     word-wrap: break-word;
     //-webkit-box-sizing:border-box;
@@ -195,49 +195,56 @@
 
   .user_avatar {
     float: left;
-    margin: 10px;
     height: 64px;
     width: 64px;
-    border: 1px solid black;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    //border: 1px solid black;
   }
 
-  .user_avatar_link {
-    //background: url('styles/img/user_avatar_link_testimg.png')
-  }
 
   .new_tip_buttons {
+    height: 100px;
+    width: 542px;
+    position: relative;
+    left: 160px;
     display: block;
-    margin: 10px;
-    margin-left: 94px;
-    border: 1px solid black;
-    
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
   }
 
   .new_tip_label {
-    display: inline;
-    position: relative;
     float: left;
+    position: relative;
     top: 0;
     left: 0;
     width: 75px;
     height: 20px;
-    padding: 61px 1px 18px 0;
+    padding: 35px 1px 0 0;
     color: #000;
     font-size: 15px;
     opacity: .9;
     font-weight: normal;
     text-decoration: none;
+    cursor: pointer;
+  }
+
+  .tip_button_icon {
+    display: block;
   }
 
   .icon_tip_label_text {
-    position: absolute;
-    top: 5px;
+    position: relative;
+    top: 30px;
     left: 0;
     width: 48px;
     height: 48px;
     padding: 0 14px;
     font-size: 4px;
-    color: #000;
+    color: #696969;
   }
 
   //Friend's tips
@@ -315,8 +322,8 @@
   }
 
   .tips_user_avatar {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     border-radius: 25px;
     vertical-align: middle;
   }
@@ -406,7 +413,7 @@
 
   .tips_tag a {
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     cursor: pointer;
     margin-right: 10px;
   }
@@ -424,7 +431,7 @@
   }
   
   .likes p {
-    font-size: 18px;
+    font-size: 15px;
     color: #000;
     display: inline;
   }
