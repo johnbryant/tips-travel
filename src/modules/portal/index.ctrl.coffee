@@ -42,18 +42,25 @@ angular.module 'tipstravel'
       @$state.go 'search'
 
     signup: ->
-      console.log @$scope.username
+      console.log @$scope.Inusername
+      console.log @$scope.Inemail
+      console.log @$scope.Inpassword
       Promise.bind @
       .then ->
         @apiUser.register
-          email: @$scope.email
-          username: @$scope.username
-          password: @$scope.password
+          email: @$scope.Inemail
+          username: @$scope.Inusername
+          password: @$scope.Inpassword
       .then (result) ->
         console.log result
+#        @$scope.errorInfo = if result.message is'邮箱已注册' then 'The email has been registered!' else 'The username has been registered!'
+
+        if result.message is '邮箱已注册'
+          @$scope.errorInfo = 'The email has been registered!'
+        else if result.message is '用户名已注册'
+          @$scope.errorInfo = 'The username has been registered!'
+        else
+          @$scope.errorInfo = null
+          @$state.go 'login'
       .error (err) ->
-          console.error err
-      if result.message is '邮箱已经注册'
-        @$scope.errorInfo = 'The email has been registered!'
-      else
-        @$state.go 'login'
+        console.error err

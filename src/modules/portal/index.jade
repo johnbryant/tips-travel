@@ -23,7 +23,7 @@
             )
                 label.sr-only(for='inputEmail') Email address
                 input.form-control(
-                  ng-model='email'
+                  ng-model='Inemail'
                   type='email'
                   placeholder='Email address'
                   required=''
@@ -31,24 +31,22 @@
                   )
                 label.sr-only(for='inputUsername') Username
                 input.form-control(
-                  type='text'
-                  placeholder='Username'
-                  required=''
-                  ng-model='username'
-                  ng-minlength = '6'
-                  )
+                    ng-model='Inusername'
+                    type='text'
+                    placeholder='Username'
+                    required=''
+                    )
                 label.sr-only(for='inputPassword') Password
                 input.form-control(
-                  type='password'
-                  placeholder='Password'
-                  required=''
-                  ng-model='password'
-                  ng-minlength='6'
-                  )
+                    ng-model='Inpassword'
+                    type='password'
+                    placeholder='Password'
+                    required=''
+                    )
                 p.registerInfo {{ errorInfo }}
                 button.btn.btn-lg.btn-primary.btn-block(
-                  ng-click='signup()'
-                  ) Sign up
+                    ng-click='signup()'
+                    ) Sign up
 
     .expertise
       .row
