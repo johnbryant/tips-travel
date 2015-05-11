@@ -3,11 +3,46 @@
 
     //ÄÚÈÝ¿ò¼Ü
     .middle-sdo1
-        #sdo2
-            #middle
+        .sdo2
+            .middle
                 .cl-mcont
+                    .topic_title
+                        h1 Ocean
                     ul.topic-timeline
                         li.topic_right
+                            time.tips_time
+                                span 5/10/15
+                                span 18:30
+                            a.tips_user_avatar
+                                img(src='styles/img/avatar4.jpg')
+                            .tips_icon.tips_icon-phone
+                            .tips_label
+                                a.tips_username
+                                    h5 {{ name }}
+                                img.tips_image(src='styles/img/pic3.jpg')
+                                p.tips_text {{ text }}
+                                a.tips_tag #ocean   #shore
+                                br
+                                a.tips_like
+                                    span.glyphicon.glyphicon-heart-empty
+                                    p 8
 
                         li.topic_left
+                            time.tips_time
+                                span 5/10/15
+                                span 18:30
+                            .tips_user_avatar
+                                img(src='styles/img/avatar4.jpg')
+                            .tips_icon.tips_icon-phone
+                            .tips_label
+                                a.tips_username
+                                    h5 {{ name }}
+                                img.tips_image(src='styles/img/pic3.jpg')
+                                p.tips_text {{ text }}
+                                a.tips_tag #ocean   #shore
+                                br
+                                a.tips_like
+                                    span.glyphicon.glyphicon-heart-empty
+                                    p 8
+
 

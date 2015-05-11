@@ -3,32 +3,31 @@
   height: 100%;
   width: 100%;
 
+
   .middle-sdo1 {
     width: 998px;
     margin: 0 auto;
-    background: url(//styles//img//sdo1.png) no-repeat bottom;
+    //background: url('//styles//img//sdo1.png') no-repeat bottom;
     display: table;
     padding-bottom: 20px;
+
   }
 
-  #sdo2 {
+  .middle-sdo1 .sdo2 {
     width: 1030px;
     margin: 0 auto;
-    background: url(//styles//img//sdo2.png) no-repeat top;
+    //background: url('//styles//img//sdo2.png') no-repeat top;
     display: table;
   }
 
-  #middle {
+  .middle-sdo1 .sdo2 .middle {
     width: 998px;
     margin: 0 auto;
-    background: #fff;
-    border: 20px solid #e9e9e9;
-    border-top: none;
-    padding-bottom: 25px;
+    background: #36465d;
   }
 
   .cl-mcont {
-    background-color: #F0F0F0;
+    background-color: #36465d;
     color: inherit;
     font-size: 13px;
     font-weight: 200;
@@ -37,6 +36,238 @@
     margin-top: 0;
   }
 
+  .topic_title {
+    text-align: center;
+    border: 1px solid hotpink;
+    background: url(//styles//img//ocean_topic.jpg) no-repeat ;
+  }
+
+  .topic-timeline {
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    border: 1px solid #000000;
+  }
+  
+  .topic-timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: #fff;
+    left: 50%;
+  }
+
+  .topic-timeline .topic_right {
+    padding-left: 50%;
+    height: 540px;
+
+  }
+
+  .topic-timeline .topic_left {
+    padding-left: 50%;
+    height: 540px;
+  }
+
+  .topic-timeline .topic_right .tips_time {
+    display: block;
+    width: 10%;
+    margin-left: -90px;
+  }
+
+  .topic-timeline .topic_left .tips_time {
+    display: block;
+    width: 10%;
+    margin-left: 50px;
+  }
+
+  .topic-timeline .topic_right .tips_user_avatar {
+    margin-left: -90px;
+    margin-top: 18px;
+  }
+
+  .topic-timeline .topic_left .tips_user_avatar {
+    margin-left: 50px;
+    margin-top: 18px;
+  }
+
+  .tips_user_avatar > a {
+    cursor: pointer;
+  }
+
+  .tips_user_avatar > img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50px;
+  }
+
+  .tips_time span {
+    display: block;
+    text-align: right;
+  }
+
+  .tips_time span:nth-child(1) {
+    font-size: 1.1em;
+    color: #fff
+  }
+
+  .tips_time span:nth-child(2) {
+    font-size: 1.8em;
+    color: #fff
+  }
+
+
+
+  .topic-timeline .topic_right .tips_icon {
+    width: 40px;
+    height: 40px;
+    font-family: 'ecoico';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.4em;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    color: #000000;
+    background: #36465d;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #fff;
+    text-align: center;
+    left: 50%;
+    top: 7px;
+    margin: 0 0 0 -15px;
+  }
+
+  .topic-timeline .topic_left .tips_icon {
+    width: 40px;
+    height: 40px;
+    font-family: 'ecoico';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.4em;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    color: #000000;
+    background: #36465d;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #fff;
+    text-align: center;
+    left: 50%;
+    top: 547px;
+    margin: 0 0 0 -15px;
+  }
+
+  .tips_icon-phone:before {
+    content: "\e000"
+  }
+
+  .topic-timeline .topic_right .tips_label {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 300px;
+    background: #fff;
+    border-radius: 5px;
+  }
+
+  .topic-timeline .topic_left .tips_label {
+    position: absolute;
+    top: 540px;
+    left: 130px;
+    width: 300px;
+    background: #fff;
+    border-radius: 5px;
+  }
+
+
+  .tips_username {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a1a1a1;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer
+  }
+
+
+  .topic-timeline .topic_right .tips_label:after {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right: 15px solid #fff;
+    top: 20px;
+  }
+
+
+  .topic-timeline .topic_left .tips_label:after {
+    position: absolute;
+    right: -18px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    border-left: 15px solid #fff;
+    top: 20px;
+  }
+
+
+  .tips_image {
+    margin: 50px 0 20px 0;
+    width:300px;
+    height: 300px;
+  }
+
+  .tips_text {
+    margin: 15px;
+    font-size: 15px;
+    font-family: arial, sans-serif;
+    color: #000
+  }
+
+  .tips_tag {
+    padding:15px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .tips_like {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .tips_like > span {
+    float: left;
+  }
+
+  .tips_like > p {
+    margin-left: 15px;
+  }
+
+
+
+
+  
+  
 
 
 
