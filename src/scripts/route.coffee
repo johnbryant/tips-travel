@@ -48,5 +48,13 @@ angular.module 'tipstravel'
       parent: 'abslogin'
       url: '/dashboard'
       templateUrl: '/modules/dashboard/dashboard.html'
-      controller: 'dashboardCtrl'    
+      controller: 'dashboardCtrl'
+
+
+    .state 'topic'
+    ,
+      parent: 'abslogin'
+      url: '/topic'
+      templateUrl: '/modules/topic/topic.html'
+      controller: 'topicCtrl'
 ]

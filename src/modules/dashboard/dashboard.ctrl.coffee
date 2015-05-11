@@ -30,7 +30,7 @@ angular.module 'tipstravel'
     @$scope.onclose = true
     @$scope.onopen = false
     @api_setting.classify_name = 'followingTips'
-    @api_setting.user_id = 1
+    @api_setting.user_id = @Global.userId
     @api_setting.scope = @$scope
     @$scope.reddit = new @Reddit @api_setting
 
