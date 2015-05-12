@@ -21,7 +21,10 @@
                                     h5 {{ name }}
                                 img.tips_image(src='styles/img/pic3.jpg')
                                 p.tips_text {{ text }}
-                                a.tips_tag #ocean   #shore
+                                .tips_tag_container
+                                    a.tips_tag #ocean
+                                    a.tips_tag #sea
+                                    a.tips_tag #river
                                 br
                                 a.tips_like
                                     span.glyphicon.glyphicon-heart-empty
@@ -39,10 +42,11 @@
                                     h5 {{ name }}
                                 img.tips_image(src='styles/img/pic3.jpg')
                                 p.tips_text {{ text }}
-                                a.tips_tag #ocean   #shore
+                                .tips_tag_container
+                                    a.tips_tag #ocean
+                                    a.tips_tag #sea
+                                    a.tips_tag #river
                                 br
                                 a.tips_like
                                     span.glyphicon.glyphicon-heart-empty
                                     p 8
-
-

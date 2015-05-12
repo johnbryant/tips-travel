@@ -43,11 +43,12 @@
   }
 
   .topic-timeline {
+    position: relative;
     margin: 30px 0 0 0;
     padding: 0;
     list-style: none;
-    position: relative;
     border: 1px solid #000000;
+    
   }
   
   .topic-timeline:before {
@@ -62,35 +63,41 @@
 
   .topic-timeline .topic_right {
     padding-left: 50%;
-    height: 540px;
-
   }
 
   .topic-timeline .topic_left {
-    padding-left: 50%;
-    height: 540px;
+    padding-right: 50%;
   }
 
   .topic-timeline .topic_right .tips_time {
+    position: relative;
+    float: left;
+    left: -90px;
     display: block;
-    width: 10%;
-    margin-left: -90px;
+    //width: 10%;
   }
 
   .topic-timeline .topic_left .tips_time {
+    position: relative;
     display: block;
-    width: 10%;
-    margin-left: 50px;
+    right: -95px;
+    float: right;
   }
 
   .topic-timeline .topic_right .tips_user_avatar {
-    margin-left: -90px;
-    margin-top: 18px;
+    position: relative;
+    display: block;
+    float: left;
+    left: -150px;
+    top: 60px
   }
 
   .topic-timeline .topic_left .tips_user_avatar {
-    margin-left: 50px;
-    margin-top: 18px;
+    position: relative;
+    display: block;
+    float: right;
+    right: -160px;
+    top: 60px;
   }
 
   .tips_user_avatar > a {
@@ -138,8 +145,7 @@
     box-shadow: 0 0 0 8px #fff;
     text-align: center;
     left: 50%;
-    top: 7px;
-    margin: 0 0 0 -15px;
+    margin: 10px 0 0 -15px;
   }
 
   .topic-timeline .topic_left .tips_icon {
@@ -160,7 +166,6 @@
     box-shadow: 0 0 0 8px #fff;
     text-align: center;
     left: 50%;
-    top: 547px;
     margin: 0 0 0 -15px;
   }
 
@@ -169,37 +174,20 @@
   }
 
   .topic-timeline .topic_right .tips_label {
-    position: absolute;
-    top: 0;
-    left: 55%;
-    width: 300px;
+    position: relative;
+    left: 50px;
+    width: 400px;
     background: #fff;
     border-radius: 5px;
   }
 
   .topic-timeline .topic_left .tips_label {
-    position: absolute;
-    top: 540px;
-    left: 130px;
-    width: 300px;
+    position: relative;
+    right: -30px;
+    width: 400px;
     background: #fff;
     border-radius: 5px;
   }
-
-
-  .tips_username {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #a1a1a1;
-    word-wrap: normal;
-    white-space: nowrap;
-    text-decoration: none;
-    cursor: pointer
-  }
-
 
   .topic-timeline .topic_right .tips_label:after {
     right: 100%;
@@ -226,40 +214,117 @@
     top: 20px;
   }
 
+  .topic-timeline .topic_right .tips_username {
+    display: block;
+    position: relative;
+    left: -100px;
+    top: 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bolder;
+    color: #a1a1a1;
+    white-space: nowrap;
+    cursor: pointer
+  }
 
-  .tips_image {
-    margin: 50px 0 20px 0;
-    width:300px;
+  .topic-timeline .topic_left .tips_username {
+    display: block;
+    position: relative;
+    left: 20px;
+    top: 15px;
+    font-size: 15px;
+    font-weight: bolder;
+    color: #a1a1a1;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer
+  }
+
+
+  .topic-timeline .topic_right .tips_image {
+    position: relative;
+    top: -10px;
+    display: block;
+    width: 400px;
     height: 300px;
   }
 
-  .tips_text {
-    margin: 15px;
+  .topic-timeline .topic_left .tips_image {
+    position: relative;
+    display: block;
+    top: -10px;
+    width: 400px;
+    height: 300px;
+  }
+
+  .topic-timeline .topic_right .tips_text {
+    padding: 10px;
+    display: block;
     font-size: 15px;
     font-family: arial, sans-serif;
     color: #000
   }
 
-  .tips_tag {
-    padding:15px;
+  .topic-timeline .topic_left .tips_text {
+    padding: 10px;
+    display: block;
+    font-size: 15px;
+    font-family: arial, sans-serif;
+    color: #000
+  }
+
+  .topic-timeline .topic_right .tips_tag_container {
+    padding: 10px;
+  }
+
+  .topic-timeline .topic_left .tips_tag_container {
+    padding: 10px;
+  }
+
+  .topic-timeline .topic_right .tips_tag_container .tips_tag {
+    float: left;
     text-decoration: none;
     font-size: 15px;
     cursor: pointer;
     margin-right: 10px;
   }
 
-  .tips_like {
+  .topic-timeline .topic_left .tips_tag_container .tips_tag {
+    float: left;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .topic-timeline .topic_right .tips_like {
     display: block;
     padding: 15px;
     text-decoration: none;
     cursor: pointer;
   }
 
-  .tips_like > span {
+  .topic-timeline .topic_left .tips_like {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .topic-timeline .topic_right .tips_like > span {
     float: left;
   }
 
-  .tips_like > p {
+  .topic-timeline .topic_left .tips_like > span {
+    float: left;
+  }
+
+  .topic-timeline .topic_right .tips_like > p {
+    margin-left: 15px;
+  }
+
+  .topic-timeline .topic_left .tips_like > p {
     margin-left: 15px;
   }
 
