@@ -4,49 +4,39 @@
     //ÄÚÈÝ¿ò¼Ü
     .middle-sdo1
         .sdo2
+            .topic_title
+                a.animated.flipInY Ocean
             .middle
-                .cl-mcont
-                    .topic_title
-                        h1 Ocean
-                    ul.topic-timeline
-                        li.topic_right
+                .cl-mcont(
+                    infinite-scroll='reddit.nextPage()'
+                    infinite-scroll-disabled='reddit.busy'
+                    infinite-scroll-distance='3'
+                )
+                    ul.topic-timeline(
+                        ng-repeat='tip in reddit.items'
+                    )
+                        li(ng-class='{topic_right:right,topic_left:left}')
                             time.tips_time
                                 span 5/10/15
                                 span 18:30
                             a.tips_user_avatar
-                                img(src='styles/img/avatar4.jpg')
+                                img(ng-src='{{ BaseURL }}{{ tip.user.avatar }}',alt='Avatar')
                             .tips_icon.tips_icon-phone
                             .tips_label
                                 a.tips_username
-                                    h5 {{ name }}
-                                img.tips_image(src='styles/img/pic3.jpg')
-                                p.tips_text {{ text }}
-                                .tips_tag_container
-                                    a.tips_tag #ocean
-                                    a.tips_tag #sea
-                                    a.tips_tag #river
+                                    h5 {{ tip.user.username }}
+                                img.tips_image(ng-src='{{ BaseURL }}{{ tip.image }}')
+                                p.tips_text {{ tip.context }}
+                                .tips_tag_container(
+                                    ng-repeat='tag in tip.tag_message'
+                                )
+                                    a.tips_tag #'{{ tag.tag.tag_name }}'
                                 br
                                 a.tips_like
                                     span.glyphicon.glyphicon-heart-empty
                                     p 8
-
-                        li.topic_left
-                            time.tips_time
-                                span 5/10/15
-                                span 18:30
-                            .tips_user_avatar
-                                img(src='styles/img/avatar4.jpg')
-                            .tips_icon.tips_icon-phone
-                            .tips_label
-                                a.tips_username
-                                    h5 {{ name }}
-                                img.tips_image(src='styles/img/pic3.jpg')
-                                p.tips_text {{ text }}
-                                .tips_tag_container
-                                    a.tips_tag #ocean
-                                    a.tips_tag #sea
-                                    a.tips_tag #river
-                                br
-                                a.tips_like
-                                    span.glyphicon.glyphicon-heart-empty
-                                    p 8
+                .loading(
+                    ng-show='reddit.busy'
+                )
+                    h3
+                        | {{ reddit.busy_statu }}
