@@ -1,6 +1,5 @@
 .topic
 
-
     //ÄÚÈÝ¿ò¼Ü
     .middle-sdo1
         .sdo2
@@ -8,17 +7,16 @@
                 a.animated.flipInY Ocean
             .middle
                 .cl-mcont(
-                    infinite-scroll='reddit.nextPage()'
-                    infinite-scroll-disabled='reddit.busy'
-                    infinite-scroll-distance='3'
+                    infinite-scroll='topic_reddit.nextPage()'
+                    infinite-scroll-disabled='topic_reddit.busy'
+                    infinite-scroll-distance='0'
                 )
                     ul.topic-timeline(
-                        ng-repeat='tip in reddit.items'
+                        ng-repeat='tip in topic_reddit.items'
                     )
-                        li(ng-class='{topic_right:right,topic_left:left}')
+                        li(class='{{ tip.position }}')
                             time.tips_time
-                                span 5/10/15
-                                span 18:30
+                                span {{ tip.message_date }}
                             a.tips_user_avatar
                                 img(ng-src='{{ BaseURL }}{{ tip.user.avatar }}',alt='Avatar')
                             .tips_icon.tips_icon-phone
@@ -30,13 +28,13 @@
                                 .tips_tag_container(
                                     ng-repeat='tag in tip.tag_message'
                                 )
-                                    a.tips_tag #'{{ tag.tag.tag_name }}'
+                                    a.tips_tag #'{{ tag.tag_name }}'
                                 br
                                 a.tips_like
                                     span.glyphicon.glyphicon-heart-empty
                                     p 8
                 .loading(
-                    ng-show='reddit.busy'
+                    ng-show='topic_reddit.busy'
                 )
                     h3
-                        | {{ reddit.busy_statu }}
+                        | {{ topic_reddit.busy_statu }}

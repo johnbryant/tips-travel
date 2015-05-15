@@ -29,6 +29,7 @@ angular.module 'tipstravel'
     @$scope.isopened = false
     @$scope.onclose = true
     @$scope.onopen = false
+    
     @api_setting.classify_name = 'followingTips'
     @api_setting.user_id = @Global.userId
     @api_setting.scope = @$scope

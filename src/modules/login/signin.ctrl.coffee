@@ -36,7 +36,7 @@ angular.module 'tipstravel'
         if result.message is '密码不正确'
           @$scope.signup_errorInfo = 'invalid email or password! '
         else
-          @Global.userId = result.userId
+          @Global.userId = result.user_id
           @$state.go 'dashboard'
       .error (err) ->
         console.error err

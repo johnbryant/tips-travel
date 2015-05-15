@@ -17,16 +17,18 @@ angular.module 'tipstravel'
   (apiTopicBase) ->
     getTopicTips: (getInfo) ->
       {
-        userId
-        topicId
+        userid
+        topicid
+        startindex
       } = getInfo
       meta = apiTopicBase.one 'topic'
       .all 'search'
 
       new Promise (resolve, reject) ->
         meta.post
-          userid: userId
-          topicid: topicId
+          userid: userid
+          topicid: topicid
+          startindex: startindex
         .then (result) ->
           resolve result
         , (res) ->
