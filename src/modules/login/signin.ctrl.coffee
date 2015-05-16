@@ -26,7 +26,7 @@ angular.module 'tipstravel'
       @$state.go 'portal'
 
     signin: ->
-      console.log @$scope.email
+      console.log @$scope.ema_id
       Promise.bind @
       .then ->
         @apiUser.login
