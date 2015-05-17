@@ -16,9 +16,27 @@
 
             .modal-selectFollow(ng-if='selectFollow_show')
                 .modal-content
+                    .modal-header
+                        h1 {{ follow_introH1 }}
+                        h2 {{ follow_introH2 }}
                     .modal-body
-                        .gif
-                        h1 {{ hello }} {{ username }}!
-                        p {{ introduction }}
+                        .container-fluid
+                            .row
+                                .col-md-3.single-user
+                                    a.user_avatar
+                                        img(src='../styles/img/avatar4.jpg')
+                                    .user_name {{ username }}
+                                    br
+                                    .user_intro {{ user_intro }}
+                                    .btn.btn-default follow
+                                .col-md-3.single-user
+                                    .user-wrapper good
+                                    .btn follow
+                                .col-md-3
+                                    .user-wrapper good
+                                    .btn follow
+                                .col-md-3
+                                    .user-wrapper good
+                                    .btn follow
                     .modal-footer
                         button.btn.btn-primary(ng-click='goFollowBox()') Next

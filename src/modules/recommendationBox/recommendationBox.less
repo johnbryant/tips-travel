@@ -2,6 +2,8 @@
   background: #36465d;
   height: 1000px;
   width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 
   .modal-welcome .modal-content {
     position: relative;
@@ -29,7 +31,6 @@
     margin: 0 90px;
     display: block;
     font-weight: bolder;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   .modal-welcome .modal-content .modal-body > p {
@@ -37,7 +38,6 @@
     color: #fff;
     margin: 18px 90px;
     display: block;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   }
 
@@ -49,11 +49,80 @@
     width: 200px;
   }
 
+  .modal-selectFollow .modal-content {
+    position: relative;
+    top: 150px;
+    width: 700px;
+    height: 500px;
+    border-radius: 10px;
+  }
+
+  .modal-selectFollow .modal-content .modal-header {
+    background-color: rgb(242,242,242);
+  }
+
+  .modal-selectFollow .modal-content .modal-header > h1 {
+    font-size: 28px;
+    padding: 0 6px 0 20px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+  }
+
+  .modal-selectFollow .modal-content .modal-header > h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 4px 6px 0 20px;
+    display: block;
+    font-weight: normal;
+    text-align: center;
+  }
 
 
+  .modal-selectFollow .modal-content .modal-body {
+    overflow: scroll;
+    display: block;
+    height: 300px;
+  }
+
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row {
+    text-align: center;
+  }
+
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user {
+    height: 130px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_avatar {
+       position: relative;
+       top: 5px;
+       left: -25px;
+     }
+
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_avatar > img {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    height: 64px;
+    width: 64px;
+  }
+
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_name {
+    position: absolute;
+    top: 28px;
+    left: 100px;
+    color: #a1a1a1;
+    font-weight: bolder;
+
+  }
+
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_intro {
+    position: relative;
+    top: 10px;
 
 
-
-
+  }
 
 }
