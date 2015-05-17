@@ -13,7 +13,8 @@ libs_obj =
   base: 'bower_components'
   files:
     bootstrap: [
-      'dist/css/bootstrap.css'
+      'dist/css/bootstrap.min.css'
+      'dist/js/bootstrap.min.js'
       'dist/fonts/glyphicons-halflings-regular.eot'
       'dist/fonts/glyphicons-halflings-regular.svg'
       'dist/fonts/glyphicons-halflings-regular.ttf'
@@ -27,6 +28,8 @@ libs_obj =
     restangular: 'dist/restangular.js'
     lodash: 'lodash.js'
     'ngInfiniteScroll': 'build/ng-infinite-scroll.js'
+    'angular-bootstrap': 'ui-bootstrap-tpls.min.js'
+    'jquery': 'dist/jquery.min.js'
 
 
 getlibfiles = (libs) ->

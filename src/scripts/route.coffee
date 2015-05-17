@@ -57,4 +57,21 @@ angular.module 'tipstravel'
       url: '/topic'
       templateUrl: '/modules/topic/topic.html'
       controller: 'topicCtrl'
+
+
+    .state 'recommendationBox'
+    ,
+      parent: 'abslogin'
+      url: '/recommendationBox'
+      templateUrl: '/modules/recommendationBox/recommendationBox.html'
+      controller: 'recommendationBoxCtrl'
+
+    .state 'navbar'
+    ,
+      parent: 'abslogin'
+      url: '/navbar'
+      templateUrl: '/modules/navbar/navbar.html'
+      controller: 'navbarCtrl'
+
+
 ]
