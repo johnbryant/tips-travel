@@ -1,7 +1,12 @@
 .recommendationBox
     .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
-    button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
-        | Launch demo modal
+    button.start_btn.btn.btn-primary.btn-lg(
+        type='button'
+        data-toggle='modal'
+        data-target='#myModal'
+        ng-click='getRecommendationUsers()'
+        )
+        | Start your Trip!
     // Modal
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
         .modal-dialog
@@ -21,22 +26,23 @@
                         h2 {{ follow_introH2 }}
                     .modal-body
                         .container-fluid
-                            .row
-                                .col-md-3.single-user
-                                    a.user_avatar
-                                        img(src='../styles/img/avatar4.jpg')
-                                    .user_name {{ username }}
-                                    br
-                                    .user_intro {{ user_intro }}
-                                    .btn.btn-default follow
-                                .col-md-3.single-user
-                                    .user-wrapper good
-                                    .btn follow
-                                .col-md-3
-                                    .user-wrapper good
-                                    .btn follow
-                                .col-md-3
-                                    .user-wrapper good
-                                    .btn follow
+                            .row.col-md-12(ng-repeat='user in userInfos')
+                                .col-md-2
+                                    .single-user
+                                        a.user_avatar
+                                            img(ng-src='{{ BaseURL }}{{user.avatar}}',alt='Avatar')
+                                        .user_name {{ user.username }}
+                                        br
+                                        .user_intro {{ user.introduction }}
+                                    .follow_btn.btn.btn-default(ng-click='dealFollowCheck()') follow
+
                     .modal-footer
-                        button.btn.btn-primary(ng-click='goFollowBox()') Next
+                        button.btn.btn-primary(ng-click='goBuildHome()') Follow this {{ remain_follow_num }}
+
+
+            .modal-buildHome(ng-if='goBuildHome_show')
+                .modal-content
+                    .modal-body
+                        .gif
+                        h1 {{ buildHomeH1 }}
+                        p Just wait for a minute

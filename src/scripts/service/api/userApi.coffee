@@ -53,8 +53,26 @@ angular.module 'tipstravel'
           reject res
 
 
+    FirstUserFollow: ->
+      meta = apiUserBase.one 'user'
+      .all 'recommendation'
+      meta.getList
+#      new Promise (resolve, reject) ->
+#        meta.getList
+#        .then (result) ->
+#          resolve result
+#        , (res) ->
+#          reject res
+
 
 ]
+
+
+
+
+
+
+
 #    registerCheck: (register_check_data) ->
 #      {
 #      cellphone

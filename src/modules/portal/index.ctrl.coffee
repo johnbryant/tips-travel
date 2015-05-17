@@ -8,6 +8,7 @@ angular.module 'tipstravel'
     '$scope'
     '$state'
     'apiUser'
+    'Global'
   ]
 
   init: ->
@@ -42,9 +43,9 @@ angular.module 'tipstravel'
       @$state.go 'search'
 
     signup: ->
-      console.log @$scope.Inusername
-      console.log @$scope.Inemail
-      console.log @$scope.Inpassword
+#      console.log @$scope.Inusername
+#      console.log @$scope.Inemail
+#      console.log @$scope.Inpassword
       Promise.bind @
       .then ->
         @apiUser.register
@@ -61,6 +62,8 @@ angular.module 'tipstravel'
           @$scope.errorInfo = 'The username has been registered!'
         else
           @$scope.errorInfo = null
-          @$state.go 'login'
+          @Global.userId = result.user_id
+          @Global.userName = result.username
+          @$state.go 'recommendationBox'
       .error (err) ->
         console.error err
