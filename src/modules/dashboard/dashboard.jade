@@ -28,22 +28,40 @@
           .new_tip_container
             a.user_avatar
               img(src='styles/img/avatar4.jpg')
-            nav.new_tip_buttons
-              a.new_tip_label
-                i.icon_tip_text
-                span.new_tip_label_text Text
-              a.new_tip_label
-                i.icon_tip_photo
-                span.new_tip_label_text Photo
-              a.new_tip_label
-                i.icon_tip_link
-                span.new_tip_label_text Link
-              a.new_tip_label
-                i.icon_tip_audio
-                span.new_tip_label_text Audio
-              a.new_tip_label
-                i.icon_tip_video
-                span.new_tip_label_text Video
+            .new_tip_panel
+              .new_tip_recommendation
+                | What's your travel tips?
+              .text_panel
+                textarea.form-control(rows='3')
+              .new_tip_buttons
+                .btn_container
+                  .btn.new_tip_photo_btn
+                    img(src='styles/img/photosign.png')
+                    | Picture
+                .btn_container
+                  .btn-group
+                    button.btn.dropdown-toggle(
+                    data-toggle='dropdown'
+                    aria-expanded='false'
+                    )
+                      img(src='styles/img/poundsign2.png')
+                      | Topic
+                      span.caret
+                    ul.dropdown-menu(role='menu')
+                      li
+                        a topic1
+                        a topic2
+                        a topic3
+                        a topic4
+                        a topic5
+
+                .btn_container
+                  .btn.new_tip_topic_btn2
+                    img(src='styles/img/poundsign.png')
+                    | DIY Topic
+                .btn_container.submit
+                  .btn.btn-primary.new_tip_submit Submit
+
 
 
           //好友tips

@@ -18,7 +18,7 @@ angular.module 'tipstravel'
       @arg_start = api_setting.start if api_setting.start?
       @arg_count = api_setting.count if api_setting.count?
       @arg_user_id = api_setting.user_id if api_setting.user_id
-      @busy_statu = '努力加载中...'
+      @busy_statu = 'Loading...'
 
     Reddit::nextPage = ->
       if @busy
@@ -33,7 +33,7 @@ angular.module 'tipstravel'
 
       .then (result) ->
         if _.isEmpty result.data
-          @busy_statu = '没有更多Tips'
+          @busy_statu = 'No more tips!'
           @scope.$apply()
           return
         @items =_.union @items, result.data
@@ -67,7 +67,7 @@ angular.module 'tipstravel'
       @arg_start = topic_api_setting.start
       @arg_count = topic_api_setting.count if topic_api_setting.count?
       @arg_user_id = topic_api_setting.user_id if topic_api_setting.user_id
-      @busy_statu = '努力加载中...'
+      @busy_statu = 'Loading...'
 
     TopicReddit::nextPage = ->
       if @busy
@@ -83,7 +83,7 @@ angular.module 'tipstravel'
 
       .then (result) ->
         if _.isEmpty result.data
-          @busy_statu = '没有更多Tips'
+          @busy_statu = 'No mor tips!'
           @scope.$apply()
           return
 

@@ -174,14 +174,15 @@
   //左侧栏
   .left_column {
     border-radius: 5px;
-    border: 2px solid black;
+    //border: 2px solid black;
     height: 100%;
     width: 100%;
     margin-top: 100px;
   }
 
-  .new_tip_container {
-    height: 130px;
+  .left_column .new_tip_container {
+    position: relative;
+    height: 180px;
     background-color: #36465D;
     padding: 15px 15px 15px 45px;
     text-align: center;
@@ -189,62 +190,97 @@
     //-webkit-box-sizing:border-box;
     //-moz-box-sizing:border-box;
     //box-sizing:border-box
-    border: 1px solid black
   }
 
-  .user_avatar {
+  .left_column .new_tip_container .user_avatar {
+    position: relative;
+    top: 5px;
     float: left;
     height: 64px;
     width: 64px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     cursor: pointer;
     //border: 1px solid black;
   }
 
-  .new_tip_buttons {
-    height: 100px;
-    margin-right: 17px;
-    margin-left: 145px;
-    display: block;
+  .left_column .new_tip_container .usr_avatar > img {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .left_column .new_tip_container .new_tip_panel {
+    position: relative;
+    height: 150px;
+    top: -10px;
+    left: 90px;
+    width: 430px;
     border-radius: 5px;
     background-color: #fff;
     text-align: center;
   }
 
-  .new_tip_label {
-    float: left;
+  .left_column .new_tip_container .new_tip_panel .new_tip_recommendation {
     position: relative;
-    top: 0;
-    left: 0;
-    width: 75px;
-    height: 20px;
-    padding: 35px 1px 0 0;
-    color: #000;
-    font-size: 15px;
-    opacity: .9;
-    font-weight: normal;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .tip_button_icon {
+    top: 10px;
+    left: -45px;
     display: block;
+    margin: 10px 10px 0 10px;
+    padding-bottom: 5px;
+    text-align: left;
+    font-family: Monaco, Consolas, Lucida Console, dejavu sans mono, monospace;
   }
 
-  .icon_tip_label_text {
+
+  .left_column .new_tip_container .new_tip_panel .text_panel {
     position: relative;
-    top: 30px;
-    left: 0;
-    width: 48px;
-    height: 48px;
-    padding: 0 14px;
-    font-size: 4px;
-    color: #696969;
+    top:-20px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
-  //Friend's tips
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons {
+    position: relative;
+    top: -20px;
+
+  }
+
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container {
+    float:left;
+  }
+
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container .new_tip_photo_btn > img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container .btn-group .btn > img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container .btn > img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container .btn-group > button {
+    background: #fff;
+  }
+
+
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container .new_tip_submit {
+    margin-top: 5px;
+    margin-left: 40px;
+    width: 80px;
+    height: 30px;
+  }
+
+
+
+    //Friend's tips
   .tips_container {
     background-color: #36465d;
     font-size: 13px;
@@ -439,7 +475,11 @@
   }
 
   
-
+  .loading > h3 {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+  }
 
 
 
