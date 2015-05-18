@@ -64,6 +64,12 @@ angular.module 'tipstravel'
       templateUrl: '/modules/topic/topic.html'
       controller: 'topicCtrl'
 
+    .state 'photo'
+    ,
+      parent: 'abslogin'
+      url: '/photo'
+      templateUrl: '/modules/photo/photo.html'
+      controller: 'photoCtrl'
 
     .state 'recommendationBox'
     ,
