@@ -37,7 +37,7 @@
                 .btn_container
                   .btn.new_tip_photo_btn
                     img(src='styles/img/photosign.png')
-                    | Picture
+                    | picture
                 .btn_container
                   .btn-group
                     button.btn.dropdown-toggle(
@@ -49,16 +49,18 @@
                       span.caret
                     ul.dropdown-menu(role='menu')
                       li
+                        a.write_topic DIY topic
+                      li.divider
+                      li
                         a topic1
+                      li
                         a topic2
+                      li
                         a topic3
+                      li
                         a topic4
+                      li
                         a topic5
-
-                .btn_container
-                  .btn.new_tip_topic_btn2
-                    img(src='styles/img/poundsign.png')
-                    | DIY Topic
                 .btn_container.submit
                   .btn.btn-primary.new_tip_submit Submit
 
@@ -89,8 +91,9 @@
                   p.tips_text {{tip.context}}
                   a.tips_tag( 
                   ng-repeat= "tag in tip.tag_message" 
-                  )       #'{{tag.tag.tag_name}}'
+                  )       # {{tag.tm_tag.tag_name}}
                   .blank_content
+                  .likes
           .loading(
           ng-show='reddit.busy'
           )
@@ -99,3 +102,44 @@
       //右侧栏
       .col-md-3
         .right_column
+          .hot_topic
+            .hot_topic_header hot topics
+            ul.hot_topic_container
+              li
+                .hot_topic_single
+                  | #
+                  span Europe
+                  | #
+
+              li
+                .hot_topic_single #Africa#
+              li
+                .hot_topic_single #Antactica#
+              li
+                .hot_topic_single #Asia#
+              li
+                .hot_topic_single #Europe#
+              li
+                .hot_topic_single #Africa#
+              li
+                .hot_topic_single #Antactica#
+              li
+                .hot_topic_single #Asia#
+
+          br
+          br
+          .dashboard_weather
+            .weather_header Weather
+            .weather_body.fd-tile.tile-green.weather
+              canvas(id='#widget1_1',width='100',height='100')
+              h2 Shanghai
+              div
+                h1 21°C
+              br
+              .row.days
+                .col-xs-4.day
+                  h6 TUE 20°C
+                .col-xs-4.day
+                  h6 WED 22°C
+                .col-xs-4.day
+                  h6 THU 17°C

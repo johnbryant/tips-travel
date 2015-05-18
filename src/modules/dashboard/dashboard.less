@@ -172,12 +172,18 @@
   //dashboard
 
   //左侧栏
+
+  .col-md-6 {
+    // margin-top: 0;
+
+  }
+
   .left_column {
     border-radius: 5px;
     //border: 2px solid black;
     height: 100%;
     width: 100%;
-    margin-top: 100px;
+    // margin-top: 100px;
   }
 
   .left_column .new_tip_container {
@@ -202,6 +208,7 @@
     //border: 1px solid black;
   }
 
+
   .left_column .new_tip_container .usr_avatar > img {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -213,7 +220,7 @@
     height: 150px;
     top: -10px;
     left: 90px;
-    width: 430px;
+    width: 422px;
     border-radius: 5px;
     background-color: #fff;
     text-align: center;
@@ -239,6 +246,7 @@
   }
 
   .left_column .new_tip_container .new_tip_panel .new_tip_buttons {
+    margin: 0 10px 0 10px;
     position: relative;
     top: -20px;
 
@@ -246,7 +254,9 @@
 
   .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container {
     float:left;
+    text-align: left;
   }
+
 
   .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container .new_tip_photo_btn > img {
     width: 20px;
@@ -271,11 +281,15 @@
   }
 
 
-  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .btn_container .new_tip_submit {
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .submit {
+    float: right;
     margin-top: 5px;
-    margin-left: 40px;
-    width: 80px;
-    height: 30px;
+    height: 34px;
+  }
+
+  .left_column .new_tip_container .new_tip_panel .new_tip_buttons .submit .new_tip_submit {
+    width: 90px;
+    height: 34px;
   }
 
 
@@ -389,7 +403,7 @@
   }
 
   .tips_timeline > li .tips_label {
-    margin: 0 0 15px 25%;
+    margin: 0 0 15px 28%;
     background: #fff;
     color: #fff;
     font-weight: 300;
@@ -444,7 +458,7 @@
     padding:15px;
   }
 
-  .tips_tag a {
+  .tips_timeline .tips_label .tips_tag > a {
     text-decoration: none;
     font-size: 15px;
     cursor: pointer;
@@ -482,13 +496,284 @@
   }
 
 
-
-
-
   .right_column {
+    position: fixed;
     height: 1000px;
-    border:2px solid black;
-    margin-top: 100px;
+
+  }
+
+  .right_column .hot_topic {
+    margin: 10px 10px 0 10px;
+    //border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .right_column .hot_topic .hot_topic_header {
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    font-weight: 700;
+    padding: 2px 10px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .right_column .hot_topic .line {
+    color: rgba(255,255,255,.2);
+    padding: 0 10px;
+  }
+
+  .right_column .hot_topic .hot_topic_container {
+    padding: 2px 10px;
+    list-style-type: none;
+  }
+
+
+  .right_column .hot_topic .hot_topic_container .hot_topic_single {
+    padding-left: 20px;
+    color: rgba(255, 255, 255, .5);
+    font-weight: bold;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+  }
+
+  .right_column .hot_topic .hot_topic_container .hot_topic_single > span {
+    cursor: pointer;
+  }
+
+
+  .right_column .dashboard_weather {
+    margin: 10px 10px 0 10px;
+    //border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .right_column .dashboard_weather .weather_header {
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    font-weight: 700;
+    padding: 2px 10px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+
+
+
+  .fd-tile {
+    background-color: #fff;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  .fd-tile .row {
+    margin: 0;
+  }
+  .fd-tile.weather {
+    text-align: center;
+
+  }
+  .weather h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 500;
+  }
+  .weather h1 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 600;
+  }
+  .fd-tile.weather .days {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .fd-tile.weather .day {
+    padding: 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .fd-tile.weather .day h6 {
+    color: #fff;
+    font-weight: 400;
+  }
+  .fd-tile.tile-green {
+
+    background-image:url(../../styles/img/dashboard_weather1.jpg);
+    background-size:cover;
+    color: #fff;
+  }
+  .fd-tile.tile-lemon {
+    background-color: #2cc36b;
+    color: #fff;
+  }
+  .fd-tile.tile-red {
+    background-color: #ea6153;
+    color: #fff;
+  }
+  .fd-tile.tile-blue {
+    background-color: #4aa3df;
+    color: #fff;
+  }
+  .fd-tile.tile-orange {
+    background-color: #f16e3f;
+    color: #fff;
+  }
+  .fd-tile.tile-prusia {
+    background-color: #3d566d;
+    color: #fff;
+  }
+  .fd-tile.tile-concrete {
+    background-color: #a3b1b2;
+    color: #fff;
+  }
+  .fd-tile.tile-purple {
+    background-color: #7761a7;
+    color: #fff;
+  }
+  /*clean tiles*/
+  .fd-tile.clean .icon i {
+    color: #e5e5e5;
+  }
+  .fd-tile.clean {
+    background-color: #fff;
+    color: #888;
+  }
+  .fd-tile.clean.tile-green .details {
+    background-color: #19b698;
+  }
+  .fd-tile.clean.tile-lemon .details {
+    background-color: #2cc36b;
+  }
+  .fd-tile.clean.tile-red .details {
+    background-color: #ea6153;
+  }
+  .fd-tile.clean.tile-blue .details {
+    background-color: #4aa3df;
+  }
+  .fd-tile.clean.tile-orange .details {
+    background-color: #f16e3f;
+  }
+  .fd-tile.clean.tile-prusia .details {
+    background-color: #3d566d;
+  }
+  .fd-tile.clean.tile-concrete .details {
+    background-color: #a3b1b2;
+  }
+  .fd-tile.clean.tile-purple .details {
+    background-color: #7761a7;
+  }
+  .fd-tile .header {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  .fd-tile .header .ico {
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    padding: 11px 18px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: central
+  }
+  .fd-tile .header .title {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 7px;
+  }
+  .fd-tile .content {
+    padding: 10px;
+  }
+  .fd-tile.header .content {
+    padding: 10px 20px;
+    background: transparent;
+    padding-right: 10px;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+  }
+  .fd-tile.detail .icon {
+    display: block;
+    float: right;
+    height: 80px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 80px;
+  }
+  .fd-tile.header .icon img {
+    opacity: 0.8;
+    display: block;
+    float: right;
+    height: 80px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    width: 80px;
+  }
+  .fd-tile.header {
+    position: relative;
     overflow: hidden;
   }
+  .fd-tile.detail {
+    position: relative;
+    overflow: hidden;
+  }
+  .fd-tile.detail .content {
+    background: transparent;
+    padding: 10px 10px 13px;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+  }
+  .fd-tile.detail .icon {
+    display: block;
+    float: right;
+    height: 80px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    width: 80px;
+  }
+  .fd-tile.detail .icon i {
+    color: rgba(0, 0, 0, 0.05);
+    font-size: 100px;
+    line-height: 65px;
+  }
+  .fd-tile.detail .details {
+    clear: both;
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .fd-tile.detail .details i {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .fd-tile .content p {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .fd-tile .content h1 {
+    margin: 0 0 0;
+    font-weight: 300;
+    font-size: 40px;
+  }
+
+
+
+
+
+
+
 }

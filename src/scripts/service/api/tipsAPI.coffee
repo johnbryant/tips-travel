@@ -34,7 +34,22 @@ angular.module 'tipstravel'
 
 
 
+    getMyTips: (getInfo) ->
+      {
+        userID
+        index
+      } = getInfo
+      meta = apiTipsBase.one 'message'
+      .all 'homepage'
 
+      new Promise (resolve, reject) ->
+        meta.post
+          userid: userID
+          startindex: index
+        .then (result) ->
+          resolve result
+        , (res) ->
+          reject res
 
 
 

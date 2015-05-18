@@ -8,7 +8,7 @@ angular.module 'tipstravel'
     getApiFunction = (classify_name) ->
       switch classify_name
         when 'followingTips' then apiTips.getFollowingTips
-        else apiTips.getFollowingTips
+        when 'myTips' then apiTips.getMyTips
 
     Reddit = (api_setting) ->
       @scope = api_setting.scope

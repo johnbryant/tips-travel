@@ -50,6 +50,12 @@ angular.module 'tipstravel'
       templateUrl: '/modules/dashboard/dashboard.html'
       controller: 'dashboardCtrl'
 
+    .state 'personPage'
+    ,
+      parent: 'abslogin'
+      url: '/personPage'
+      templateUrl: '/modules/personPage/personPage.html'
+      controller: 'personPageCtrl'
 
     .state 'topic'
     ,
