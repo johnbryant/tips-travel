@@ -69,6 +69,51 @@ angular.module 'tipstravel'
           reject res
 
 
+    SettingAccount: (account_data) ->
+      {
+        userid
+        password
+      } = account_data
+      meta = apiUserBase.one 'user'
+      .all 'updatepassword'
+
+      new Promise (resolve, reject) ->
+        meta.post
+          user_id: userid
+          password: password
+        .then (result) ->
+          resolve result
+        , (res) ->
+          reject res
+
+
+    SettingProfile: (profile_data) ->
+      {
+        user_id
+        user_name
+        user_gender
+        user_city
+        user_introduction
+      } = profile_data
+      meta = apiUserBase.one ''
+      .all ''
+
+      new Promise(resolve, result) ->
+        meta.post
+          userid : user_id
+          username : user_name
+          usergender : user_gender
+          usercity : user_city
+          userindroduction : user_introduction
+        .then (result) ->
+          resolve result
+        .then (res) ->
+          reject res
+
+
+
+
+
 ]
 
 
