@@ -53,16 +53,20 @@ angular.module 'tipstravel'
           reject res
 
 
-    FirstUserFollow: ->
+    FirstUserFollow: (test_data) ->
+      {
+        user_id
+      } = test_data
       meta = apiUserBase.one 'user'
       .all 'recommendation'
-      meta.getList
-#      new Promise (resolve, reject) ->
-#        meta.getList
-#        .then (result) ->
-#          resolve result
-#        , (res) ->
-#          reject res
+
+      new Promise (resolve, reject) ->
+        meta.post
+          userid : user_id
+        .then (result) ->
+          resolve result
+        , (res) ->
+          reject res
 
 
 ]

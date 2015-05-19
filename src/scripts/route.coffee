@@ -79,5 +79,10 @@ angular.module 'tipstravel'
       templateUrl: '/modules/navbar/navbar.html'
       controller: 'navbarCtrl'
 
-
+    .state 'personSetting'
+    ,
+      parent: 'abslogin'
+      url: '/personSetting'
+      templateUrl: '/modules/personSetting/personSetting.html'
+      controller: 'personSettingCtrl'
 ]

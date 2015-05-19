@@ -12,9 +12,9 @@ angular.module 'tipstravel'
   ]
 
   init: ->
-    @$scope.baseURL = @Global.baseUrl
-    @$scope.username = @Global.userName
-
+    @$scope.Baseurl = @Global.baseUrl
+    @$scope.username = 'John'
+    @$scope.userid = 2
     @$scope.hello = 'Hello there, '
     @$scope.introduction = 'TipsTravel helps you discover and share interesting travel tips.Let\'s get started by setting up your home feed.'
     @$scope.user_intro = 'cool traveler from China'
@@ -42,10 +42,14 @@ angular.module 'tipstravel'
       @$scope.goBuildHome_show = true
 
     getRecommendationUsers: ->
-#      console.log @$scope.baseURL
+      console.log(@$scope.userid)
+      console.log(@$scope.baseurl)
       Promise.bind @
       .then ->
-        @$scope.allUsers = @apiUser.FirstUserFollow
-        console.log @$scope.allUsers
+        @apiUser.FirstUserFollow
+          user_id : @$scope.userid
+      .then (result) ->
+        @$scope.AllUser = result.data
+        console.log(result)
       .error (err) ->
         console.error err

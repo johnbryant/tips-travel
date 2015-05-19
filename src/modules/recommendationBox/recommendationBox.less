@@ -57,8 +57,8 @@
   .modal-selectFollow .modal-content {
     position: relative;
     top: 150px;
-    width: 650px;
-    height: 480px;
+    width: 700px;
+    height: 540px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
   }
@@ -96,32 +96,35 @@
   }
 
   .col-md-12 {
+    position: relative;
     margin-left: 0;
     padding: 0;
-    margin-top: -30px;
-    float: none;
+    float: left;
   }
 
-  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-2 {
-    height: 130px;
-    width: 135px;
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 {
+    margin: 0 5px 0 5px;
+    //height: 130px;
+    width: 190px;
     padding: 0;
-    margin-top: 40px;
-    margin-left: 3px;
-    margin-right: 3px;
+    //margin-top: 40px;
+    //margin-right: 3px;
   }
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user {
-    height: 100%;
-    width: 100%;
+    position: relative;
+    top: 20px;
+    height: 200px;
+    width: 180px;
     border-radius: 5px;
     background: rgb(242,242,242);
+
   }
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_avatar {
        position: relative;
        top: 5px;
-       left: -25px;
+       left: -35px;
      }
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_avatar > img {
@@ -141,14 +144,21 @@
 
   }
 
-  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-2 .single-user .user_intro {
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 .single-user .user_intro {
     position: relative;
-    top: 20px;
+    top: 25px;
+    padding: 0 5px;
+    height: 100px;
+    font-size: 13px;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    color: rgba(8,8,8,.8);
+    overflow-y: scroll;
   }
 
-  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-2 .follow_btn {
-    margin-top: 5px;
-    width: 125px;
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 .btn > button{
+    position: relative;
+    top: 40px;
+    width: 300px;
     height: 30px;
   }
 

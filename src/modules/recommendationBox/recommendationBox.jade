@@ -26,15 +26,15 @@
                         h2 {{ follow_introH2 }}
                     .modal-body
                         .container-fluid
-                            .row.col-md-12(ng-repeat='user in userInfos')
-                                .col-md-2
+                            .row.col-md-12
+                                .col-md-3(ng-repeat='user in AllUser')
                                     .single-user
                                         a.user_avatar
-                                            img(ng-src='{{ BaseURL }}{{user.avatar}}',alt='Avatar')
+                                            img(ng-src="{{ Baseurl }}{{user.avatar}}",alt='Avatar')
                                         .user_name {{ user.username }}
                                         br
                                         .user_intro {{ user.introduction }}
-                                    .follow_btn.btn.btn-default(ng-click='dealFollowCheck()') follow
+                                    button.follow_btn.btn.btn-info(ng-click='dealFollowCheck()') follow
 
                     .modal-footer
                         button.btn.btn-primary(ng-click='goBuildHome()') Follow this {{ remain_follow_num }}
