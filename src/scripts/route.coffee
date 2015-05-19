@@ -4,10 +4,12 @@ angular.module 'tipstravel'
   '$locationProvider'
   '$urlRouterProvider'
   '$stateProvider'
+  'gResolveProvider'
   (
     $locationProvider
     $urlRouterProvider
     $stateProvider
+    gResolveProvider
   ) ->
     $locationProvider.html5Mode true
 
@@ -15,12 +17,13 @@ angular.module 'tipstravel'
     .otherwise '/404'
 
     $stateProvider
+
     .state 'abslogin'
     ,
       template: '<div ui-view></div>'
       abstract: true
-#      resolve:
-#        authorizationn: gResolveProvider.authorizationn
+      resolve:
+        authorization: gResolveProvider.authorization
 
     .state 'portal'
     ,
@@ -28,6 +31,8 @@ angular.module 'tipstravel'
       url: '/'
       templateUrl: '/modules/portal/index.html'
       controller: 'portalCtrl'
+      data:
+        role: 'Guest'
 
     .state 'login'
     ,
@@ -35,6 +40,8 @@ angular.module 'tipstravel'
       url: '/login'
       templateUrl: '/modules/login/signin.html'
       controller: 'loginCtrl'
+      data:
+        role: 'Guest'
 
     .state 'search'
     ,
@@ -42,6 +49,8 @@ angular.module 'tipstravel'
       url: '/search'
       templateUrl: '/modules/search/search.html'
       controller: 'searchCtrl'
+      data:
+        role: 'Guest'
 
     .state 'dashboard'
     ,
@@ -49,6 +58,8 @@ angular.module 'tipstravel'
       url: '/dashboard'
       templateUrl: '/modules/dashboard/dashboard.html'
       controller: 'dashboardCtrl'
+      data:
+        role: 'Guest'
 
 
     .state 'topic'
@@ -57,6 +68,8 @@ angular.module 'tipstravel'
       url: '/topic'
       templateUrl: '/modules/topic/topic.html'
       controller: 'topicCtrl'
+      data:
+        role: 'Guest'
 
 
     .state 'recommendationBox'
@@ -65,6 +78,8 @@ angular.module 'tipstravel'
       url: '/recommendationBox'
       templateUrl: '/modules/recommendationBox/recommendationBox.html'
       controller: 'recommendationBoxCtrl'
+      data:
+        role: 'Guest'
 
     .state 'navbar'
     ,
@@ -72,6 +87,8 @@ angular.module 'tipstravel'
       url: '/navbar'
       templateUrl: '/modules/navbar/navbar.html'
       controller: 'navbarCtrl'
+      data:
+        role: 'Guest'
 
 
 ]

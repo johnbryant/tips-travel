@@ -3,4 +3,5 @@ angular.module 'tipstravel', [
   'classy'
   'restangular'
   'infinite-scroll'
+  'ngCookies'
 ]

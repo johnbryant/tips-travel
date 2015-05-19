@@ -30,6 +30,7 @@ libs_obj =
     'ngInfiniteScroll': 'build/ng-infinite-scroll.js'
     'angular-bootstrap': 'ui-bootstrap-tpls.min.js'
     'jquery': 'dist/jquery.min.js'
+    'angular-cookies': 'angular-cookies.js'
 
 
 getlibfiles = (libs) ->

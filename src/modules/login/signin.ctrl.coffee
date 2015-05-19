@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     '$state'
     'apiUser'
     'Global'
+    '$cookies'
   ]
 
   init: ->
@@ -20,6 +21,7 @@ angular.module 'tipstravel'
     @$scope.onclose = true
     @$scope.onopen = false
 #    @$scope.signup_errorInfo = 'haha'
+#    console.log @AUTH.isLogged()
 
   methods:
     goSignup: ->
