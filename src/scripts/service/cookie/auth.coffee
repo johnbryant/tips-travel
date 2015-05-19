@@ -22,8 +22,6 @@ angular.module 'tipstravel'
     @login = (token) ->
       d = new Date()
       d.setTime d.getTime() + 15*24*3600*1000
-
-
       @_token = token
       $cookies.put 'user-id', token
 
