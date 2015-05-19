@@ -61,6 +61,12 @@ angular.module 'tipstravel'
       data:
         role: 'Guest'
 
+    .state 'personPage'
+    ,
+      parent: 'abslogin'
+      url: '/personPage'
+      templateUrl: '/modules/personPage/personPage.html'
+      controller: 'personPageCtrl'
 
     .state 'topic'
     ,
@@ -71,6 +77,12 @@ angular.module 'tipstravel'
       data:
         role: 'Guest'
 
+    .state 'photo'
+    ,
+      parent: 'abslogin'
+      url: '/photo'
+      templateUrl: '/modules/photo/photo.html'
+      controller: 'photoCtrl'
 
     .state 'recommendationBox'
     ,
@@ -90,5 +102,10 @@ angular.module 'tipstravel'
       data:
         role: 'Guest'
 
-
+    .state 'personSetting'
+    ,
+      parent: 'abslogin'
+      url: '/personSetting'
+      templateUrl: '/modules/personSetting/personSetting.html'
+      controller: 'personSettingCtrl'
 ]

@@ -1,13 +1,18 @@
 .recommendationBox {
   background: #36465d;
-  height: 1000px;
+  height: 800px;
   width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-
+  .start_btn {
+    position: fixed;
+    top: 40%;
+    left: 45%;
+  }
   .modal-welcome .modal-content {
     position: relative;
     top: 150px;
+    left: -40px;
     width:700px;
     height: 500px;
     background: url(../../styles/img/recommendation-background.png);
@@ -53,8 +58,9 @@
     position: relative;
     top: 150px;
     width: 700px;
-    height: 500px;
-    border-radius: 10px;
+    height: 540px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
   }
 
   .modal-selectFollow .modal-content .modal-header {
@@ -80,7 +86,7 @@
 
 
   .modal-selectFollow .modal-content .modal-body {
-    overflow: scroll;
+    overflow-y: scroll;
     display: block;
     height: 300px;
   }
@@ -89,16 +95,36 @@
     text-align: center;
   }
 
+  .col-md-12 {
+    position: relative;
+    margin-left: 0;
+    padding: 0;
+    float: left;
+  }
+
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 {
+    margin: 0 5px 0 5px;
+    //height: 130px;
+    width: 190px;
+    padding: 0;
+    //margin-top: 40px;
+    //margin-right: 3px;
+  }
+
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user {
-    height: 130px;
-    border: 1px solid black;
+    position: relative;
+    top: 20px;
+    height: 200px;
+    width: 180px;
     border-radius: 5px;
+    background: rgb(242,242,242);
+
   }
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_avatar {
        position: relative;
        top: 5px;
-       left: -25px;
+       left: -35px;
      }
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_avatar > img {
@@ -112,17 +138,82 @@
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_name {
     position: absolute;
     top: 28px;
-    left: 100px;
+    left: 90px;
     color: #a1a1a1;
     font-weight: bolder;
 
   }
 
-  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_intro {
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 .single-user .user_intro {
     position: relative;
-    top: 10px;
+    top: 25px;
+    padding: 0 5px;
+    height: 100px;
+    font-size: 13px;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    color: rgba(8,8,8,.8);
+    overflow-y: scroll;
+  }
+
+  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 .btn > button{
+    position: relative;
+    top: 40px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .modal-selectFollow .modal-content .modal-footer {
+    text-align: center;
+  }
+
+  .modal-selectFollow .modal-content .modal-footer > button {
+    width: 200px;
+  }
 
 
+
+  .modal-buildHome .modal-content {
+    position: relative;
+    top: 150px;
+    width:700px;
+    height: 400px;
+    background: url(../../styles/img/recommendation-background.png);
+  }
+
+  .modal-buildHome .modal-content .modal-body {
+    text-align: center;
+  }
+
+  .modal-buildHome .modal-content .modal-body .gif {
+    width: 200px;
+    height: 244px;
+
+    background: url(../../styles/img/recommendation-compass-animated.gif) 0px 0px no-repeat;
+    display: inline-block;
+    text-align: center;
+  }
+  .modal-buildHome .modal-content .modal-body > h1 {
+    font-size: 32px;
+    color: #fff;
+    margin: 0 90px;
+    display: block;
+    font-weight: bolder;
+  }
+
+  .modal-buildHome .modal-content .modal-body > p {
+    font-size: 18px;
+    color: #fff;
+    margin: 18px 90px;
+    display: block;
+
+  }
+
+  .modal-buildHome .modal-content .modal-footer {
+    text-align: center;
+  }
+
+  .modal-buildHome .modal-content .modal-footer > button {
+    width: 200px;
   }
 
 }

@@ -53,8 +53,30 @@ angular.module 'tipstravel'
           reject res
 
 
+    FirstUserFollow: (test_data) ->
+      {
+        user_id
+      } = test_data
+      meta = apiUserBase.one 'user'
+      .all 'recommendation'
+
+      new Promise (resolve, reject) ->
+        meta.post
+          userid : user_id
+        .then (result) ->
+          resolve result
+        , (res) ->
+          reject res
+
 
 ]
+
+
+
+
+
+
+
 #    registerCheck: (register_check_data) ->
 #      {
 #      cellphone

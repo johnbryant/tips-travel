@@ -1,0 +1,53 @@
+.personSetting
+    .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
+    main.wrapper.animated.rotateIn
+        h1.title {{ hello }}
+        form.setting-form
+            // START ACCOUNT FIELDS
+            fieldset
+                h2.subtitle Account
+                .fields
+                    p.row
+                        label(for='username')
+                            | Username
+                            span.required *
+                            | :
+                        input#first-name.field-large(type='text', name='first_name', required='required', aria-required='true')
+                    p.row
+                        label(for='email') Email:
+                        input#email.field-large(type='email', name='email', placeholder='yourname@example.com')
+                    p.row
+                        label(for='password') Current Password:
+                        input#password.field-medium
+                    p.row
+                        label(for='password2') New Password:
+                        input#password2.field-medium
+                input.btn_save(type='submit', value='Save')
+
+            fieldset
+                h2.subtitle Profile
+                .fields
+                    .row
+                        label(for='city') City:
+                        input#city.field-large(type='text', name='city')
+                    .row
+                        fieldset.radios
+                            label.gender Gender:
+                            p.row
+                                input#gender-male(type='radio', name='gender', value='male')
+                                label(for='gender-male') Male
+                                input#gender-female(type='radio', name='gender', value='female')
+                                label(for='gender-female') Female
+                input.btn_save(type='submit', value='Save')
+
+
+            fieldset
+                h2.subtitle Avatar
+                .fields
+                    .row
+                        label(for='picture') Picture:
+                        input#picture(type='file', name='picture')
+                        p.instructions Maximum size of 700k. JPG, GIF or PNG.
+                input.btn_save(type='submit', value='Save')
+
+            .blank

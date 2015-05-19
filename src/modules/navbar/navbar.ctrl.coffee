@@ -7,7 +7,15 @@ angular.module 'tipstravel'
   inject: [
     '$scope'
     'Global'
+    '$state'
   ]
 
   init: ->
     @$scope.hello = 'Hello world!'
+
+  methods:
+    goDashboard: ->
+      @$state.go 'dashboard'
+
+    goSearch: ->
+      @$state.go 'search'
