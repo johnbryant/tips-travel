@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     '$state'
     'apiUser'
     'Global'
+    'AUTH'
   ]
 
   init: ->
@@ -20,6 +21,7 @@ angular.module 'tipstravel'
     @$scope.onclose = true
     @$scope.onopen = false
 #    @$scope.signup_errorInfo = 'haha'
+#    console.log @AUTH.isLogged()
 
   methods:
     goSignup: ->
@@ -37,6 +39,7 @@ angular.module 'tipstravel'
           @$scope.signup_errorInfo = 'invalid email or password! '
         else
           @Global.userId = result.user_id
+          @AUTH.login @Global.userId
           @$state.go 'dashboard'
       .error (err) ->
         console.error err
