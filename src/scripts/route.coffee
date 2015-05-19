@@ -59,7 +59,7 @@ angular.module 'tipstravel'
       templateUrl: '/modules/dashboard/dashboard.html'
       controller: 'dashboardCtrl'
       data:
-        role: 'Guest'
+        role: 'User'
 
     .state 'personPage'
     ,
