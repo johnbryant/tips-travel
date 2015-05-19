@@ -89,25 +89,25 @@ angular.module 'tipstravel'
 
     SettingProfile: (profile_data) ->
       {
-        user_id
-        user_name
-        user_gender
-        user_city
-        user_introduction
+        userid
+        username
+        usergender
+        usercity
+        userintroduction
       } = profile_data
-      meta = apiUserBase.one ''
-      .all ''
+      meta = apiUserBase.one 'user'
+      .all 'updateprofile'
 
-      new Promise(resolve, result) ->
+      new Promise (resolve, reject) ->
         meta.post
-          userid : user_id
-          username : user_name
-          usergender : user_gender
-          usercity : user_city
-          userindroduction : user_introduction
+          user_id : userid
+          username : username
+          gender : usergender
+          city : usercity
+          introduction : userintroduction
         .then (result) ->
           resolve result
-        .then (res) ->
+        , (res) ->
           reject res
 
 

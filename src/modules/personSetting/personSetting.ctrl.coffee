@@ -13,13 +13,15 @@ angular.module 'tipstravel'
 
   init: ->
     @$scope.hello = 'User Setting'
-    @$scope.userid = 1
+    @$scope.userid = @Global.userId
+#    @$scope.
     @$scope.newpassword = null
-
+    @$scope.username = null
     @$scope.pwd_err_info = false
     @$scope.pwd_success_info = false
     @$scope.pwd_info = null
-
+    @$scope.profile_success_info = false
+    @$scope.profile_info = null
 
 
   methods:
@@ -31,14 +33,36 @@ angular.module 'tipstravel'
           password: @$scope.Inpassword
       .then (result) ->
         console.log result
-        if result.message is '密码重复'
+        if result is 'fail'
+          console.log 'red fail'
           @$scope.pwd_err_info = true
           @$scope.pwd_success_info = false
           @$scope.pwd_info = 'the password is exist!'
-        else if result.message is '更新成功'
+        else if result is 'success'
+          console.log 'green success'
           @$scope.pwd_err_info = false
           @$scope.pwd_success_info = true
-          @$scope.pwd_info = 'update successful!'
-
+          @$scope.pwd_info = 'update password successful!'
+        else
+          console.log 'else'
+      .error (err) ->
+        console.log err
 
     saveProfile: ->
+      Promise.bind @
+      .then ->
+        @apiUser.SettingProfile
+          userid: @Global.userId
+          username: @$scope.Inusername
+          usergender: @$scope.Ingender
+          usercity: @$scope.Incity
+          userintroduction: @$scope.Inintro
+      .then (result) ->
+        console.log result
+        if result is 'success'
+          @$scope.profile_success_info = true
+          @$scope.profile_info = 'update profile successful!'
+        else
+          console.log 'else'
+      .error (err) ->
+        console.log err

@@ -24,6 +24,6 @@ angular.module 'tipstravel'
     @$scope.BaseURL = @Global.baseUrl
 
     @api_setting.classify_name = 'myTips'
-    @api_setting.user_id = 39
+    @api_setting.user_id = @Global.userId
     @api_setting.scope = @$scope
     @$scope.reddit = new @Reddit @api_setting
