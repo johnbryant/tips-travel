@@ -34,7 +34,9 @@
                                         .user_name {{ user.username }}
                                         br
                                         .user_intro {{ user.introduction }}
-                                    button.follow_btn.btn.btn-info(ng-click='dealFollowCheck()') follow
+                                    button.follow_btn.btn.btn-info(
+                                        ng-click='dealFollowCheck()'
+                                        ) follow
 
                     .modal-footer
                         button.btn.btn-primary(ng-click='goBuildHome()') Follow this {{ remain_follow_num }}

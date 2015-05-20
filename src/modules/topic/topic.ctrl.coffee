@@ -25,8 +25,8 @@ angular.module 'tipstravel'
     @$scope.text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod'
     @$scope.BaseUrl = @Global.baseUrl
     @topic_api_setting.classify_name = 'topicTips'
-    @topic_api_setting.user_id = 1
-    @topic_api_setting.topic_id = 1
+    @topic_api_setting.user_id = @Global.userId
+    @topic_api_setting.topic_id = 2
     @topic_api_setting.scope = @$scope
     @$scope.topic_reddit = new @TopicReddit @topic_api_setting
 

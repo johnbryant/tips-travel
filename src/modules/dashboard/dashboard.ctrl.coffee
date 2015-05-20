@@ -32,7 +32,7 @@ angular.module 'tipstravel'
     @$scope.onopen = false
     @$scope.chooseImgs = []
     @api_setting.classify_name = 'followingTips'
-    @api_setting.user_id = 2
+    @api_setting.user_id = @Global.userId
     @api_setting.scope = @$scope
     @$scope.reddit = new @Reddit @api_setting
     @$scope.content = null

@@ -8,44 +8,80 @@
                 h2.subtitle Account
                 .fields
                     p.row
-                        label(for='username')
-                            | Username
-                            span.required *
-                            | :
-                        input#first-name.field-large(type='text', name='first_name', required='required', aria-required='true')
+                        label(for='password') new password:
+                        input#password.field-medium(
+                            ng-model='Inpassword'
+                            type='password'
+                            )
                     p.row
-                        label(for='email') Email:
-                        input#email.field-large(type='email', name='email', placeholder='yourname@example.com')
-                    p.row
-                        label(for='password') Current Password:
-                        input#password.field-medium
-                    p.row
-                        label(for='password2') New Password:
-                        input#password2.field-medium
-                input.btn_save(type='submit', value='Save')
+                        label(for='password2') repeat password:
+                        input#password2.field-medium(
+                            type='password'
+                            )
+
+                    p.row.pwd_info(ng-class='{err_info:pwd_err_info,success_info:pwd_success_info}') {{ pwd_info }}
+                input.btn_save(
+                    type='submit'
+                    ng-click='saveAccount()'
+                    )
 
             fieldset
                 h2.subtitle Profile
                 .fields
-                    .row
-                        label(for='city') City:
-                        input#city.field-large(type='text', name='city')
+                    p.row
+                        label(for='username')
+                            | username
+                            span.required *
+                            | :
+                        input#first-name.field-large(
+                            ng-model= 'Inusername'
+                            value='john'
+                            )
                     .row
                         fieldset.radios
-                            label.gender Gender:
-                            p.row
-                                input#gender-male(type='radio', name='gender', value='male')
-                                label(for='gender-male') Male
-                                input#gender-female(type='radio', name='gender', value='female')
-                                label(for='gender-female') Female
-                input.btn_save(type='submit', value='Save')
+                            label.gender gender:
+                            input#gender-male(
+                                ng-model='Ingender'
+                                type='radio'
+                                name='gender'
+                                value='male'
+                                )
+                            label(for='gender-male') male
+                            input#gender-female(
+                                ng-model='Ingender'
+                                type='radio'
+                                name='gender'
+                                value='female'
+                                )
+                            label(for='gender-female') female
+                    .row
+                        label(for='city') city:
+                        input#city.field-large(
+                            type='text'
+                            name='city'
+                            ng-model='Incity'
+                            )
+                    .row
+                        label(for='city') introduction:
+                        textarea#city.field-large(
+                            ng-model='Inintro'
+                            type='text'
+                            max='244'
+                            rows='3'
+                            )
+                    p.row.profile_info(ng-class='{success_info:profile_success_info}') {{ profile_info }}
+
+                input.btn_save(
+                    ng-click='saveProfile()'
+                    type='submit'
+                    )
 
 
             fieldset
                 h2.subtitle Avatar
                 .fields
                     .row
-                        label(for='picture') Picture:
+                        label(for='picture') picture:
                         input#picture(type='file', name='picture')
                         p.instructions Maximum size of 700k. JPG, GIF or PNG.
                 input.btn_save(type='submit', value='Save')
