@@ -31,7 +31,10 @@ libs_obj =
     'angular-bootstrap': 'ui-bootstrap-tpls.min.js'
     'jquery': 'dist/jquery.min.js'
     'angular-cookies': 'angular-cookies.js'
-
+    'ng-file-upload': [
+      'ng-file-upload.js'
+      'ng-file-upload-shim.js'
+    ]
 
 getlibfiles = (libs) ->
   {base} = libs
