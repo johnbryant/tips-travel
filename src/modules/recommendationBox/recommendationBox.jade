@@ -27,18 +27,27 @@
                     .modal-body
                         .container-fluid
                             .row.col-md-12
-                                .col-md-3(ng-repeat='user in AllUser')
-                                    .single-user
+                                .col-md-3(
+                                    ng-repeat='user in AllUser'
+                                    )
+                                    .single-user(
+                                        ng-class='{single_user:!($index===AllUser.current_item),single_user_select:($index===current_item)}'
+                                        )
                                         a.user_avatar
                                             img(ng-src="{{ Baseurl }}{{user.avatar}}",alt='Avatar')
                                         .user_name {{ user.username }}
                                         br
                                         .user_intro {{ user.introduction }}
                                     button.follow_btn.btn.btn-info(
-                                        ng-click='dealFollowCheck()'
+                                        ng-click='dealFollowCheck($index,user.username)'
                                         ) follow
 
+
+
+
                     .modal-footer
+                        .selected_users(ng-repeat='name in selected_usernames')
+                            .selected_user {{ name }}
                         button.btn.btn-primary(ng-click='goBuildHome()') Follow this {{ remain_follow_num }}
 
 

@@ -34,3 +34,4 @@ angular.module 'tipstravel'
     @$scope.topic_reddit = new @TopicReddit @topic_api_setting
 
 
+
