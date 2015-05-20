@@ -18,4 +18,7 @@ angular.module 'tipstravel'
       @$state.go 'dashboard'
 
     goSearch: ->
+      @$state.go 'photo'
+
+    goTopic: ->
       @$state.go 'search'

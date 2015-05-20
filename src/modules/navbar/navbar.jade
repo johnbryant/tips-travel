@@ -1,25 +1,28 @@
-nav.navbar.navbar-default
-   .container-fluid
-      // Brand and toggle get grouped for better mobile display
-      .navbar-header
-         a.navbar-brand(href='') TipsTravel.
-         form.navbar-form.navbar-left(role='search')
-            .form-group
-               input.form-control(type='text', placeholder='Search')
-            button.btn.btn-default(type='submit') Go
-         ul.nav.navbar-nav.navbar-right
-            li.img_btn
-               a(href='')
-                  img(src='styles/img/navbar_dashboard.png')
-            li.img_btn
-               a(href='navbar.html')
-                  img(src='styles/img/navbar_search.png')
-            li.img_btn
-               a(href='')
-                  img(src='styles/img/navbar_person.png')
-            li.img_btn
-               a(href='')
-                  img(src='styles/img/navbar_setting.png')
+nav.navbar.navbar-default(
+ng-controller='navbarCtrl'
+)
+  .container-fluid
+    // Brand and toggle get grouped for better mobile display
+    .navbar-header
+      a.navbar-brand(href='') TipsTravel.
+      form.navbar-form.navbar-left(role='search')
+        .form-group
+          input.form-control(type='text', placeholder='Search' ng-model='tagName')
+        button.btn.btn-default(type='submit' ng-click='goSearch()') Go
+        button.btn.btn-default(ng-click='goTopic()') Topics
+      ul.nav.navbar-nav.navbar-right
+        li.img_btn
+          a(href='dashboard')
+            img(src='styles/img/navbar_dashboard.png')
+        li.img_btn
+          a(href='search')
+            img(src='styles/img/navbar_search.png')
+        li.img_btn
+          a(href='personPage')
+            img(src='styles/img/navbar_person.png')
+        li.img_btn
+          a(href='personSetting')
+            img(src='styles/img/navbar_setting.png')
 
 //Created by John on 2015/5/16.
 
