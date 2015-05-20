@@ -71,7 +71,7 @@ angular.module 'tipstravel'
     .state 'topic'
     ,
       parent: 'abslogin'
-      url: '/topic'
+      url: '/topic/:num'
       templateUrl: '/modules/topic/topic.html'
       controller: 'topicCtrl'
       data:

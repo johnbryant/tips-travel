@@ -1,6 +1,6 @@
 .topic
     .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
-    //ÄÚÈÝ¿ò¼Ü
+    //ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½
     .middle-sdo1
         .sdo2
             .topic_title
@@ -18,12 +18,12 @@
                             time.tips_time
                                 span {{ tip.message_date }}
                             a.tips_user_avatar
-                                img(ng-src='http://192.168.1.110:8080/tipstravel{{ tip.user.avatar }}',alt='Avatar')
+                                img(ng-src='{{baseUrl + tip.user.avatar }}',alt='Avatar')
                             .tips_icon.tips_icon-phone
                             .tips_label
                                 a.tips_username
                                     h5 {{ tip.user.username }}
-                                img.tips_image(ng-src='http://192.168.1.110:8080/tipstravel{{ tip.image }}')
+                                img.tips_image(ng-src='{{baseUrl + tip.image }}')
                                 p.tips_text {{ tip.context }}
                                 .tips_tag_container(
                                     ng-repeat='tag in tip.tag_message'

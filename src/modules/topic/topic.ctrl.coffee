@@ -6,6 +6,7 @@ angular.module 'tipstravel'
 
   inject: [
     '$scope'
+    '$state'
     'apiTopic'
     'Global'
     'TopicReddit'
@@ -21,12 +22,14 @@ angular.module 'tipstravel'
       scope: null
 
   init: ->
+    @$scope.baseUrl = @Global.baseUrl
     @$scope.name = 'Michael Corleone'
     @$scope.text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod'
+    num = @$state.params.num
     @$scope.BaseUrl = @Global.baseUrl
     @topic_api_setting.classify_name = 'topicTips'
     @topic_api_setting.user_id = @Global.userId
-    @topic_api_setting.topic_id = 2
+    @topic_api_setting.topic_id = num
     @topic_api_setting.scope = @$scope
     @$scope.topic_reddit = new @TopicReddit @topic_api_setting
 

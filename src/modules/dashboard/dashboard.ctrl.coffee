@@ -46,8 +46,7 @@ angular.module 'tipstravel'
 
         for img in @$scope.chooseImgs
           @Upload.upload
-            url : 'http://192.168.1.111:8080/tipstravel/message/upload'
-#            data:
+            url : @Global.baseUrl+'/message/upload'
             fields:
               userid: @Global.userId
               tags: tags
