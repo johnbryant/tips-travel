@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     'apiTips'
     'Global'
     'Reddit'
+    'Upload'
   ]
 
   data:
@@ -29,13 +30,29 @@ angular.module 'tipstravel'
     @$scope.isopened = false
     @$scope.onclose = true
     @$scope.onopen = false
-    
+    @$scope.chooseImgs = []
     @api_setting.classify_name = 'followingTips'
     @api_setting.user_id = 2
     @api_setting.scope = @$scope
     @$scope.reddit = new @Reddit @api_setting
+    @$scope.content = null
 
   methods:
+    upload: ->
+      if (@$scope.chooseImgs && @$scope.chooseImgs.length)
+        tags =  @$scope.content.split('#')
+        tags.shift()
+        content = tags.pop()
+
+        for img in @$scope.chooseImgs
+          @Upload.upload
+            url : 'http://192.168.1.111:8080/tipstravel/message/upload'
+#            data:
+            fields:
+              userid: @Global.userId
+              tags: tags
+              content: content
+            file: img
 
     opendNav: ->
       if !@$scope.isopened

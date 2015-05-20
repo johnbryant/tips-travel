@@ -32,10 +32,16 @@
               .new_tip_recommendation
                 | What's your travel tips?
               .text_panel
-                textarea.form-control(rows='3',placeholder='Input such as #China#Beach Wow it is so beautiful!')
+                textarea.form-control(rows='3',placeholder='Input such as #China#Beach Wow it is so beautiful!',ng-model='content')
               .new_tip_buttons
                 .btn_container
-                  .btn.new_tip_photo_btn
+                  .btn.new_tip_photo_btn(
+                  ngf-select=''
+                  accept="image/*"
+                  ngf-allow-dir='false'
+                  ngf-multiple='true'
+                  ng-model='chooseImgs'
+                  )
                     img(src='styles/img/photosign.png')
                     | picture
                 .btn_container
@@ -45,24 +51,28 @@
                     aria-expanded='false'
                     )
                       img(src='styles/img/poundsign2.png')
-                      | Topic
+                      | Tag
                       span.caret
                     ul.dropdown-menu(role='menu')
                       li
                         a.write_topic DIY topic
                       li.divider
                       li
-                        a topic1
+                        a 海洋
                       li
-                        a topic2
+                        a 沙漠
                       li
-                        a topic3
+                        a 河流
                       li
-                        a topic4
+                        a 远方
                       li
-                        a topic5
+                        a 彼岸
                 .btn_container.submit
-                  .btn.btn-primary.new_tip_submit Submit
+                  .btn.btn-primary.new_tip_submit(
+                    ng-click="upload()"
+                    )
+                    | Submit
+
 
 
 

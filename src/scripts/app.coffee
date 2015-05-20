@@ -4,4 +4,5 @@ angular.module 'tipstravel', [
   'restangular'
   'infinite-scroll'
   'ngCookies'
+  'ngFileUpload'
 ]
