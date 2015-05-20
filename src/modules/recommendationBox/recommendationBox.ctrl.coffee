@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     '$state'
     'apiUser'
     'Global'
+    '$timeout'
   ]
 
   init: ->
@@ -25,6 +26,9 @@ angular.module 'tipstravel'
     @$scope.welcome_show = true
     @$scope.selectFollow_show = false
     @$scope.goBuildHome_show = false
+#    @$scope.AllUser.current_item = null
+#    @$scope.AllUser.button_name = 'follow'
+    @$scope.selected_usernames = []
 
   methods:
     goFollowBox: ->
@@ -32,24 +36,43 @@ angular.module 'tipstravel'
       @$scope.selectFollow_show = true
       @$scope.goBuildHome_show = false
 
-    dealFollowCheck: ->
+    dealFollowCheck: (index,selected_username) ->
       if(@$scope.remain_follow_num > 0)
         @$scope.remain_follow_num--
+        @$scope.single_unselect = false
+        @$scope.single_select = true
+        @$scope.AllUser.current_item = index
+        @$scope.AllUser.button_name= 'unfollow'
+        @$scope.selected_usernames.push(selected_username)
+
 
     goBuildHome: ->
       @$scope.welcome_show = false
       @$scope.selectFollow_show = false
       @$scope.goBuildHome_show = true
+      @$timeout(@goDashboard,3000)
+
+    goDashboard: ->
+      @$state.go 'dashboard'
+
 
     getRecommendationUsers: ->
       console.log(@$scope.userid)
-      console.log(@$scope.baseurl)
       Promise.bind @
       .then ->
         @apiUser.FirstUserFollow
           user_id : @$scope.userid
       .then (result) ->
         @$scope.AllUser = result.data
-        console.log(result)
+        @$scope.AllUser.button_name = 'follow'
+        console.log(@$scope.AllUser)
       .error (err) ->
         console.error err
+
+#    sleep: (time) ->
+#      now = getData
+#      exitTime = now.getTime + time
+#      while(true)
+#        now = new Data()
+#        if(now.getTime > exitTime)
+#          return
