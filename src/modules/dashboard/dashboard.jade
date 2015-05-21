@@ -1,5 +1,5 @@
 .dashboard
-  .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
+  include ../navbar/navbar
   //导航栏
   #toggle.button-container(ng-click='opendNav()')
     span(ng-class='{top_active:topactive}')
