@@ -1,18 +1,18 @@
 .topic
     .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
-    //���ݿ��
+    //���ݿ��?
     .middle-sdo1
         .sdo2
             .topic_title
                 a.animated.flipInY Ocean
             .middle
                 .cl-mcont(
-                    infinite-scroll='topic_reddit.nextPage()'
-                    infinite-scroll-disabled='topic_reddit.busy'
-                    infinite-scroll-distance='0'
+                infinite-scroll='topic_reddit.nextPage()'
+                infinite-scroll-disabled='topic_reddit.busy'
+                infinite-scroll-distance='0'
                 )
                     ul.topic-timeline(
-                        ng-repeat='tip in topic_reddit.items'
+                    ng-repeat='tip in topic_reddit.items'
                     )
                         li(class='{{ tip.position }}')
                             time.tips_time
@@ -21,12 +21,13 @@
                                 img(ng-src='{{baseUrl + tip.user.avatar }}',alt='Avatar')
                             .tips_icon.tips_icon-phone
                             .tips_label
+                                //button.btn.btn-info
                                 a.tips_username
                                     h5 {{ tip.user.username }}
                                 img.tips_image(ng-src='{{baseUrl + tip.image }}')
                                 p.tips_text {{ tip.context }}
                                 .tips_tag_container(
-                                    ng-repeat='tag in tip.tag_message'
+                                ng-repeat='tag in tip.tag_message'
                                 )
                                     a.tips_tag # {{ tag.tm_tag.tag_name }}
                                 br
@@ -34,7 +35,7 @@
                                     span.glyphicon.glyphicon-heart-empty
                                     p {{ tip.like_count }}
                 .loading(
-                    ng-show='topic_reddit.busy'
+                ng-show='topic_reddit.busy'
                 )
                     h3
                         | {{ topic_reddit.busy_statu }}
