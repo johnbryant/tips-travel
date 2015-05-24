@@ -57,10 +57,10 @@
   .modal-selectFollow .modal-content {
     position: relative;
     background: url(../../styles/img/recommendation-background.png);
-    top: 150px;
+    top: 100px;
     left: -100px;
     width: 890px;
-    height: 540px;
+    height: 740px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
   }
@@ -92,7 +92,7 @@
   .modal-selectFollow .modal-content .modal-body {
     overflow-y: scroll;
     display: block;
-    height: 300px;
+    height: 500px;
   }
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row {
@@ -130,7 +130,7 @@
     height: 200px;
     width: 180px;
     border-radius: 5px;
-    opacity: 0.8;
+    opacity: 0.5;
     background: rgb(242,242,242);
   }
 
@@ -140,11 +140,12 @@
        left: -35px;
      }
 
-  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single_user_select .user_avatar {
-    position: relative;
-    top: 5px;
-    left: -35px;
-  }
+  //.modal-selectFollow .modal-content .modal-body .container-fluid .row .single_user_select .user_avatar {
+  //  position: relative;
+  //  top: 5px;
+  //  left: -35px;
+  //}
+
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_avatar > img {
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
@@ -153,13 +154,13 @@
     width: 64px;
   }
 
-  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single_user_select .user_avatar > img {
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    height: 64px;
-    width: 64px;
-  }
+  //.modal-selectFollow .modal-content .modal-body .container-fluid .row .single_user_select .user_avatar > img {
+  //  -webkit-border-radius: 50px;
+  //  -moz-border-radius: 50px;
+  //  border-radius: 50px;
+  //  height: 64px;
+  //  width: 64px;
+  //}
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .single-user .user_name {
     position: absolute;
@@ -170,14 +171,14 @@
 
   }
 
-  .modal-selectFollow .modal-content .modal-body .container-fluid .row .single_user_select .user_name {
-    position: absolute;
-    top: 28px;
-    left: 90px;
-    color: #a1a1a1;
-    font-weight: bolder;
-
-  }
+  //.modal-selectFollow .modal-content .modal-body .container-fluid .row .single_user_select .user_name {
+  //  position: absolute;
+  //  top: 28px;
+  //  left: 90px;
+  //  color: #a1a1a1;
+  //  font-weight: bolder;
+  //
+  //}
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 .single-user .user_intro {
     position: relative;
@@ -190,16 +191,16 @@
     overflow-y: scroll;
   }
 
-  .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 .single_user_select .user_intro {
-    position: relative;
-    top: 25px;
-    padding: 0 5px;
-    height: 100px;
-    font-size: 13px;
-    font-family: Consolas, Menlo, Monaco, monospace;
-    color: white;
-    overflow-y: scroll;
-  }
+  //.modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 .single_user_select .user_intro {
+  //  position: relative;
+  //  top: 25px;
+  //  padding: 0 5px;
+  //  height: 100px;
+  //  font-size: 13px;
+  //  font-family: Consolas, Menlo, Monaco, monospace;
+  //  color: white;
+  //  overflow-y: scroll;
+  //}
 
   .modal-selectFollow .modal-content .modal-body .container-fluid .row .col-md-3 .follow_btn{
     //position: relative;
@@ -213,9 +214,8 @@
     text-align: center;
   }
 
-  .selected_users {
+  .modal-selectFollow .modal-content .modal-footer .selected_users {
     width: 100%;
-    display: block;
   }
 
   .modal-selectFollow .modal-content .selected_user {
@@ -224,9 +224,22 @@
     margin: 5px 10px;
   }
 
-  .modal-selectFollow .modal-content .modal-footer > button {
+  .modal-selectFollow .modal-content .modal-footer .btn {
+    position: absolute;
+    top: 680px;
+    left: 40%;
     width: 200px;
+    display: block;
 
+  }
+
+  .modal-selectFollow .modal-content .modal-footer .forstudy > p {
+    display: inline;
+  }
+  .modal-selectFollow .modal-content .modal-footer .forstudy .forstudy-btn {
+    display: inline;
+    width: 100px;
+    height: 30px
   }
 
 
@@ -276,4 +289,9 @@
     width: 200px;
   }
 
+  .btn_success {
+    color:#fff;
+    background-color:#5cb85c;
+    border-color:#4cae4c
+  }
 }

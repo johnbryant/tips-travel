@@ -28,10 +28,10 @@
                         .container-fluid
                             .row.col-md-12
                                 .col-md-3(
-                                    ng-repeat='user in AllUser'
+                                    ng-repeat='user in AllUser track by $index'
                                     )
                                     .single-user(
-                                        ng-class='{single_user:!($index===AllUser.current_item),single_user_select:($index===current_item)}'
+                                        ng-class='{single_user:!($index === single_current_index)&&!user.single_info.isfollowed,single_user_select:($index===single_current_index)&&user.single_info.isfollowed}'
                                         )
                                         a.user_avatar
                                             img(ng-src="{{ Baseurl }}{{user.avatar}}",alt='Avatar')
@@ -39,16 +39,25 @@
                                         br
                                         .user_intro {{ user.introduction }}
                                     button.follow_btn.btn.btn-info(
-                                        ng-click='dealFollowCheck($index,user.username)'
-                                        ) follow
-
-
-
+                                        ng-click='user.single_info=dealFollowCheck($index,user.username,user.single_info.isfollowed)'
+                                        ng-bind='user.single_info.button_name'
+                                        )
 
                     .modal-footer
                         .selected_users(ng-repeat='name in selected_usernames')
                             .selected_user {{ name }}
-                        button.btn.btn-primary(ng-click='goBuildHome()') Follow this {{ remain_follow_num }}
+                        //.forstudy(ng-repeat='name in [21,22,23,24,25,26]')
+                        //    p(style='color:white') {{ name }}
+                        //    button.btn.forstudy-btn(
+                        //    value='change'
+                        //    name='change_name'
+                        //    )
+                        //    | change
+                        button.btn.btn-danger(
+                            ng-click='goBuildHome()'
+                            ng-class='{btn_success:is_select_all}'
+                            ng-bind = 'final_btn_word'
+                                    )
 
 
             .modal-buildHome(ng-if='goBuildHome_show')
