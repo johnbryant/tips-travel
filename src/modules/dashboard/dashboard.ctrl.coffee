@@ -10,6 +10,7 @@ angular.module 'tipstravel'
     'Global'
     'Reddit'
     'Upload'
+    '$timeout'
   ]
 
   data:

@@ -12,7 +12,8 @@ angular.module 'tipstravel'
   ]
 
   init: ->
-    @$scope.tips = "follow and share the interesting travel tips"
+    @$scope.webname = 'IPicYou'
+    @$scope.tips = "follow and share the interesting travel pictures"
     @$scope.topactive = false
     @$scope.middleactive = false
     @$scope.bottomactive = false

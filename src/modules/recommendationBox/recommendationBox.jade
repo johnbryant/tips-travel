@@ -31,7 +31,7 @@
                                     ng-repeat='user in AllUser track by $index'
                                     )
                                     .single-user(
-                                        ng-class='{single_user:!($index === single_current_index)&&!user.single_info.isfollowed,single_user_select:($index===single_current_index)&&user.single_info.isfollowed}'
+                                        ng-class='{single_user:!user.single_info.isfollowed,single_user_select:user.single_info.isfollowed}'
                                         )
                                         a.user_avatar
                                             img(ng-src="{{ Baseurl }}{{user.avatar}}",alt='Avatar')
@@ -39,7 +39,7 @@
                                         br
                                         .user_intro {{ user.introduction }}
                                     button.follow_btn.btn.btn-info(
-                                        ng-click='user.single_info=dealFollowCheck($index,user.username,user.single_info.isfollowed)'
+                                        ng-click='user.single_info=dealFollowCheck($index,user.username,user.single_info.isfollowed,user.user_id)'
                                         ng-bind='user.single_info.button_name'
                                         )
 

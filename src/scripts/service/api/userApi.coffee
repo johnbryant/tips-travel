@@ -110,7 +110,22 @@ angular.module 'tipstravel'
         , (res) ->
           reject res
 
+    sendFollowUser: (user_data) ->
+      {
+        user_id
+        all_follow_users
+      } = user_data
+      meta = apiUserBase.one 'user'
+      .all 'nachrecommendation'
 
+      new Promise (resolve, reject) ->
+        meta.post
+          userid: user_id
+          allFollowUsers: all_follow_users
+        .then (result) ->
+          resolve result
+        , (res) ->
+          reject res
 
 
 

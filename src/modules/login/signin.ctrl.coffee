@@ -13,7 +13,7 @@ angular.module 'tipstravel'
   ]
 
   init: ->
-    @$scope.hello = "follow and share the interesting travel tips"
+    @$scope.hello = "follow and share the interesting travel pictures"
     @$scope.topactive = false
     @$scope.middleactive = false
     @$scope.bottomactive = false
