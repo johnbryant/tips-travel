@@ -74,8 +74,8 @@ angular.module 'tipstravel'
       url: '/topic/:num'
       templateUrl: '/modules/topic/topic.html'
       controller: 'topicCtrl'
-      data:
-        role: 'Guest'
+#      data:
+#        role: 'Guest'
 
     .state 'photo'
     ,

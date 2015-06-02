@@ -83,7 +83,7 @@ angular.module 'tipstravel'
 
       .then (result) ->
         if _.isEmpty result.data
-          @busy_statu = 'No mor tips!'
+          @busy_statu = 'No more tips!'
           @scope.$apply()
           return
 

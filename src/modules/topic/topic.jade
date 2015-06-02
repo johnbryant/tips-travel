@@ -1,7 +1,7 @@
 .topic
     .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
     //ï¿½ï¿½ï¿½Ý¿ï¿½ï¿?
-    .middle-sdo1
+    .middle-sdo1.animated.slideInLeft
         .sdo2
             .topic_title
                 a.animated.flipInY Ocean
@@ -24,6 +24,11 @@
                                 //button.btn.btn-info
                                 a.tips_username
                                     h5 {{ tip.user.username }}
+                                button.btn.btn-info.btn_follow(
+                                    ng-click='follow_user(tip.user.user_id,tip.user.isfollowed)'
+                                    ng-bind='btn_word'
+
+                                    )
                                 img.tips_image(ng-src='{{baseUrl + tip.image }}')
                                 p.tips_text {{ tip.context }}
                                 .tips_tag_container(

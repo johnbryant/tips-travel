@@ -82,7 +82,8 @@
   .topic-timeline .topic_right .tips_time {
     position: relative;
     float: left;
-    left: -90px;
+    left: -170px;
+    top: 15px;
     display: block;
     //width: 10%;
   }
@@ -90,7 +91,8 @@
   .topic-timeline .topic_left .tips_time {
     position: relative;
     display: block;
-    right: -95px;
+    right: -180px;
+    top: 5px;
     float: right;
   }
 
@@ -98,7 +100,7 @@
     position: relative;
     display: block;
     float: left;
-    left: -150px;
+    left: -220px;
     top: 60px
   }
 
@@ -106,7 +108,7 @@
     position: relative;
     display: block;
     float: right;
-    right: -160px;
+    right: -220px;
     top: 60px;
   }
 
@@ -224,7 +226,7 @@
     top: 20px;
   }
 
-  .topic-timeline .topic_right .tips_username {
+  .topic-timeline .topic_right .tips_label .tips_username {
     display: block;
     position: relative;
     left: -100px;
@@ -237,7 +239,7 @@
     cursor: pointer
   }
 
-  .topic-timeline .topic_left .tips_username {
+  .topic-timeline .topic_left .tips_label .tips_username {
     display: block;
     position: relative;
     left: 20px;
@@ -251,8 +253,19 @@
     cursor: pointer
   }
 
+  .topic-timeline .topic_right .tips_label .btn_follow {
+    position: relative;
+    left: 130px;
+    top: -15px;
+  }
 
-  .topic-timeline .topic_right .tips_image {
+  .topic-timeline .topic_left .tips_label .btn_follow {
+    position: relative;
+    left: 325px;
+    top: -15px;
+  }
+
+  .topic-timeline .topic_right .tips_label .tips_image {
     position: relative;
     top: -10px;
     display: block;
@@ -260,7 +273,7 @@
     height: 300px;
   }
 
-  .topic-timeline .topic_left .tips_image {
+  .topic-timeline .topic_left .tips_label .tips_image {
     position: relative;
     display: block;
     top: -10px;
@@ -268,7 +281,7 @@
     height: 300px;
   }
 
-  .topic-timeline .topic_right .tips_text {
+  .topic-timeline .topic_right .tips_label .tips_text {
     padding: 10px;
     display: block;
     font-size: 15px;
@@ -276,7 +289,7 @@
     color: #000
   }
 
-  .topic-timeline .topic_left .tips_text {
+  .topic-timeline .topic_left .tips_label .tips_text {
     padding: 10px;
     display: block;
     font-size: 15px;
@@ -328,6 +341,12 @@
 
   .topic-timeline .topic_left .tips_like > p {
     margin-left: 15px;
+  }
+
+  .btn_success {
+      color:#fff;
+      background-color:#5cb85c;
+      border-color:#4cae4c
   }
 
 

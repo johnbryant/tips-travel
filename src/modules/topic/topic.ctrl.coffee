@@ -8,6 +8,7 @@ angular.module 'tipstravel'
     '$scope'
     '$state'
     'apiTopic'
+    'apiUser'
     'Global'
     'TopicReddit'
   ]
@@ -32,6 +33,30 @@ angular.module 'tipstravel'
     @topic_api_setting.topic_id = num
     @topic_api_setting.scope = @$scope
     @$scope.topic_reddit = new @TopicReddit @topic_api_setting
+    @$scope.btn_word = 'follow'
+    @$scope.userids = []
+
+  methods:
+    follow_user: (follow_userid,isfollowed) ->
+      if isfollowed is false
+        while @$scope.userids isnt null
+          @$scope.userids.pop
+        @$scope.userids.push(follow_userid)
+        console.log @$scope.userids
+        Promise.bind @
+        .then ->
+          @apiUser.sendFollowUser
+            user_id: @Global.userId
+            all_follow_users: @$scope.userids
+        .then (result) ->
+          console.log result
+          if result is 'success'
+            @$scope.btn_word = 'unfollow'
+        .error (err) ->
+          console.error err
+
+
+
 
 
 
