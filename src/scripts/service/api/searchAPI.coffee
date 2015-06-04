@@ -15,14 +15,13 @@ angular.module 'tipstravel'
 .factory 'apiSearch', [
   'apiSearchBase'
   (apiSearchBase) ->
-    search: (tips_data) ->
+    search: (getInfo) ->
       {
-       tagname
-       startindex
-      } =tips_data
-      meta = apiSearchBase.one'tag'.all "search"
-
-
+      tagname
+      startindex
+      } = getInfo
+      meta = apiTopicBase.one 'tag'
+      .all 'search'
 
     new Promise (resolve, reject) ->
     meta.post
