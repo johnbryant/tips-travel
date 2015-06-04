@@ -6,7 +6,10 @@ angular.module 'tipstravel'
 
   inject: [
     '$scope'
+
   ]
 
   init: ->
     @$scope.tips = "follow and share the interesting travel tips"
+
+

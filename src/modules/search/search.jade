@@ -1,17 +1,15 @@
 .search
   include ../navbar/navbar
-  .row
-    .col-lg-6
-      .input-group
-        input.form-control(type='text', placeholder='Search for...', style='height:30px; width:270px')
-      // /input-group
-    // /.col-lg-6
-  // /.row
-  section
-    #container_buttons
-      p
-        a.a_demo_four(href='photo.html')
-          | Go!
+
+    .row
+      .col-lg-6
+        .input-group
+          input.form-control(for="tagname" type='text', placeholder='Search for...', style='height:30px; width:270px')
+    section
+      #container_buttons
+        p
+          button.a_demo_four(type='submit' ng-click='search()') Go!
+        p {{ search_errorInfo }}
   .wrapper
     h3
       a(href='photo.html')
