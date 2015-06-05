@@ -116,7 +116,7 @@ angular.module 'tipstravel'
         all_follow_users
       } = user_data
       meta = apiUserBase.one 'user'
-      .all 'nachrecommendation'
+      .all 'recommendation'
 
       new Promise (resolve, reject) ->
         meta.post

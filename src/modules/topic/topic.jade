@@ -37,8 +37,13 @@
                                     a.tips_tag # {{ tag.tm_tag.tag_name }}
                                 br
                                 a.tips_like
-                                    span.glyphicon.glyphicon-heart-empty
-                                    p {{ tip.like_count }}
+                                    button.tips_like_btn(
+                                        ng-click='like_tips(tip.message_id,tip.like_count)'
+                                        )
+                                        img.like_icon(src='{{ like_btn_url }}')
+                                    p(
+                                        ng-bind='tip.like_count'
+                                        )
                 .loading(
                 ng-show='topic_reddit.busy'
                 )

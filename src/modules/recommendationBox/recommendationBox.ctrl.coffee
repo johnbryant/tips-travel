@@ -45,7 +45,7 @@ angular.module 'tipstravel'
     }
 #    @$scope.AllUser.current_item = null
 #    @$scope.AllUser.button_name = 'follow'
-
+    @$scope.dismiss = null
 
   methods:
     goFollowBox: ->
@@ -115,11 +115,12 @@ angular.module 'tipstravel'
             console.log @$scope.allFollowUsers
         .then (result) ->
           console.log result
-          if result is 'success'
+          if result.message is 'success'
             @$scope.welcome_show = false
             @$scope.selectFollow_show = false
             @$scope.goBuildHome_show = true
             @$scope.$$phase
+            @$scope.dismiss = 'modal'
             @$timeout(@goDashboard,3000)
 
         .error (err) ->
@@ -153,6 +154,7 @@ angular.module 'tipstravel'
         console.error err
 
     goDashboard: ->
+
       @$state.go 'dashboard'
 
 

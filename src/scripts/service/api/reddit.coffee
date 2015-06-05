@@ -105,6 +105,7 @@ angular.module 'tipstravel'
           userid: "1"
 
       .then (result) ->
+        console.log result.data
         if _.isEmpty result.data
           @busy_statu = 'No more tips!'
           @scope.$apply()

@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     '$state'
     'apiTopic'
     'apiUser'
+    'apiLikes'
     'Global'
     'TopicReddit'
   ]
@@ -36,6 +37,8 @@ angular.module 'tipstravel'
     @$scope.btn_word = 'follow'
     @$scope.userids = []
 
+    @$scope.like_btn_url = 'styles/img/unlike_bkg.png'
+
   methods:
     follow_user: (follow_userid,isfollowed) ->
       if isfollowed is false
@@ -55,6 +58,27 @@ angular.module 'tipstravel'
         .error (err) ->
           console.error err
 
+    like_tips: (messageid,like_count) ->
+      Promise.bind @
+      .then ->
+        @apiLikes.likeTips
+          message_id: messageid
+          user_id: @Global.userId
+      .then (result) ->
+        console.log like_count
+        console.log result
+        if result is 'likesuccess'
+          @$scope.like_btn_url = 'styles/img/like_bkg.png'
+          like_count++
+          console.log like_count
+          return like_count
+        else if result is 'dislikesuccess'
+          @$scope.like_btn_url = 'styles/img/unlike_bkg.png'
+          like_count--
+          console.log like_count
+          return like_count
+      .error (err) ->
+        console.error err
 
 
 
