@@ -55,16 +55,17 @@ angular.module 'tipstravel'
           password: @$scope.Inpassword
       .then (result) ->
         console.log result
-#        @$scope.errorInfo = if result.message is'ÓÊÏäÒÑ×¢²á' then 'The email has been registered!' else 'The username has been registered!'
+#        @$scope.errorInfo = if result.message is'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½' then 'The email has been registered!' else 'The username has been registered!'
 
-        if result.message is 'ÓÊÏäÒÑ×¢²á'
+        if result.message is 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½'
           @$scope.errorInfo = 'The email has been registered!'
-        else if result.message is 'ÓÃ»§ÃûÒÑ×¢²á'
+        else if result.message is 'ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½'
           @$scope.errorInfo = 'The username has been registered!'
         else
           @$scope.errorInfo = null
           @Global.userId = result.user_id
           @Global.userName = result.username
+          @AUTH.login @Global.userId
           @$state.go 'recommendationBox'
       .error (err) ->
         console.error err
