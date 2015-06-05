@@ -29,13 +29,13 @@ angular.module 'tipstravel'
       .then ->
         @apiSearch.search
           tagname: @$scope.tagname
-          startindex:@scope.start
+          startindex:@$scope.start
 
       .then (result) ->
         console.log result
-        #        @$scope.errorInfo = if result.message is'ÓÊÏäÒÑ×¢²á' then 'The email has been registered!' else 'The username has been registered!'
+        #        @$scope.errorInfo = if result.message is'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½' then 'The email has been registered!' else 'The username has been registered!'
 
-        if result.message is '·µ»ØÊ§°Ü'
+        if result.message is 'fail'
           @$scope.errorInfo = 'There is no such Tag!'
         else
           @$scope.errorInfo = null
