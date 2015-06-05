@@ -4,26 +4,26 @@
     .row
       .col-lg-6
         .input-group
-          input.form-control(for="tagname" type='text', placeholder='Search for...', style='height:30px; width:270px')
+          input.form-control(id="tagname" type='text', placeholder='Search for...', style='height:30px; width:270px')
     section
       #container_buttons
         p
           button.a_demo_four(type='submit' ng-click='search()') Go!
-        p {{ search_errorInfo }}
+        p {{errorInfo }}
 
   .wrapper
     h3
-      a(href='photo.html')
+      a(href='photo')
         span.label.label-.label-default Cities
-      a(href='photo.html')
+      a(href='photo')
         span.label.label-primary Ocean
-      a(href='photo.html')
+      a(href='photo')
         span.label.label-success Nature
-      a(href='photo.html')
+      a(href='photo')
         span.label.label-info Mountains
-      a(href='photo.html')
+      a(href='photo')
         span.label.label-warning HongKong
-      a(href='photo.html')
+      a(href='photo')
         span.label.label-danger Architecture
   .wrapper2
     .box1
