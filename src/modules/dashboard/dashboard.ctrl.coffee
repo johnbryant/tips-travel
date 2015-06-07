@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     'apiTips'
     'Global'
     'Reddit'
+    'apiLikes'
     'Upload'
     '$timeout'
   ]
@@ -67,3 +68,26 @@ angular.module 'tipstravel'
         @$scope.bottomactive = false
         @$scope.isopened = false
         @$scope.onopen = false
+
+    like_tips: (index,messageid,like_count) ->
+#      console.log "click1"
+      Promise.bind @
+      .then ->
+        @apiLikes.likeTips
+          message_id: messageid
+          user_id: @Global.userId
+      .then (result) ->
+        console.log like_count
+        console.log result
+        if result is 'likesuccess'
+          @$scope.reddit.items[index].like_return.like_count++
+          @$scope.reddit.items[index].like_return.like_btn_url = 'styles/img/like_bkg.png'
+          console.log @$scope.reddit.items[index].like_return.like_count
+          console.log @$scope.reddit.items[index].isliked
+        else if result is 'dislikesuccess'
+          @$scope.reddit.items[index].like_return.like_count--
+          @$scope.reddit.items[index].like_return.like_btn_url = 'styles/img/unlike_bkg.png'
+          console.log @$scope.reddit.items[index].like_return.like_count
+          console.log @$scope.reddit.items[index].isliked
+      .error (err) ->
+        console.error err

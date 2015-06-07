@@ -102,8 +102,15 @@
                   a.tips_tag( 
                   ng-repeat= "tag in tip.tag_message" 
                   )       # {{tag.tm_tag.tag_name}}
-                  .blank_content
-                  .likes
+                  br
+                  a.tips_like
+                    button.tips_like_btn(
+                    ng-click='like_tips($index,tip.message_id,tip.like_count)'
+                    )
+                      img.like_icon(src='{{ tip.like_return.like_btn_url }}')
+                    p(
+                    ng-bind='tip.like_return.like_count'
+                    )
           .loading(
           ng-show='reddit.busy'
           )

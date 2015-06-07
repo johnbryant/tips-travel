@@ -71,13 +71,19 @@ angular.module 'tipstravel'
 #      console.log isfollowed
 
       # if has not select 5 users
+
       if(@$scope.remain_follow_num > 0 and isfollowed is false)
         @$scope.remain_follow_num--
 #        if(@$scope.selected_usernames.indexOf(selected_username) isnt -1)
         @$scope.selected_usernames.push(selected_username)
 #        if(@$scope.tempallFollowUsers.indexOf(userid) isnt -1)
         @$scope.singleFollowUser.user_id = userid
-        @$scope.allFollowUsers.push(@$scope.singleFollowUser)
+        sfu =
+          user_id: userid
+#        console.log JSON.stringify @$scope.singleFollowUser
+#        console.log JSON.stringify @$scope.allFollowUsers
+        @$scope.allFollowUsers.push sfu
+#        console.log JSON.stringify @$scope.allFollowUsers
 #          @$scope.tempallFollowUsers.push(userid)
         @$scope.single_current_index = index
         @$scope.temp_single.isfollowed = true
@@ -90,6 +96,7 @@ angular.module 'tipstravel'
         console.log @$scope.remain_follow_num
         if(@$scope.remain_follow_num < 1)
           @$scope.is_select_all = true
+
         return @$scope.temp_single
       else if(isfollowed is true and @$scope.remain_follow_num <5)
         @$scope.remain_follow_num++
@@ -115,7 +122,7 @@ angular.module 'tipstravel'
             console.log @$scope.allFollowUsers
         .then (result) ->
           console.log result
-          if result.message is 'success'
+          if result is 'success'
             @$scope.welcome_show = false
             @$scope.selectFollow_show = false
             @$scope.goBuildHome_show = true

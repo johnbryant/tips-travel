@@ -4,6 +4,7 @@ angular.module 'tipstravel'
   'apiTips'
   (
     apiTips
+    Global
   ) ->
     getApiFunction = (classify_name) ->
       switch classify_name
@@ -32,10 +33,18 @@ angular.module 'tipstravel'
           userID: @arg_user_id
 
       .then (result) ->
+        console.log result.data
         if _.isEmpty result.data
           @busy_statu = 'No more tips!'
           @scope.$apply()
           return
+
+        for tip in result.data
+        tip.like_return = {
+          like_count: tip.like_count
+          like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
+        }
+        console.log result.data
         @items =_.union @items, result.data
         @busy = false
         @arg_start += result.data.length
@@ -79,10 +88,10 @@ angular.module 'tipstravel'
         @api_func
           startindex: @arg_start
           topicid: "1"
-          userid: "1"
+          userid: @arg_user_id
 
       .then (result) ->
-        console.log result.data
+
         if _.isEmpty result.data
           @busy_statu = 'No more tips!'
           @scope.$apply()
@@ -96,6 +105,15 @@ angular.module 'tipstravel'
           else
             result.data[_i].position = 'topic_left'
           _i++
+
+        for tip in result.data
+          tip.like_return = {
+            like_count: tip.like_count
+            like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
+          }
+          console.log tip.isliked
+
+        console.log result.data
         @items =_.union @items, result.data
         @busy = false
         @arg_start += result.data.length
