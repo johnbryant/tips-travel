@@ -18,7 +18,6 @@ angular.module 'tipstravel'
     search: (getInfo) ->
       {
       tagname
-      startindex
       } = getInfo
       meta = apiTopicBase.one 'tag'
       .all 'search'
@@ -26,7 +25,6 @@ angular.module 'tipstravel'
     new Promise (resolve, reject) ->
     meta.post
       tagname:tagname
-      startindex:startindex
      .then (result) ->
       resolve  result
      , (res) ->

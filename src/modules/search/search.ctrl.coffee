@@ -29,7 +29,7 @@ angular.module 'tipstravel'
       .then ->
         @apiSearch.search
           tagname: @$scope.tagname
-          startindex:@$scope.start
+
 
       .then (result) ->
         console.log result
