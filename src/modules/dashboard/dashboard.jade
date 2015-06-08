@@ -106,7 +106,13 @@
                   a.tips_tag( 
                   ng-repeat= "tag in tip.tag_message" 
                   )       # {{tag.tm_tag.tag_name}}
-                  br
+                  a.tips_tag(
+                  target="_blank"
+                  href="{{BaseURL}}{{tip.image}}"
+                  download
+                  ) 【下载原图】
+                  .blank_content
+                  .likes
                   a.tips_like
                     button.tips_like_btn(
                     ng-click='like_tips($index,tip.message_id,tip.like_count)'
@@ -115,6 +121,7 @@
                     p(
                     ng-bind='tip.like_return.like_count'
                     )
+
           .loading(
           ng-show='reddit.busy'
           )

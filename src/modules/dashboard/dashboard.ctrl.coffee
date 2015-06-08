@@ -38,6 +38,8 @@ angular.module 'tipstravel'
     @api_setting.user_id = @Global.userId
     @api_setting.scope = @$scope
     @$scope.reddit = new @Reddit @api_setting
+
+
     @$scope.content = null
 
   methods:
