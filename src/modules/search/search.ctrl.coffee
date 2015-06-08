@@ -12,13 +12,13 @@ angular.module 'tipstravel'
   ]
   data:
     search_api_setting:
-      startindex: 0
-      userid: null
+     startindex: 0
+     user_id: null
 
   init: ->
     @$scope.test = "Search"
     @$scope.errorInfo = null
-    @search_api_setting.userid = @Global.userId
+    @search_api_setting.user_id = @Global.userId
     console.log 'good'
 
   methods:
@@ -31,7 +31,7 @@ angular.module 'tipstravel'
       .then ->
         @apiSearch.search
           tagname: @$scope.tagname
-        console.log @$scope.tagname
+
       .then (result) ->
         console.log result
 

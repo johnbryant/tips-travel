@@ -17,7 +17,7 @@ angular.module 'tipstravel'
    photo_api_setting:
         start: 0
         count:20
-        userid: null
+        user_id: null
         scope: null
 
 

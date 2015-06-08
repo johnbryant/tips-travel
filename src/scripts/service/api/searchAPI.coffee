@@ -19,7 +19,7 @@ angular.module 'tipstravel'
       {
         tagname
         startindex
-        userid
+        user_id
       } = getInfo
       meta = apiSearchBase.one 'tag'
       .all 'search'
@@ -28,7 +28,7 @@ angular.module 'tipstravel'
         meta.post
           tagname:tagname
           startindex:startindex
-          userid:userid
+          userid:user_id
       .then (result) ->
         resolve  result
       , (res) ->
