@@ -47,6 +47,12 @@ angular.module 'tipstravel'
           tip.follow_btn_content = if tip.user.isfollowed is "true" then 'unfollow' else 'follow'
         console.log result.data
 
+        @items =_.union @items, result.data
+        @busy = false
+        @arg_start += result.data.length
+        @scope.$apply()
+      .catch (err) ->
+        console.error err
 
     Reddit
 

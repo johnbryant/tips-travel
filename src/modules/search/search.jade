@@ -4,17 +4,21 @@
     .row
       .col-lg-6
         .input-group
-          input.form-control(ng-model="tagname" type='text', placeholder='Search for...', style='height:30px; width:270px')
+          input.form-control(ng-model="tagname",type='text',placeholder='Search for...', style='height:30px; width:270px')
     section
       #container_buttons
         p
-          button.a_demo_four(type='submit' ng-click='search()') Go!
+          button.a_demo_four(
+            ng-click='searchFor()'
+            ) {{ test }}
         p {{errorInfo }}
 
   .wrapper
     h3
-
-      span.label.label-.label-default(ng-model='tagname', ng-click='search()') Cities
+      button.btn-success(
+      ng-click='searchFor()'
+      ) Test
+      button.label.label-.label-default(ng-model='tagname', ng-click='searchTest()') Cities
       span.label.label-primary(ng-model='tagname', ng-click='search()') Ocean
       span.label.label-success(ng-model='tagname', ng-click='search()') Nature
       span.label.label-info(ng-model='tagname', ng-click='search()') Mountains

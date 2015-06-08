@@ -9,29 +9,24 @@ angular.module 'tipstravel'
     '$state'
     'apiSearch'
     'Global'
-
   ]
 
-  data:
-    api_setting:
-      start: 0
-
   init: ->
-    @$scope.tips = "follow and share the interesting travel tips"
+    @$scope.test = "Search"
     @$scope.errorInfo = null
+    console.log 'good'
 
-  method:
+  methods:
     goTopic: (num) ->
       @$state.go 'topic', num:num
 
-    search: ->
-
+    searchFor: ->
+      console.log 'search'
       Promise.bind @
       .then ->
         @apiSearch.search
           tagname: @$scope.tagname
-
-
+        console.log @$scope.tagname
       .then (result) ->
         console.log result
 
@@ -42,6 +37,9 @@ angular.module 'tipstravel'
           @$state.go 'photo'
       .error (err) ->
         console.error err
+
+    searchTest: ->
+      console.log 'tet'
 
 
 
