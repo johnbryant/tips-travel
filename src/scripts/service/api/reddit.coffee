@@ -145,7 +145,7 @@ angular.module 'tipstravel'
       @busy = false
       @arg_start =photo_api_setting.start
       @arg_count = photo_api_setting.count if photo_api_setting.count?
-      @arg_user_id =photo_api_setting.user_id if photo_api_setting.user_id
+      @arg_user_id =photo_api_setting.userid if photo_api_setting.userid
       @busy_statu = 'Loading...'
 
     PhotoReddit::nextPage = ->

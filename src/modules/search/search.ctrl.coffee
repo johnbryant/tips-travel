@@ -10,10 +10,15 @@ angular.module 'tipstravel'
     'apiSearch'
     'Global'
   ]
+  data:
+    search_api_setting:
+      startindex: 0
+      userid: null
 
   init: ->
     @$scope.test = "Search"
     @$scope.errorInfo = null
+    @search_api_setting.userid = @Global.userId
     console.log 'good'
 
   methods:
@@ -38,8 +43,7 @@ angular.module 'tipstravel'
       .error (err) ->
         console.error err
 
-    searchTest: ->
-      console.log 'tet'
+
 
 
 
