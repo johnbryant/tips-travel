@@ -15,6 +15,7 @@ angular.module 'tipstravel'
 .factory 'apiUser', [
   'apiUserBase'
   (apiUserBase) ->
+    # user login
     login: (login_data) ->
       {
       email
@@ -33,6 +34,7 @@ angular.module 'tipstravel'
         , (res) ->
           reject res
 
+    # user register
     register: (register_data) ->
       {
       email
@@ -52,7 +54,7 @@ angular.module 'tipstravel'
         , (res) ->
           reject res
 
-
+    # get the recommendation users list
     FirstUserFollow: (test_data) ->
       {
         user_id
@@ -68,7 +70,7 @@ angular.module 'tipstravel'
         , (res) ->
           reject res
 
-
+    # set user's account
     SettingAccount: (account_data) ->
       {
         userid
@@ -86,7 +88,7 @@ angular.module 'tipstravel'
         , (res) ->
           reject res
 
-
+    # set user's profile
     SettingProfile: (profile_data) ->
       {
         userid
@@ -110,6 +112,7 @@ angular.module 'tipstravel'
         , (res) ->
           reject res
 
+    # recommendation follow users
     sendFollowUser: (user_data) ->
       {
         user_id
@@ -127,7 +130,23 @@ angular.module 'tipstravel'
         , (res) ->
           reject res
 
+    # follow user in dashboard or topic or photo wall
+    dealFollowUser: (user_data) ->
+      {
+        following_id
+        user_id
+      } = user_data
+      meta = apiUserBase.one 'user'
+      .all 'follow'
 
+      new Promise (resolve, reject) ->
+        meta.post
+          followingid: following_id
+          userid: user_id
+        .then (result) ->
+          resolve result
+        , (res) ->
+          reject res
 
 ]
 

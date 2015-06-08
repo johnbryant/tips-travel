@@ -35,7 +35,7 @@ angular.module 'tipstravel'
     @topic_api_setting.scope = @$scope
     @$scope.topic_reddit = new @TopicReddit @topic_api_setting
     @$scope.btn_word = 'follow'
-    @$scope.userids = []
+    @$scope.topic_name = @choose_topicname(num)
 
 
 
@@ -44,26 +44,41 @@ angular.module 'tipstravel'
 
 
   methods:
-    follow_user: (follow_userid,isfollowed) ->
+    # follow users
+    follow_user: (index,follow_userid,isfollowed) ->
       console.log follow_userid
       console.log isfollowed
-      if isfollowed is false
-        while @$scope.userids isnt null
-          @$scope.userids.pop
-        @$scope.userids.push(follow_userid)
-        console.log @$scope.userids
+      if isfollowed is "false"
+        console.log 'begin follow'
         Promise.bind @
         .then ->
-          @apiUser.sendFollowUser
+          @apiUser.dealFollowUser
+            following_id: follow_userid
             user_id: @Global.userId
-            all_follow_users: @$scope.userids
         .then (result) ->
           console.log result
-          if result is 'success'
-            @$scope.btn_word = 'unfollow'
+          if result is 'followsuccess'
+            @$scope.topic_reddit.items[index].follow_return.follow_btn_content = 'unfollow'
+            @$scope.topic_reddit.items[index].user.isfollowed = "true"
+        .error (err) ->
+          console.error err
+      else if isfollowed is 'true'
+        console.log 'begin unfollow'
+        Promise.bind @
+        .then ->
+          @apiUser.dealFollowUser
+            following_id: follow_userid
+            user_id: @Global.userId
+        .then (result) ->
+          console.log result
+          if result is 'unfollowsuccess'
+            @$scope.topic_reddit.items[index].follow_return.follow_btn_content = 'follow'
+            @$scope.topic_reddit.items[index].user.isfollowed = "false"
         .error (err) ->
           console.error err
 
+
+    # like tips
     like_tips: (index,messageid,like_count) ->
 #      console.log "click1"
       Promise.bind @
@@ -87,6 +102,17 @@ angular.module 'tipstravel'
       .error (err) ->
         console.error err
 
+    choose_topicname: (index) ->
+      switch index
+        when '1' then return 'Trip in Europe'
+        when '2' then return 'Cityscape'
+        when '3' then return 'Sun and Sandybeach'
+        when '4' then return 'Natural Landscape'
+        when '5' then return 'View to Asia'
+        when '6' then return 'Beyond the Ocean'
+        when '7' then return 'Glacier World'
+        when '8' then return 'Charming China'
+        else return 'Suck my Dick'
 
 
 

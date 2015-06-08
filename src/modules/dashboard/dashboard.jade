@@ -97,6 +97,10 @@
                 .tips_label
                   a.tips_username
                     h5 {{tip.user.username}}
+                  button.btn.btn-info.btn_follow(
+                    ng-click='follow_user($index,tip.user.user_id,tip.user.isfollowed)'
+                    ng-bind='tip.follow_btn_content'
+                    )
                   img.tips_image(ng-src="{{BaseURL}}{{tip.image}}")
                   p.tips_text {{tip.context}}
                   a.tips_tag( 

@@ -44,6 +44,7 @@ angular.module 'tipstravel'
             like_count: tip.like_count
             like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
           }
+          tip.follow_btn_content = if tip.user.isfollowed is "true" then 'unfollow' else 'follow'
         console.log result.data
 
         _len = result.data.length
@@ -99,6 +100,7 @@ angular.module 'tipstravel'
       @arg_start = topic_api_setting.start
       @arg_count = topic_api_setting.count if topic_api_setting.count?
       @arg_user_id = topic_api_setting.user_id if topic_api_setting.user_id
+      @arg_topic_id = topic_api_setting.topic_id
       @busy_statu = 'Loading...'
 
     TopicReddit::nextPage = ->
@@ -110,7 +112,7 @@ angular.module 'tipstravel'
       .then ->
         @api_func
           startindex: @arg_start
-          topicid: "1"
+          topicid: @arg_topic_id
           userid: @arg_user_id
 
       .then (result) ->
@@ -135,7 +137,10 @@ angular.module 'tipstravel'
             like_count: tip.like_count
             like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
           }
-
+          tip.follow_return = {
+            isfollowed: tip.user.isfollowed
+            follow_btn_content: if tip.user.isfollowed is "true" then 'unfollow' else 'follow'
+          }
         console.log result.data
 
 
