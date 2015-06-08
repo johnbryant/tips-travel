@@ -40,10 +40,10 @@ angular.module 'tipstravel'
           return
 
         for tip in result.data
-        tip.like_return = {
-          like_count: tip.like_count
-          like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
-        }
+          tip.like_return = {
+            like_count: tip.like_count
+            like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
+          }
         console.log result.data
         @items =_.union @items, result.data
         @busy = false
