@@ -2,12 +2,7 @@ angular.module 'tipstravel'
 
 .service 'Global', [
   () ->
-
-<<<<<<< HEAD
-    @baseUrl = 'http://192.168.1.104:8080/tipstravel'
-=======
-    @baseUrl = 'http://192.168.1.102:8080/tipstravel'
->>>>>>> origin/master
+    @baseUrl = 'http://192.168.1.106:8080/tipstravel'
     @userId = null
     @userName = null
 
