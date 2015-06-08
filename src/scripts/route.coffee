@@ -102,6 +102,15 @@ angular.module 'tipstravel'
       data:
         role: 'Guest'
 
+    .state 'nav_side'
+    ,
+      parent: 'abslogin'
+      url: '/nav_side'
+      templateUrl: '/modules/nav_side/nav_side.html'
+      controller: 'nav_sideCtrl'
+      data:
+        role: 'Guest'
+
     .state 'personSetting'
     ,
       parent: 'abslogin'

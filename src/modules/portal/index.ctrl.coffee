@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     '$state'
     'apiUser'
     'Global'
+    'AUTH'
   ]
 
   init: ->

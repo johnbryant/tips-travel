@@ -4,27 +4,22 @@
     .row
       .col-lg-6
         .input-group
-          input.form-control(for="tagname" type='text', placeholder='Search for...', style='height:30px; width:270px')
+          input.form-control(ng-model="tagname" type='text', placeholder='Search for...', style='height:30px; width:270px')
     section
       #container_buttons
         p
           button.a_demo_four(type='submit' ng-click='search()') Go!
-        p {{ search_errorInfo }}
+        p {{errorInfo }}
 
   .wrapper
     h3
-      a(href='photo.html')
-        span.label.label-.label-default Cities
-      a(href='photo.html')
-        span.label.label-primary Ocean
-      a(href='photo.html')
-        span.label.label-success Nature
-      a(href='photo.html')
-        span.label.label-info Mountains
-      a(href='photo.html')
-        span.label.label-warning HongKong
-      a(href='photo.html')
-        span.label.label-danger Architecture
+
+      span.label.label-.label-default(ng-model='tagname', ng-click='search()') Cities
+      span.label.label-primary(ng-model='tagname', ng-click='search()') Ocean
+      span.label.label-success(ng-model='tagname', ng-click='search()') Nature
+      span.label.label-info(ng-model='tagname', ng-click='search()') Mountains
+      span.label.label-warning(ng-model='tagname', ng-click='search()') HongKong
+      span.label.label-danger(ng-model='tagname', ng-click='search()') Architecture
   .wrapper2
     .box1
       a(href='topic/1')
