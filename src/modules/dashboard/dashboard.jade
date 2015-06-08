@@ -102,6 +102,10 @@
                   a.tips_tag( 
                   ng-repeat= "tag in tip.tag_message" 
                   )       # {{tag.tm_tag.tag_name}}
+                  a.tips_tag(
+                  target="_blank"
+                  href="{{BaseURL}}{{tip.image}}"
+                  ) 【下载原图】
                   .blank_content
                   .likes
           .loading(
