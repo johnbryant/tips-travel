@@ -135,7 +135,6 @@ angular.module 'tipstravel'
             like_count: tip.like_count
             like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
           }
-          console.log tip.isliked
 
         console.log result.data
 
