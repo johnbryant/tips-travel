@@ -164,11 +164,11 @@ angular.module 'tipstravel'
         _n = 0
         while _n < _len
           if _n % 3 == 0
-            result.data[_n].div = 'left'
+            result.data[_n].divde = 'left'
           else if _n % 3 == 1
-            result.data[_n].div = 'right'
+            result.data[_n].divde = 'right'
           else
-            result.data[_n].div = 'mid'
+            result.data[_n].divde = 'mid'
           _n++
 
         _m = 0

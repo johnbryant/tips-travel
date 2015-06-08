@@ -2,8 +2,8 @@
   include ../navbar/navbar
   .area(ng-repeat='photo in photo_reddit.items')
 
-    div(id='{{photo.div}}')
-      div(class="{{photo.style}}")
+    div(id='{{photo.divde}}')
+      div(class='{{photo.style}}')
         .media
           .media-left
             img.media-object(ng-src='{{baseUrl + photo.user.avatar }}',alt='Avatar', style='margin-left: 7px;margin-top: 5px;')
