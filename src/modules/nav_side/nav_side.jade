@@ -1,0 +1,14 @@
+.nav_side
+    #toggle.button-container(ng-click='openNav()')
+        span(ng-class='{top_active:topactive}')
+        span(ng-class='{middle_active:middleactive}')
+        span(ng-class='{bottom_active:bottomactive}')
+    #overlay(ng-class='{overlay:onclose,overlay_open:onopen}')
+        nav
+            ul
+                li
+                    a(ng-click='goSignin()') Sign in
+                li
+                    a(href='#') Sign up
+                li
+                    a(ng-click='goSearch()') Search

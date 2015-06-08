@@ -10,6 +10,7 @@ angular.module 'tipstravel'
     'Global'
     'Reddit'
     'apiLikes'
+    'apiUser'
     'Upload'
     '$timeout'
   ]
@@ -68,6 +69,39 @@ angular.module 'tipstravel'
         @$scope.bottomactive = false
         @$scope.isopened = false
         @$scope.onopen = false
+
+    # follow users
+    follow_user: (index,follow_userid,isfollowed) ->
+      console.log follow_userid
+      console.log isfollowed
+      if isfollowed is "false"
+        console.log 'begin follow'
+        Promise.bind @
+        .then ->
+          @apiUser.dealFollowUser
+            following_id: follow_userid
+            user_id: @Global.userId
+        .then (result) ->
+          console.log result
+          if result is 'followsuccess'
+            @$scope.reddit.items[index].follow_btn_content = 'unfollow'
+            @$scope.reddit.items[index].user.isfollowed = "true"
+        .error (err) ->
+          console.error err
+      else if isfollowed is 'true'
+        console.log 'begin unfollow'
+        Promise.bind @
+        .then ->
+          @apiUser.dealFollowUser
+            following_id: follow_userid
+            user_id: @Global.userId
+        .then (result) ->
+          console.log result
+          if result is 'unfollowsuccess'
+            @$scope.reddit.items[index].follow_btn_content = 'follow'
+            @$scope.reddit.items[index].user.isfollowed = "false"
+        .error (err) ->
+          console.error err
 
     like_tips: (index,messageid,like_count) ->
 #      console.log "click1"

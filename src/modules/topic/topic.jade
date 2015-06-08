@@ -4,7 +4,7 @@
     .middle-sdo1.animated.slideInLeft
         .sdo2
             .topic_title
-                a.animated.flipInY Ocean
+                a.animated.flipInY {{ topic_name }}
             .middle
                 .cl-mcont(
                 infinite-scroll='topic_reddit.nextPage()'
@@ -25,8 +25,8 @@
                                 a.tips_username
                                     h5 {{ tip.user.username }}
                                 button.btn.btn-info.btn_follow(
-                                    ng-click='follow_user(tip.user.user_id,tip.user.isfollowed)'
-                                    ng-bind='btn_word'
+                                    ng-click='follow_user($index,tip.user.user_id,tip.user.isfollowed)'
+                                    ng-bind='tip.follow_return.follow_btn_content'
                                     )
                                 img.tips_image(ng-src='{{baseUrl + tip.image }}')
                                 p.tips_text {{ tip.context }}
