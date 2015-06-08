@@ -38,34 +38,6 @@ angular.module 'tipstravel'
           return
 
 
-        _len = result.data.length
-        _n = 0
-        while _n < _len
-          if _n % 3 == 0
-            result.data[_n].div = 'left'
-          else if _n % 3 == 1
-            result.data[_n].div = 'right'
-          else
-            result.data[_n].div = 'mid'
-          _n++
-
-        _m = 0
-        while _m < _len
-          _r=Math.floor(Math.random() * 10)
-          if _n % 3 == 0
-            result.data[_m].style = 'img'
-          else if _n % 3 == 1
-            result.data[_m].style = 'img2'
-          else
-            result.data[_m].style = 'img3'
-          _m++
-        @items =_.union @items, result.data
-        @busy = false
-        @arg_start += result.data.length
-        @scope.$apply()
-      .catch (err) ->
-        console.error err
-
 
     Reddit
 

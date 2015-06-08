@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     '$state'
     'apiSearch'
     'Global'
+
   ]
 
   data:
@@ -33,7 +34,6 @@ angular.module 'tipstravel'
 
       .then (result) ->
         console.log result
-        #        @$scope.errorInfo = if result.message is'������ע��' then 'The email has been registered!' else 'The username has been registered!'
 
         if result.message is 'fail'
           @$scope.errorInfo = 'There is no such Tag!'
