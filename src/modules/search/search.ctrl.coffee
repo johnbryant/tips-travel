@@ -10,14 +10,7 @@ angular.module 'tipstravel'
     'apiSearch'
     'Global'
   ]
-<<<<<<< HEAD
-  data:
-    search_api_setting:
-      startindex: 0
-      user_id: null
-=======
 
->>>>>>> origin/master
 
   init: ->
     @$scope.test = "Search"
@@ -28,22 +21,15 @@ angular.module 'tipstravel'
     goTopic: (num) ->
       @$state.go 'topic', num:num
 
-    searchFor:(tag) ->
+    searchFor:() ->
       console.log 'search'
       Promise.bind @
       .then ->
         @apiSearch.search
-<<<<<<< HEAD
-          tagname: @$scope.tagname
-          user_id: @Global.userId
-          index: 0
-
-=======
           tag_name: @$scope.tag_name
           start_index:0
           user_id:@Global.userId
           console.log @$scope.tag_name
->>>>>>> origin/master
       .then (result) ->
         console.log result
         if result.message is 'fail'
@@ -51,7 +37,7 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$state.go 'photo', tag:tag
+          @$state.go 'photo', tag:@$scope.tag_name
       .error (err) ->
         console.error err
 

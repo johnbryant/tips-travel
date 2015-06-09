@@ -32,7 +32,7 @@ angular.module 'tipstravel'
     @photo_api_setting.tag_name = tag
     methods:
 
-      follow_user: (index,follow_userid,isfollowed) ->
+      follow_user: (follow_userid,isfollowed) ->
         console.log follow_userid
         console.log isfollowed
         if isfollowed is "false"
@@ -45,8 +45,8 @@ angular.module 'tipstravel'
           .then (result) ->
             console.log result
             if result is 'followsuccess'
-              @$scope.photo_reddit.items[index].follow_return.follow_btn_content = 'unfollow'
-              @$scope.photo_reddit.items[index].user.isfollowed = "true"
+              @$scope.photo_reddit.items[1].follow_return.follow_btn_content = 'unfollow'
+              @$scope.photo_reddit.items[1].user.isfollowed = "true"
           .error (err) ->
             console.error err
         else if isfollowed is 'true'
@@ -59,8 +59,8 @@ angular.module 'tipstravel'
           .then (result) ->
             console.log result
             if result is 'unfollowsuccess'
-              @$scope.photo_reddit.items[index].follow_return.follow_btn_content = 'follow'
-              @$scope.photo_reddit.items[index].user.isfollowed = "false"
+              @$scope.photo_reddit.items[1].follow_return.follow_btn_content = 'follow'
+              @$scope.photo_reddit.items[1].user.isfollowed = "false"
           .error (err) ->
             console.error err
 
@@ -77,12 +77,12 @@ angular.module 'tipstravel'
           console.log like_count
           console.log result
           if result is 'likesuccess'
-            @$scope.photo_reddit.items[index].like_return.like_count++
-            console.log @$scope.photo_reddit.items[index].like_return.like_count
-            console.log @$scope.photo_reddit.items[index].isliked
+            @$scope.photo_reddit.items[1].like_return.like_count++
+            console.log @$scope.photo_reddit.items[1].like_return.like_count
+            console.log @$scope.photo_reddit.items[1].isliked
           else if result is 'dislikesuccess'
-            @$scope.photo_reddit.items[index].like_return.like_count--
-            console.log @$scope.photo_reddit.items[index].like_return.like_count
-            console.log @$scope.photo_reddit.items[index].isliked
+            @$scope.photo_reddit.items[1].like_return.like_count--
+            console.log @$scope.photo_reddit.items[1].like_return.like_count
+            console.log @$scope.photo_reddit.items[1].isliked
         .error (err) ->
           console.error err

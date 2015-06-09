@@ -142,7 +142,7 @@ angular.module 'tipstravel'
 
     PhotoReddit = (photo_api_setting) ->
       @scope = photo_api_setting.scope
-      @items = []
+      @items = [1]
       @busy = false
       @arg_start =photo_api_setting.start
       @arg_count = photo_api_setting.count if photo_api_setting.count?
@@ -196,7 +196,6 @@ angular.module 'tipstravel'
         @scope.$apply()
       .catch (err) ->
         console.error err
-
 
     PhotoReddit
 ]
