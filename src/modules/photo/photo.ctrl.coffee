@@ -19,16 +19,17 @@ angular.module 'tipstravel'
         count:20
         user_id: null
         scope: null
+        tag_name:null
 
 
   init: ->
     @$scope.tips = "follow and share the interesting travel tips"
     @$scope.photo_reddit = new @PhotoReddit @photo_api_setting
-    @$scope.baseUrl = @Global.baseUrl
     @photo_api_setting.user_id = @Global.userId
     @photo_api_setting.scope = @$scope
     @$scope.btn_word = 'follow'
-
+    tag = @$state.params.tag
+    @photo_api_setting.tag_name = tag
     methods:
 
       follow_user: (index,follow_userid,isfollowed) ->

@@ -4,26 +4,23 @@
     .row
       .col-lg-6
         .input-group
-          input.form-control(ng-model="tagname",type='text',placeholder='Search for...', style='height:30px; width:270px')
+          input.form-control(ng-model="tag_name",type='text',placeholder='Search for...', style='height:30px; width:270px')
+          h4{{ errorInfo }}
     section
       #container_buttons
         p
           button.a_demo_four(
             ng-click='searchFor()'
             ) {{ test }}
-        p {{errorInfo }}
 
   .wrapper
     h3
-      button.btn-success(
-      ng-click='searchFor()'
-      ) Test
-      button.label.label-.label-default(ng-model='tagname', ng-click='searchFor()') Cities
-      span.label.label-primary(ng-model='tagname', ng-click='searchFor()') Ocean
-      span.label.label-success(ng-model='tagname', ng-click='searchFor()') Nature
-      span.label.label-info(ng-model='tagname', ng-click='searchFor()') Mountains
-      span.label.label-warning(ng-model='tagname', ng-click='searchFor()') HongKong
-      span.label.label-danger(ng-model='tagname', ng-click='searchFor()') Architecture
+      span.label.label-.label-default(ng-model='tag_name', ng-click='searchFor()') Cities
+      span.label.label-primary(ng-model='tag_name', ng-click='searchFor()',value='ocean') Ocean
+      span.label.label-success(ng-model='tag_name', ng-click='searchFor()') Nature
+      span.label.label-info(ng-model='tag_name', ng-click='searchFor()') Mountains
+      span.label.label-warning(ng-model='tag_name', ng-click='searchFor()') HongKong
+      span.label.label-danger(ng-model='tag_name', ng-click='searchFor()') Architecture
   .wrapper2
     .box1
       a(href='topic/1')
