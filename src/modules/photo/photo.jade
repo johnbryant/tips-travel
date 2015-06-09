@@ -1,6 +1,11 @@
 .photo
   include ../navbar/navbar
-  .area(ng-repeat='photo in photo_reddit.items')
+  .cl-mcont(
+    infinite-scroll='photo_reddit.nextPage()'
+    infinite-scroll-disabled='photo_reddit.busy'
+    infinite-scroll-distance='0'
+    )
+    .area(ng-repeat='photo in photo_reddit.items')
 
     div(id='{{photo.divde}}')
       div(class='{{photo.style}}')
