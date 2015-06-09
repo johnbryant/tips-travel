@@ -17,22 +17,22 @@ angular.module 'tipstravel'
   (apiSearchBase) ->
     search: (getInfo) ->
       {
-        tagname
-        startindex
+        tag_name
+        start_index
         user_id
       } = getInfo
       meta = apiSearchBase.one 'tag'
       .all 'search'
-
+      console.log 'api'
       new Promise (resolve, reject) ->
         meta.post
-          tagname:tagname
-          startindex:startindex
+          tagname:tag_name
+          startindex:start_index
           userid:user_id
-      .then (result) ->
-        resolve  result
-      , (res) ->
-        reject res
+        .then (result) ->
+          resolve  result
+        , (res) ->
+          reject res
 
 
 

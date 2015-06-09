@@ -137,6 +137,7 @@ angular.module 'tipstravel'
   'apiSearch'
   (
     apiSearch
+    Global
   ) ->
 
     PhotoReddit = (photo_api_setting) ->
@@ -145,7 +146,8 @@ angular.module 'tipstravel'
       @busy = false
       @arg_start =photo_api_setting.start
       @arg_count = photo_api_setting.count if photo_api_setting.count?
-      @arg_user_id =photo_api_setting.userid if photo_api_setting.userid
+      @arg_user_id =photo_api_setting.user_id if photo_api_setting.user_id
+      @arg_tag_name=photo_api_setting.tag_name
       @busy_statu = 'Loading...'
 
     PhotoReddit::nextPage = ->
@@ -156,8 +158,9 @@ angular.module 'tipstravel'
       Promise.bind @
       .then ->
         @api_func
-          index: @arg_start
-          userID: @arg_user_id
+          start_index: @arg_start
+          user_id: @arg_user_id
+          tag_name:@arg_tag_name
 
       .then (result) ->
         if _.isEmpty result.data
