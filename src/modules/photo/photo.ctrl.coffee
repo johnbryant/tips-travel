@@ -10,6 +10,8 @@ angular.module 'tipstravel'
     'Global'
     'apiLikes'
     'apiUser'
+    'PhotoReddit'
+    '$state'
 
   ]
 

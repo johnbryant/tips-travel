@@ -9,6 +9,7 @@ angular.module 'tipstravel'
     '$state'
     'apiSearch'
     'Global'
+    'PhotoReddit'
   ]
 
 
@@ -22,6 +23,8 @@ angular.module 'tipstravel'
     @$scope.moun="Mountains"
     @$scope.honk="HongKong"
     @$scope.arct="Architecture"
+    @$scope.activestatus="None"
+    @$scope.activestatus1=""
 
 
   methods:
@@ -44,7 +47,7 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$state.go 'photo', tag:@$scope.tag_name
+          @$state.go 'photo', tag: @$scope.tag_name
       .error (err) ->
         console.error err
 
@@ -64,7 +67,8 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$state.go 'photo', tag:@$scope.city
+          @$scope.activestatus=""
+          @$scope.activestatus1="None"
       .error (err) ->
         console.error err
 
@@ -83,7 +87,8 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$state.go 'photo', tag:@$scope.ocea
+          @$scope.activestatus=""
+          @$scope.activestatus1="None"
       .error (err) ->
         console.error err
 
@@ -102,7 +107,8 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$state.go 'photo', tag:@$scope.natu
+          @$scope.activestatus=""
+          @$scope.activestatus1="None"
       .error (err) ->
         console.error err
 
@@ -121,7 +127,8 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$state.go 'photo', tag:@$scope.moun
+          @$scope.activestatus=""
+          @$scope.activestatus1="None"
       .error (err) ->
         console.error err
 
@@ -140,7 +147,8 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$state.go 'photo', tag:@$scope.honk
+          @$scope.activestatus=""
+          @$scope.activestatus1="None"
       .error (err) ->
         console.error err
 
@@ -159,7 +167,8 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$state.go 'photo', tag:@$scope.arct
+          @$scope.activestatus=""
+          @$scope.activestatus1="None"
       .error (err) ->
         console.error err
 
