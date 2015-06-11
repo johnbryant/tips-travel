@@ -140,6 +140,7 @@ angular.module 'tipstravel'
     Global
   ) ->
 
+
     PhotoReddit = (photo_api_setting) ->
       @scope = photo_api_setting.scope
       @items = [1]
@@ -149,11 +150,14 @@ angular.module 'tipstravel'
       @arg_user_id =photo_api_setting.user_id if photo_api_setting.user_id
       @arg_tag_name=photo_api_setting.tag_name
       @busy_statu = 'Loading...'
+      @api_func=apiSearch.search
+      console.log 'photoreddit'
 
     PhotoReddit::nextPage = ->
       if @busy
         return
       @busy = true
+      console.log @busy
 
       Promise.bind @
       .then ->
@@ -166,18 +170,20 @@ angular.module 'tipstravel'
         if _.isEmpty result.data
           @busy_statu = 'No more tips!'
           @scope.$apply()
+          console.log result.data.length
           return
+
 
 
         _len = result.data.length
         _n = 0
         while _n < _len
           if _n % 3 == 0
-            result.data[_n].divde = 'left'
+            result.data[_n].pos = 'left'
           else if _n % 3 == 1
-            result.data[_n].divde = 'right'
+            result.data[_n].pos = 'right'
           else
-            result.data[_n].divde = 'mid'
+            result.data[_n].pos = 'mid'
           _n++
 
         _m = 0
