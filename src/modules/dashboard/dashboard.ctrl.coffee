@@ -40,6 +40,7 @@ angular.module 'tipstravel'
     @$scope.reddit = new @Reddit @api_setting
 
 
+
     @$scope.content = null
 
   methods:

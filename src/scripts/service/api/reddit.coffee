@@ -45,6 +45,7 @@ angular.module 'tipstravel'
             like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
           }
           tip.follow_btn_content = if tip.user.isfollowed is "true" then 'unfollow' else 'follow'
+          tip.user.follow_btn_show = if tip.user.isfollowed is "itself" then false else true
 
         for photo in result.data
           photo.like_return = {
