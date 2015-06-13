@@ -45,7 +45,16 @@ angular.module 'tipstravel'
             like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
           }
           tip.follow_btn_content = if tip.user.isfollowed is "true" then 'unfollow' else 'follow'
+
+        for photo in result.data
+          photo.like_return = {
+            like_count: photo.like_count
+            like_btn_url: if photo.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
+          }
+          photo.follow_btn_content = if photo.user.isfollowed is "true" then 'unfollow' else 'follow'
         console.log result.data
+
+
 
         @items =_.union @items, result.data
         @busy = false
@@ -152,6 +161,8 @@ angular.module 'tipstravel'
       @busy_statu = 'Loading...'
       @api_func=apiSearch.search
       console.log 'photoreddit'
+      console.log @arg_start
+      console.log @arg_tag_name
 
     PhotoReddit::nextPage = ->
       if @busy
@@ -167,6 +178,7 @@ angular.module 'tipstravel'
           tag_name:@arg_tag_name
 
       .then (result) ->
+        console.log result.data
         if _.isEmpty result.data
           @busy_statu = 'No more tips!'
           @scope.$apply()
@@ -186,16 +198,19 @@ angular.module 'tipstravel'
             result.data[_n].pos = 'mid'
           _n++
 
-        _m = 0
-        while _m < _len
-          _r=Math.floor(Math.random() * 10)
-          if _n % 3 == 0
-            result.data[_m].style = 'img'
-          else if _n % 3 == 1
-            result.data[_m].style = 'img2'
-          else
-            result.data[_m].style = 'img3'
-          _m++
+        for photo in result.data
+          photo.like_return = {
+            like_count: photo.like_count
+            like_btn_url: if photo.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
+          }
+          photo.follow_return = {
+            isfollowed: photo.user.isfollowed
+            follow_btn_content: if photo.user.isfollowed is "true" then 'unfollow' else 'follow'
+          }
+
+#        console.log result.data
+
+
         @items =_.union @items, result.data
         @busy = false
         @arg_start += result.data.length

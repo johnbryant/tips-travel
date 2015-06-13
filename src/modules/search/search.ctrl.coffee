@@ -29,7 +29,8 @@ angular.module 'tipstravel'
 
   methods:
     goTopic: (num) ->
-      @$state.go 'topic', num:num
+      @$state.go 'topic', num:num  console.log num
+
 
     searchFor:() ->
       console.log 'search'
@@ -48,6 +49,7 @@ angular.module 'tipstravel'
         else
           @$scope.errorInfo = null
           @$state.go 'photo', tag: @$scope.tag_name
+
       .error (err) ->
         console.error err
 

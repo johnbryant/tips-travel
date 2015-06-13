@@ -5,25 +5,29 @@
       infinite-scroll-disabled='photo_reddit.busy'
       infinite-scroll-distance='0'
       )
-    .area(ng-repeat='photo in photo_reddit.items')
+    .area
+      .row(ng-repeat='photo in photo_reddit.items', style='')
+          .div(id='{{photo.pos}}')
+            .img
+              .media
+                .media-left
+                  img.media-object(ng-src='{{baseUrl + photo.user.avatar }}',alt='Avatar', style='width:65px;height:65px;margin-left: 7px;margin-top: 5px;')
+                .media-body
+                  h4.media-heading
+                    | {{ photo.user.username }}
+                    button.btn.btn-info(type='button', style='margin-left: 7px;margin-top: 5px'
+                    ng-click='follow_user($index,photo.user.user_id,photo.user.isfollowed)'
+                    ng-bind='photo.follow_return.follow_btn_content')
+                    button.btn.btn-default(type='button', style='margin-left: 7px;margin-top: 7px;'
+                    ng-click='like_tips($index,photo.message_id,photo.like_count)'
+                    )
+                      .input(type='image'
+                      src='{{photo.like_return.like_btn_url}}')
+                    span(
+                      ng-bind='photo.like_return.like_count',style='margin-left:7px'
+                    )
 
-      div(class='{{photo.pos}}')
-        div(class='{{photo.style}}')
-          .media
-            .media-left
-              img.media-object(ng-src='{{baseUrl + photo.user.avatar }}',alt='Avatar', style='margin-left: 7px;margin-top: 5px;')
-            .media-body
-              h4.media-heading
-                | {{ photo.user.username }}
-                button.btn.btn-danger.btn-sm(type='button', style='margin-left: 7px;margin-top: 5px'
-                ng-click='follow_user(photo.user.user_id,photo.user.isfollowed)'
-                ng-bind='photo.follow_return.follow_btn_content')
-                button.btn.btn-default.btn-sm(type='button', style='margin-left: 7px;margin-top: 7px'
-                ng-click='like_tips(photo.message_id,photo.like_count)'
-                ng-bind='photo.like_return.like_count')
-
-                  a(herf='#')
-                    img(src='../../styles/img/thumb.jpg', style='width:18px;height:18px;')
-              |      {{ photo.context }}
-          p(style='text-align:center')
-            img(ng-src='{{baseUrl + photo.image }}')
+                  |      {{ photo.context }}
+              p(style='text-align:center')
+                img(ng-src='{{baseUrl + photo.image }}',style='width:350px;margin-top:5px')
+      .clear

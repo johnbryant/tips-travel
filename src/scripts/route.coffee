@@ -80,7 +80,7 @@ angular.module 'tipstravel'
     .state 'photo'
     ,
       parent: 'abslogin'
-      url: '/photo'
+      url: '/photo/:tag'
       templateUrl: '/modules/photo/photo.html'
       controller: 'photoCtrl'
 
