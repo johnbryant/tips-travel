@@ -27,6 +27,7 @@ angular.module 'tipstravel'
     @$scope.activestatus1=""
 
 
+
   methods:
     goTopic: (num) ->
       @$state.go 'topic', num:num  console.log num
