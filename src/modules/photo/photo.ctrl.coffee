@@ -91,11 +91,13 @@ angular.module 'tipstravel'
         if result is 'likesuccess'
           @$scope.photo_reddit.items[index].like_return.like_count++
           @$scope.photo_reddit.items[index].like_return.like_btn_url = 'styles/img/like_bkg.png'
+          @$scope.photo_reddit.items[index].like_return.like_btn_content = 'unlike'
           console.log @$scope.photo_reddit.items[index].like_return.like_count
           console.log @$scope.photo_reddit.items[index].isliked
         else if result is 'dislikesuccess'
           @$scope.photo_reddit.items[index].like_return.like_count--
           @$scope.photo_reddit.items[index].like_return.like_btn_url = 'styles/img/unlike_bkg.png'
+          @$scope.photo_reddit.items[index].like_return.like_btn_content = 'like'
           console.log @$scope.photo_reddit.items[index].like_return.like_count
           console.log @$scope.photo_reddit.items[index].isliked
       .error (err) ->

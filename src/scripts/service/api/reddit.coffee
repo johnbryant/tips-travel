@@ -48,6 +48,7 @@ angular.module 'tipstravel'
 
         for photo in result.data
           photo.like_return = {
+            like_btn_content : if photo.isliked is "true" then 'unlike' else 'like'
             like_count: photo.like_count
             like_btn_url: if photo.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
           }
@@ -130,6 +131,7 @@ angular.module 'tipstravel'
         console.log result.data
 
 
+
         @items =_.union @items, result.data
         @busy = false
         @arg_start += result.data.length
@@ -152,7 +154,7 @@ angular.module 'tipstravel'
 
     PhotoReddit = (photo_api_setting) ->
       @scope = photo_api_setting.scope
-      @items = [1]
+      @items = []
       @busy = false
       @arg_start =photo_api_setting.start
       @arg_count = photo_api_setting.count if photo_api_setting.count?
@@ -200,6 +202,7 @@ angular.module 'tipstravel'
 
         for photo in result.data
           photo.like_return = {
+            like_btn_content:if photo.isliked is "true" then 'unlike' else 'like'
             like_count: photo.like_count
             like_btn_url: if photo.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
           }

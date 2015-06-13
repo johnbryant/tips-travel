@@ -35,6 +35,8 @@ libs_obj =
       'ng-file-upload.js'
       'ng-file-upload-shim.js'
     ]
+    'angular-masonry': 'angular-masonry.js'
+    'masonry':'dist/masonry.pkgd.min.js'
 
 getlibfiles = (libs) ->
   {base} = libs
