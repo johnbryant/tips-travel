@@ -1,6 +1,6 @@
 .topic
     .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
-    //���ݿ��?
+    //���ݿ��?
     .middle-sdo1.animated.slideInLeft
         .sdo2
             .topic_title
@@ -34,6 +34,11 @@
                                 ng-repeat='tag in tip.tag_message'
                                 )
                                     a.tips_tag # {{ tag.tm_tag.tag_name }}
+                                a.tips_tag(
+                                target="_blank"
+                                href='{{baseUrl + tip.image }}'
+                                download
+                                ) 【下载原图】
                                 br
                                 a.tips_like
                                     button.tips_like_btn(

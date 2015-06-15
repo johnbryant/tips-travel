@@ -29,3 +29,7 @@
             |      {{ photo.context }}
         p(style='text-align:center')
           img(ng-src='{{baseUrl + photo.image }}',style='width:350px;margin-top:5px')
+          a.tips_tag(
+          href="{{baseUrl + photo.image }}"
+          download
+          ) 【下载原图】

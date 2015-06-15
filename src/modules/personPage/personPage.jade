@@ -1,13 +1,13 @@
 .personPage
     .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
-    //ÄÚÈİ¿ò¼Ü
+    //ï¿½ï¿½ï¿½İ¿ï¿½ï¿½
     .container-fluid
         .row-fluid
-            //×ó²àÀ¸
+            //ï¿½ï¿½ï¿½ï¿½ï¿½
             .col-md-2
             .col-md-7
                 .left_column
-                    //ĞÂ½¨tip¿ò
+                    //ï¿½Â½ï¿½tipï¿½ï¿½
                     .new_tip_container
                         a.user_avatar
                             img(ng-src='{{BaseURL}}{{reddit.items[0].user.avatar}}')
@@ -46,7 +46,7 @@
                                                 a topic5
                                 .btn_container.submit
                                     .btn.btn-primary.new_tip_submit Submit
-                                //ºÃÓÑtips
+                                //ï¿½ï¿½ï¿½ï¿½tips
                     .tips_container(
                     infinite-scroll='reddit.nextPage()'
                     infinite-scroll-disabled='reddit.busy'
@@ -68,15 +68,20 @@
                                         h5 {{tip.user.username}}
                                     img.tips_image(ng-src="{{BaseURL}}{{tip.image}}")
                                     p.tips_text {{tip.context}}
-                                    a.tips_tag(?
+                                    a.tips_tag(
                                     ng-repeat= "tag in tip.tag_message"
-                                    )? #'{{tag.tm_tag.tag_name}}'
+                                    ) #'{{tag.tm_tag.tag_name}}'
+                                    a.tips_tag(
+                                    target="_blank"
+                                    href="{{BaseURL}}{{tip.image}}"
+                                    download
+                                    ) ã€ä¸‹è½½åŸå›¾ã€‘
                                     .blank_content
                     .loading(
                     ng-show='reddit.busy'
                     )
                         h3
                             | {{reddit.busy_statu}}
-            //ÓÒ²àÀ¸
+            //ï¿½Ò²ï¿½ï¿½ï¿½
             .col-md-3
                 .right_column
