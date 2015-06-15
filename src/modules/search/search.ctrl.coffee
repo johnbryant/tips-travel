@@ -23,8 +23,7 @@ angular.module 'tipstravel'
     @$scope.moun="山脉"
     @$scope.honk="香港"
     @$scope.arct="建筑"
-    @$scope.activestatus="None"
-    @$scope.activestatus1=""
+   
 
 
 
