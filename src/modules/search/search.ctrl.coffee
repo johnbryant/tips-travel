@@ -70,8 +70,7 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$scope.activestatus=""
-          @$scope.activestatus1="None"
+          @$state.go 'photo', tag: @$scope.city
       .error (err) ->
         console.error err
 
@@ -90,8 +89,7 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$scope.activestatus=""
-          @$scope.activestatus1="None"
+          @$state.go 'photo', tag: @$scope.ocea
       .error (err) ->
         console.error err
 
@@ -110,8 +108,7 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$scope.activestatus=""
-          @$scope.activestatus1="None"
+          @$state.go 'photo', tag: @$scope.natu
       .error (err) ->
         console.error err
 
@@ -130,8 +127,7 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$scope.activestatus=""
-          @$scope.activestatus1="None"
+          @$state.go 'photo', tag: @$scope.moun
       .error (err) ->
         console.error err
 
@@ -150,8 +146,7 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$scope.activestatus=""
-          @$scope.activestatus1="None"
+          @$state.go 'photo', tag: @$scope.honk
       .error (err) ->
         console.error err
 
@@ -170,8 +165,7 @@ angular.module 'tipstravel'
           console.log @$scope.errorInfo
         else
           @$scope.errorInfo = null
-          @$scope.activestatus=""
-          @$scope.activestatus1="None"
+          @$state.go 'photo', tag: @$scope.arct
       .error (err) ->
         console.error err
 
