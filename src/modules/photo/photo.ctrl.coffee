@@ -102,3 +102,4 @@ angular.module 'tipstravel'
           console.log @$scope.photo_reddit.items[index].isliked
       .error (err) ->
         console.error err
+
