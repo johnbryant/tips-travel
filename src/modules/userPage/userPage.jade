@@ -1,0 +1,83 @@
+.personPage
+    .navbar(ng-include='', src="'/modules/navbar/navbar.html'")
+    //?????¨°??
+    .container-fluid
+        .row-fluid
+            //¡Á¨®?¨¤??
+            .col-md-2
+            .col-md-7
+                .left_column
+                    //???¡§tip?¨°
+                    .new_tip_container
+                        a.user_avatar
+                            //img(ng-src='{{BaseURL}}{{ Global.userId }}')
+                            img(src='styles/img/avatar4.jpg')
+                        .new_tip_panel
+                            .new_tip_recommendation
+                                | What's your travel tips?
+                            .text_panel
+                                textarea.form-control(rows='3')
+                            .new_tip_buttons
+                                .btn_container
+                                    .btn.new_tip_photo_btn
+                                        img(src='styles/img/photosign.png')
+                                        | picture
+                                .btn_container
+                                    .btn-group
+                                        button.btn.dropdown-toggle(
+                                        data-toggle='dropdown'
+                                        aria-expanded='false'
+                                        )
+                                            img(src='styles/img/poundsign2.png')
+                                            | Topic
+                                            span.caret
+                                        ul.dropdown-menu(role='menu')
+                                            li
+                                                a.write_topic DIY topic
+                                            li.divider
+                                            li
+                                                a topic1
+                                            li
+                                                a topic2
+                                            li
+                                                a topic3
+                                            li
+                                                a topic4
+                                            li
+                                                a topic5
+                                .btn_container.submit
+                                    .btn.btn-primary.new_tip_submit Submit
+                                //????tips
+                    .tips_container(
+                    infinite-scroll='reddit.nextPage()'
+                    infinite-scroll-disabled='reddit.busy'
+                    infinite-scroll-distance='3'
+                    )
+                        ul.tips_timeline(
+                        ng-repeat= "tip in reddit.items"
+                        )
+                            li
+                                time.tips_time
+                                    span 4/30/15
+                                    span 18:30
+                                .tips_id
+                                    .tips_user_avatar
+                                        img(ng-src="{{BaseURL}}{{tip.user.avatar}}",alt='Avatar')
+                                .tips_icon.tips_icon-phone
+                                .tips_label
+                                    a.tips_username
+                                        h5 {{tip.user.username}}
+                                    img.tips_image(ng-src="{{BaseURL}}{{tip.image}}")
+                                    p.tips_text {{tip.context}}
+                                    a.tips_tag(?
+                                    ng-repeat= "tag in tip.tag_message"
+                                    )? #'{{tag.tm_tag.tag_name}}'
+                                    .blank_content
+                    .loading(
+                    ng-show='reddit.busy'
+                    )
+                        h3
+                            | {{reddit.busy_statu}}
+            //???¨¤??
+            .col-md-3
+                .right_column

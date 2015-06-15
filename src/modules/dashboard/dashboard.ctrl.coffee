@@ -6,6 +6,7 @@ angular.module 'tipstravel'
 
   inject: [
     '$scope'
+    '$state'
     'apiTips'
     'Global'
     'Reddit'
@@ -44,6 +45,7 @@ angular.module 'tipstravel'
     @$scope.content = null
 
   methods:
+  # upload the tip
     upload: ->
       if (@$scope.chooseImgs && @$scope.chooseImgs.length)
         tags =  @$scope.content.split('#')
@@ -58,7 +60,7 @@ angular.module 'tipstravel'
               tags: tags
               content: content
             file: img
-
+  # open the side nav bar
     opendNav: ->
       if !@$scope.isopened
         @$scope.topactive = true
@@ -106,6 +108,7 @@ angular.module 'tipstravel'
         .error (err) ->
           console.error err
 
+    # like tips
     like_tips: (index,messageid,like_count) ->
 #      console.log "click1"
       Promise.bind @
@@ -128,3 +131,7 @@ angular.module 'tipstravel'
           console.log @$scope.reddit.items[index].isliked
       .error (err) ->
         console.error err
+
+    goPersonPage: (userid) ->
+      @$state.go 'userPage', visit_id:userid
+      console.log userid

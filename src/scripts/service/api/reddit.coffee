@@ -10,6 +10,7 @@ angular.module 'tipstravel'
       switch classify_name
         when 'followingTips' then apiTips.getFollowingTips
         when 'myTips' then apiTips.getMyTips
+        when 'userTips' then apiTips.getUserTips
 
     Reddit = (api_setting) ->
       @scope = api_setting.scope
@@ -19,6 +20,7 @@ angular.module 'tipstravel'
       @arg_start = api_setting.start if api_setting.start?
       @arg_count = api_setting.count if api_setting.count?
       @arg_user_id = api_setting.user_id if api_setting.user_id
+      @arg_visit_id = api_setting.visit_id if api_setting.visit_id
       @busy_statu = 'Loading...'
 
     Reddit::nextPage = ->
@@ -223,4 +225,76 @@ angular.module 'tipstravel'
         console.error err
 
     PhotoReddit
+]
+
+.factory 'VisitReddit', [
+  'apiTips'
+  (
+    apiTips
+    Global
+  ) ->
+    getApiFunction = (classify_name) ->
+      switch classify_name
+        when 'userTips' then apiTips.getUserTips
+
+    VisitReddit = (api_setting) ->
+#      console.log api_setting
+      @scope = api_setting.scope
+      @items = []
+      @busy = false
+      @api_func = getApiFunction api_setting.classify_name
+      @arg_start = api_setting.start if api_setting.start?
+      @arg_count = api_setting.count if api_setting.count?
+      @arg_user_id = api_setting.user_id if api_setting.user_id
+      @arg_visit_id = api_setting.visit_id if api_setting.visit_id
+      @busy_statu = 'Loading...'
+      console.log @arg_visit_id + "haha"
+
+    VisitReddit::nextPage = ->
+      if @busy
+        return
+      @busy = true
+
+      Promise.bind @
+      .then ->
+        @api_func
+          visit_id: @arg_visit_id
+          user_id: @arg_user_id
+          index: @arg_start
+
+      .then (result) ->
+        console.log result.data
+        if _.isEmpty result.data
+          @busy_statu = 'No more tips!'
+          @scope.$apply()
+          return
+
+        for tip in result.data
+          tip.like_return = {
+            like_count: tip.like_count
+            like_btn_url: if tip.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
+          }
+          tip.follow_btn_content = if tip.user.isfollowed is "true" then 'unfollow' else 'follow'
+          tip.user.follow_btn_show = if tip.user.isfollowed is "itself" then false else true
+
+        for photo in result.data
+          photo.like_return = {
+            like_btn_content : if photo.isliked is "true" then 'unlike' else 'like'
+            like_count: photo.like_count
+            like_btn_url: if photo.isliked is "true" then 'styles/img/like_bkg.png' else 'styles/img/unlike_bkg.png'
+          }
+          photo.follow_btn_content = if photo.user.isfollowed is "true" then 'unfollow' else 'follow'
+        console.log result.data
+
+
+
+        @items =_.union @items, result.data
+        @busy = false
+        @arg_start += result.data.length
+        @scope.$apply()
+      .catch (err) ->
+        console.error err
+
+    VisitReddit
+
 ]

@@ -50,7 +50,7 @@ angular.module 'tipstravel'
       templateUrl: '/modules/search/search.html'
       controller: 'searchCtrl'
       data:
-        role: 'Guest'
+        role: 'User'
 
     .state 'dashboard'
     ,
@@ -67,6 +67,17 @@ angular.module 'tipstravel'
       url: '/personPage'
       templateUrl: '/modules/personPage/personPage.html'
       controller: 'personPageCtrl'
+      data:
+        role: 'User'
+
+    .state 'userPage'
+    ,
+      parent: 'abslogin'
+      url: '/userPage/:visit_id'
+      templateUrl: '/modules/userPage/userPage.html'
+      controller: 'userPageCtrl'
+      data:
+        role: 'User'
 
     .state 'topic'
     ,
@@ -74,8 +85,8 @@ angular.module 'tipstravel'
       url: '/topic/:num'
       templateUrl: '/modules/topic/topic.html'
       controller: 'topicCtrl'
-#      data:
-#        role: 'Guest'
+      data:
+        role: 'User'
 
     .state 'photo'
     ,
@@ -83,6 +94,8 @@ angular.module 'tipstravel'
       url: '/photo/:tag'
       templateUrl: '/modules/photo/photo.html'
       controller: 'photoCtrl'
+      data:
+        role: 'User'
 
     .state 'recommendationBox'
     ,
@@ -91,7 +104,7 @@ angular.module 'tipstravel'
       templateUrl: '/modules/recommendationBox/recommendationBox.html'
       controller: 'recommendationBoxCtrl'
       data:
-        role: 'Guest'
+        role: 'User'
 
     .state 'navbar'
     ,
@@ -117,4 +130,6 @@ angular.module 'tipstravel'
       url: '/personSetting'
       templateUrl: '/modules/personSetting/personSetting.html'
       controller: 'personSettingCtrl'
+      data:
+        role: 'User'
 ]

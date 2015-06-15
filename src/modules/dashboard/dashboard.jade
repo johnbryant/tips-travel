@@ -95,7 +95,9 @@
                     img(ng-src="{{BaseURL}}{{tip.user.avatar}}",alt='Avatar')
                 .tips_icon.tips_icon-phone
                 .tips_label
-                  a.tips_username
+                  a.tips_username(
+                    ng-click='goPersonPage(tip.user.user_id)'
+                  )
                     h5 {{tip.user.username}}
                   button.btn.btn-info.btn_follow(
                     ng-click='follow_user($index,tip.user.user_id,tip.user.isfollowed)'
