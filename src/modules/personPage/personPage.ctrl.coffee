@@ -6,9 +6,13 @@ angular.module 'tipstravel'
 
   inject: [
     '$scope'
+    '$state'
     'apiTips'
+    'apiTopic'
+    'apiUser'
+    'apiLikes'
     'Global'
-    'Reddit'
+    'VisitReddit'
   ]
 
   data:
@@ -17,6 +21,7 @@ angular.module 'tipstravel'
       count: 10
       classify_name: null
       user_id: null
+      visit_id: null
       scope: null
 
   init: ->
@@ -25,5 +30,6 @@ angular.module 'tipstravel'
 
     @api_setting.classify_name = 'myTips'
     @api_setting.user_id = @Global.userId
+    @api_setting.visit_id = @Global.userId
     @api_setting.scope = @$scope
-    @$scope.reddit = new @Reddit @api_setting
+    @$scope.reddit = new @VisitReddit @api_setting

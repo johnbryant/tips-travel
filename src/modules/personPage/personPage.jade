@@ -15,35 +15,35 @@
                             .new_tip_recommendation
                                 | What's your travel tips?
                             .text_panel
-                                textarea.form-control(rows='3')
+                                textarea.form-control(rows='3',placeholder='Input such as #China#Beach Wow it is so beautiful!')
                             .new_tip_buttons
                                 .btn_container
                                     .btn.new_tip_photo_btn
                                         img(src='styles/img/photosign.png')
                                         | picture
-                                .btn_container
-                                    .btn-group
-                                        button.btn.dropdown-toggle(
-                                        data-toggle='dropdown'
-                                        aria-expanded='false'
-                                        )
-                                            img(src='styles/img/poundsign2.png')
-                                            | Topic
-                                            span.caret
-                                        ul.dropdown-menu(role='menu')
-                                            li
-                                                a.write_topic DIY topic
-                                            li.divider
-                                            li
-                                                a topic1
-                                            li
-                                                a topic2
-                                            li
-                                                a topic3
-                                            li
-                                                a topic4
-                                            li
-                                                a topic5
+                                //.btn_container
+                                //    .btn-group
+                                //        button.btn.dropdown-toggle(
+                                //        data-toggle='dropdown'
+                                //        aria-expanded='false'
+                                //        )
+                                //            img(src='styles/img/poundsign2.png')
+                                //            | Topic
+                                //            span.caret
+                                //        ul.dropdown-menu(role='menu')
+                                //            li
+                                //                a.write_topic DIY topic
+                                //            li.divider
+                                //            li
+                                //                a topic1
+                                //            li
+                                //                a topic2
+                                //            li
+                                //                a topic3
+                                //            li
+                                //                a topic4
+                                //            li
+                                //                a topic5
                                 .btn_container.submit
                                     .btn.btn-primary.new_tip_submit Submit
                                 //����tips
@@ -57,8 +57,9 @@
                         )
                             li
                                 time.tips_time
-                                    span 4/30/15
-                                    span 18:30
+                                    span {{ tip.message_date }}
+                                    //span 4/30/15
+                                    //span 18:30
                                 .tips_id
                                     .tips_user_avatar
                                         img(ng-src="{{BaseURL}}{{tip.user.avatar}}",alt='Avatar')

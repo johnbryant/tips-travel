@@ -31,8 +31,8 @@ angular.module 'tipstravel'
       Promise.bind @
       .then ->
         @api_func
-          index: @arg_start
           userID: @arg_user_id
+          index: @arg_start
 
       .then (result) ->
         console.log result.data
@@ -236,7 +236,7 @@ angular.module 'tipstravel'
     getApiFunction = (classify_name) ->
       switch classify_name
         when 'userTips' then apiTips.getUserTips
-
+        when 'myTips' then apiTips.getUserTips
     VisitReddit = (api_setting) ->
 #      console.log api_setting
       @scope = api_setting.scope
@@ -249,6 +249,7 @@ angular.module 'tipstravel'
       @arg_visit_id = api_setting.visit_id if api_setting.visit_id
       @busy_statu = 'Loading...'
       console.log @arg_visit_id + "haha"
+      console.log @arg_user_id + "haha"
 
     VisitReddit::nextPage = ->
       if @busy

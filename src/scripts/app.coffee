@@ -5,5 +5,4 @@ angular.module 'tipstravel', [
   'infinite-scroll'
   'ngCookies'
   'ngFileUpload'
-  'wu.masonry'
 ]
