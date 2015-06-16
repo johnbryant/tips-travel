@@ -14,6 +14,9 @@ angular.module 'tipstravel'
     'apiUser'
     'Upload'
     '$timeout'
+    'apiSearch'
+    'PhotoReddit'
+    '$timeout'
   ]
 
   data:
@@ -60,6 +63,10 @@ angular.module 'tipstravel'
               tags: tags
               content: content
             file: img
+          console.log 'timeout'
+          @$state.reload()
+#          @$timeout(@$state.reload(),10000)
+
   # open the side nav bar
     opendNav: ->
       if !@$scope.isopened
@@ -135,3 +142,17 @@ angular.module 'tipstravel'
     goPersonPage: (userid) ->
       @$state.go 'userPage', visit_id:userid
       console.log userid
+
+    goPhotoWall: (tagname)->
+      console.log 'photo wall'
+      Promise.bind @
+      .then ->
+        @apiSearch.search
+          tag_name: tagname
+          start_index: 0
+          user_id: @Global.userId
+      .then (result) ->
+        console.log result.data
+        @$state.go 'photo', tag: tagname
+      .error (err) ->
+        console.error err

@@ -44,29 +44,29 @@
                   )
                     img(src='styles/img/photosign.png')
                     | picture
-                .btn_container
-                  .btn-group
-                    button.btn.dropdown-toggle(
-                    data-toggle='dropdown'
-                    aria-expanded='false'
-                    )
-                      img(src='styles/img/poundsign2.png')
-                      | Tag
-                      span.caret
-                    ul.dropdown-menu(role='menu')
-                      li
-                        a.write_topic DIY topic
-                      li.divider
-                      li
-                        a 海洋
-                      li
-                        a 沙漠
-                      li
-                        a 河流
-                      li
-                        a 远方
-                      li
-                        a 彼岸
+                //.btn_container
+                  //.btn-group
+                  //  button.btn.dropdown-toggle(
+                  //  data-toggle='dropdown'
+                  //  aria-expanded='false'
+                  //  )
+                  //    img(src='styles/img/poundsign2.png')
+                  //    | Tag
+                  //    span.caret
+                  //  ul.dropdown-menu(role='menu')
+                  //    li
+                  //      a.write_topic DIY topic
+                  //    li.divider
+                  //    li
+                  //      a 海洋
+                  //    li
+                  //      a 沙漠
+                  //    li
+                  //      a 河流
+                  //    li
+                  //      a 远方
+                  //    li
+                  //      a 彼岸
                 .btn_container.submit
                   .btn.btn-primary.new_tip_submit(
                     ng-click="upload()"
@@ -88,8 +88,8 @@
             )
               li
                 time.tips_time
-                  span 4/30/15
-                  span 18:30
+                  span {{ tip.message_date }}
+                  //span 18:30
                 .tips_id
                   .tips_user_avatar
                     img(ng-src="{{BaseURL}}{{tip.user.avatar}}",alt='Avatar')
@@ -106,9 +106,11 @@
                     )
                   img.tips_image(ng-src="{{BaseURL}}{{tip.image}}")
                   p.tips_text {{tip.context}}
-                  a.tips_tag( 
-                  ng-repeat= "tag in tip.tag_message" 
-                  )       # {{tag.tm_tag.tag_name}}
+                  a.tips_tag(ng-repeat='tag in tip.tag_message',ng-click='goPhotoWall(tag.tm_tag.tag_name)')
+                    | # {{tag.tm_tag.tag_name}}
+                    //div(
+                    //    ng-click='goPhotoWall(tag.tm_tag.tag_name)'
+                    //) # {{tag.tm_tag.tag_name}}
                   a.tips_tag(
                   target="_blank"
                   href="{{BaseURL}}{{tip.image}}"
